@@ -1,0 +1,272 @@
+/* ==========================================================================
+   SENAPATHI ALLIANCE - 9 CORE SERVICE LINES STYLES
+   Interactive Filter Tabs, Dribbble Card Grid, & Sub-Offering Chips
+   ========================================================================== */
+
+.services-section {
+  background: var(--color-bg-body);
+  position: relative;
+}
+
+/* Category Filter Bar */
+.services-filter-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  flex-wrap: wrap;
+  margin-bottom: 48px;
+}
+
+.filter-btn {
+  font-family: var(--font-heading);
+  font-size: 0.875rem;
+  font-weight: 600;
+  padding: 10px 20px;
+  border-radius: var(--radius-full);
+  border: 1px solid var(--color-border);
+  background: #FFFFFF;
+  color: var(--color-text-muted);
+  cursor: pointer;
+  transition: all var(--transition-normal);
+  box-shadow: var(--shadow-xs);
+}
+
+.filter-btn:hover {
+  border-color: var(--color-primary-300);
+  color: var(--color-primary-600);
+  background: var(--color-primary-50);
+}
+
+.filter-btn.active {
+  background: var(--color-primary-800);
+  color: #FFFFFF;
+  border-color: var(--color-primary-800);
+  box-shadow: 0 4px 12px rgba(11, 37, 69, 0.25);
+}
+
+/* Services Grid */
+.services-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 30px;
+}
+
+@media (max-width: 1120px) {
+  .services-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 768px) {
+  .services-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* Service Card Component */
+.service-card {
+  background: #FFFFFF;
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-xl);
+  padding: 32px 28px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  transition: all var(--transition-normal);
+  position: relative;
+  overflow: hidden;
+  box-shadow: var(--shadow-sm);
+}
+
+.service-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 4px;
+  background: linear-gradient(90deg, var(--color-primary-600), var(--color-primary-400));
+  opacity: 0;
+  transition: opacity var(--transition-normal);
+}
+
+.service-card:hover {
+  transform: translateY(-6px);
+  border-color: rgba(2, 132, 199, 0.35);
+  box-shadow: var(--shadow-xl);
+}
+
+.service-card:hover::before {
+  opacity: 1;
+}
+
+/* Card Top Section */
+.service-card-top {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  margin-bottom: 20px;
+}
+
+.service-icon-box {
+  width: 52px;
+  height: 52px;
+  border-radius: var(--radius-md);
+  background: linear-gradient(135deg, var(--color-primary-50) 0%, var(--color-primary-100) 100%);
+  color: var(--color-primary-600);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all var(--transition-normal);
+}
+
+.service-card:hover .service-icon-box {
+  background: linear-gradient(135deg, var(--color-primary-700) 0%, var(--color-primary-500) 100%);
+  color: #FFFFFF;
+  transform: rotate(-4deg) scale(1.05);
+}
+
+.service-icon-box svg {
+  width: 26px;
+  height: 26px;
+}
+
+.service-card-number {
+  font-family: var(--font-heading);
+  font-size: 1.25rem;
+  font-weight: 800;
+  color: #CBD5E1;
+  letter-spacing: -0.02em;
+}
+
+.service-card-title {
+  font-size: 1.25rem;
+  font-weight: 700;
+  color: var(--color-primary-900);
+  margin-bottom: 12px;
+  line-height: 1.3;
+}
+
+.service-card-overview {
+  font-size: 0.90625rem;
+  color: var(--color-text-muted);
+  line-height: 1.65;
+  margin-bottom: 20px;
+}
+
+/* Sub-Services Pill Tag Showcase */
+.service-sub-offerings {
+  margin-bottom: 24px;
+}
+
+.sub-offering-header {
+  font-size: 0.75rem;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  font-weight: 700;
+  color: var(--color-primary-700);
+  margin-bottom: 10px;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.sub-offerings-list {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.sub-offering-item {
+  font-size: 0.8125rem;
+  color: var(--color-text-main);
+  background: var(--color-bg-surface-alt);
+  padding: 6px 12px;
+  border-radius: var(--radius-sm);
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-weight: 500;
+  border-left: 2.5px solid var(--color-primary-500);
+}
+
+.sub-offering-item span.code {
+  font-size: 0.75rem;
+  font-weight: 700;
+  color: var(--color-primary-600);
+}
+
+/* Regulatory Partner Badge */
+.partner-tag-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 5px 10px;
+  background: #EFF6FF;
+  border: 1px solid #BFDBFE;
+  color: #1D4ED8;
+  border-radius: var(--radius-sm);
+  font-size: 0.75rem;
+  font-weight: 600;
+  margin-bottom: 16px;
+}
+
+.partner-tag-badge.cag {
+  background: #FEF3C7;
+  border-color: #FDE68A;
+  color: #92400E;
+}
+
+.partner-tag-badge svg {
+  width: 14px;
+  height: 14px;
+}
+
+/* Card Bottom Action Area */
+.service-card-bottom {
+  padding-top: 18px;
+  border-top: 1px solid var(--color-border);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.service-deliverable-teaser {
+  font-size: 0.8125rem;
+  color: var(--color-accent-emerald);
+  font-weight: 600;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.service-deliverable-teaser svg {
+  width: 14px;
+  height: 14px;
+}
+
+.btn-service-detail {
+  font-family: var(--font-heading);
+  font-size: 0.8125rem;
+  font-weight: 600;
+  color: var(--color-primary-600);
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 6px 0;
+  transition: gap var(--transition-fast), color var(--transition-fast);
+}
+
+.btn-service-detail:hover {
+  color: var(--color-primary-800);
+  gap: 9px;
+}
+
+.btn-service-detail svg {
+  width: 14px;
+  height: 14px;
+}

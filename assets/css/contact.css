@@ -1,0 +1,253 @@
+/* ==========================================================================
+   SENAPATHI ALLIANCE - CONTACT & RFP CONSULTATION STYLES
+   ========================================================================== */
+
+.contact-section {
+  background: var(--color-bg-surface-alt);
+  position: relative;
+}
+
+.contact-layout-grid {
+  display: grid;
+  grid-template-columns: 0.9fr 1.1fr;
+  gap: 56px;
+  align-items: flex-start;
+}
+
+@media (max-width: 992px) {
+  .contact-layout-grid {
+    grid-template-columns: 1fr;
+    gap: 40px;
+  }
+}
+
+/* Contact Info Column */
+.contact-info-panel {
+  display: flex;
+  flex-direction: column;
+}
+
+.contact-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 0.8125rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: var(--color-primary-700);
+  margin-bottom: 14px;
+}
+
+.contact-headline {
+  font-size: clamp(1.85rem, 3vw, 2.5rem);
+  font-weight: 800;
+  color: var(--color-primary-900);
+  margin-bottom: 16px;
+  line-height: 1.25;
+}
+
+.contact-intro {
+  font-size: 1.0625rem;
+  color: var(--color-text-muted);
+  line-height: 1.7;
+  margin-bottom: 32px;
+}
+
+.contact-cards-stack {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  margin-bottom: 32px;
+}
+
+.contact-card-box {
+  background: #FFFFFF;
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-lg);
+  padding: 20px 24px;
+  display: flex;
+  align-items: flex-start;
+  gap: 16px;
+  transition: all var(--transition-fast);
+  box-shadow: var(--shadow-xs);
+}
+
+.contact-card-box:hover {
+  border-color: var(--color-primary-400);
+  box-shadow: var(--shadow-md);
+  transform: translateX(4px);
+}
+
+.contact-box-icon {
+  width: 44px;
+  height: 44px;
+  border-radius: var(--radius-sm);
+  background: var(--color-primary-50);
+  color: var(--color-primary-600);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.contact-box-icon svg {
+  width: 22px;
+  height: 22px;
+}
+
+.contact-box-details h4 {
+  font-size: 0.9375rem;
+  font-weight: 700;
+  color: var(--color-primary-900);
+  margin-bottom: 4px;
+}
+
+.contact-box-details p,
+.contact-box-details a {
+  font-size: 0.875rem;
+  color: var(--color-text-muted);
+  line-height: 1.5;
+}
+
+.contact-box-details a:hover {
+  color: var(--color-primary-600);
+}
+
+/* Compliance and Confidentiality Note */
+.confidentiality-badge {
+  background: rgba(5, 150, 105, 0.08);
+  border: 1px solid rgba(5, 150, 105, 0.2);
+  border-radius: var(--radius-md);
+  padding: 16px 20px;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.confidentiality-badge svg {
+  width: 20px;
+  height: 20px;
+  color: var(--color-accent-emerald);
+  flex-shrink: 0;
+}
+
+.confidentiality-badge p {
+  font-size: 0.8125rem;
+  color: #065F46;
+  font-weight: 500;
+  line-height: 1.4;
+}
+
+/* Form Container */
+.contact-form-container {
+  background: #FFFFFF;
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-2xl);
+  padding: 44px 40px;
+  box-shadow: var(--shadow-xl);
+  position: relative;
+}
+
+@media (max-width: 600px) {
+  .contact-form-container {
+    padding: 28px 20px;
+  }
+}
+
+.form-header {
+  margin-bottom: 28px;
+}
+
+.form-header h3 {
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: var(--color-primary-900);
+  margin-bottom: 8px;
+}
+
+.form-header p {
+  font-size: 0.875rem;
+  color: var(--color-text-muted);
+}
+
+.contact-form {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.form-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 20px;
+}
+
+@media (max-width: 600px) {
+  .form-row {
+    grid-template-columns: 1fr;
+  }
+}
+
+.form-group {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.form-label {
+  font-size: 0.8125rem;
+  font-weight: 600;
+  color: var(--color-primary-900);
+}
+
+.form-control {
+  width: 100%;
+  padding: 12px 16px;
+  border: 1.5px solid var(--color-border);
+  border-radius: var(--radius-md);
+  font-size: 0.9375rem;
+  color: var(--color-text-main);
+  background: #FFFFFF;
+  transition: all var(--transition-fast);
+}
+
+.form-control:focus {
+  border-color: var(--color-primary-500);
+  box-shadow: 0 0 0 4px rgba(2, 132, 199, 0.12);
+}
+
+textarea.form-control {
+  min-height: 120px;
+  resize: vertical;
+}
+
+.btn-submit-rfp {
+  width: 100%;
+  padding: 15px;
+  font-size: 1rem;
+  margin-top: 8px;
+}
+
+/* Toast alert notification */
+.form-toast {
+  display: none;
+  background: #065F46;
+  color: #FFFFFF;
+  padding: 14px 20px;
+  border-radius: var(--radius-md);
+  font-size: 0.875rem;
+  margin-top: 16px;
+  animation: slideInToast 0.3s ease;
+}
+
+.form-toast.active {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+@keyframes slideInToast {
+  from { opacity: 0; transform: translateY(-8px); }
+  to { opacity: 1; transform: translateY(0); }
+}
