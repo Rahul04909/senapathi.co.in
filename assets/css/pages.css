@@ -1,0 +1,633 @@
+/* ==========================================================================
+   SENAPATHI ALLIANCE - INNER PAGES STYLES (ABOUT US, LEGAL, PRIVACY)
+   Dribbble-Grade Executive Styling for Inner Corporate Pages
+   ========================================================================== */
+
+/* --------------------------------------------------------------------------
+   1. Page Hero Banner & Breadcrumbs
+   -------------------------------------------------------------------------- */
+.page-hero {
+  position: relative;
+  background: radial-gradient(circle at 80% 20%, rgba(2, 132, 199, 0.18) 0%, transparent 50%),
+              radial-gradient(circle at 10% 80%, rgba(15, 59, 108, 0.25) 0%, transparent 45%),
+              linear-gradient(135deg, #071527 0%, #0B2545 60%, #0F3B6C 100%);
+  color: #FFFFFF;
+  padding: 64px 0 72px 0;
+  overflow: hidden;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.page-hero::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 4px;
+  background: linear-gradient(90deg, var(--color-primary-500), var(--color-primary-300), var(--color-accent-amber));
+}
+
+.page-hero-glow {
+  position: absolute;
+  width: 500px;
+  height: 500px;
+  border-radius: 50%;
+  filter: blur(90px);
+  pointer-events: none;
+  opacity: 0.15;
+}
+
+.page-hero-glow-1 {
+  top: -150px;
+  right: -100px;
+  background: #38BDF8;
+}
+
+.page-hero-glow-2 {
+  bottom: -150px;
+  left: -50px;
+  background: #0284C7;
+}
+
+/* Breadcrumbs Component */
+.breadcrumb-nav {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 0.84375rem;
+  color: #94A3B8;
+  margin-bottom: 20px;
+  flex-wrap: wrap;
+}
+
+.breadcrumb-nav a {
+  color: #CBD5E1;
+  text-decoration: none;
+  transition: color var(--transition-fast);
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.breadcrumb-nav a:hover {
+  color: #38BDF8;
+}
+
+.breadcrumb-nav .separator {
+  color: #64748B;
+  font-size: 0.75rem;
+}
+
+.breadcrumb-nav .current {
+  color: #38BDF8;
+  font-weight: 600;
+}
+
+/* Page Hero Content */
+.page-hero-content {
+  position: relative;
+  z-index: 2;
+  max-width: 860px;
+}
+
+.page-eyebrow {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 0.8125rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: #38BDF8;
+  background: rgba(56, 189, 248, 0.12);
+  border: 1px solid rgba(56, 189, 248, 0.25);
+  padding: 5px 14px;
+  border-radius: var(--radius-full);
+  margin-bottom: 16px;
+}
+
+.page-title {
+  font-size: clamp(2.2rem, 3.8vw, 3.25rem);
+  font-weight: 800;
+  line-height: 1.2;
+  color: #FFFFFF;
+  margin-bottom: 18px;
+  letter-spacing: -0.03em;
+}
+
+.page-title span.accent {
+  background: linear-gradient(135deg, #38BDF8 0%, #60A5FA 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.page-subtitle {
+  font-size: 1.125rem;
+  color: #CBD5E1;
+  line-height: 1.7;
+  margin-bottom: 24px;
+}
+
+/* Page Meta Badges (Effective date, version, etc.) */
+.page-meta-strip {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  flex-wrap: wrap;
+  padding-top: 18px;
+  border-top: 1px solid rgba(255, 255, 255, 0.12);
+  font-size: 0.8125rem;
+  color: #94A3B8;
+}
+
+.page-meta-item {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.page-meta-item svg {
+  width: 16px;
+  height: 16px;
+  color: #38BDF8;
+}
+
+.page-meta-item strong {
+  color: #FFFFFF;
+}
+
+/* --------------------------------------------------------------------------
+   2. Legal Pages Layout (Sticky Sidebar + Content)
+   -------------------------------------------------------------------------- */
+.legal-page-wrapper {
+  background: #F8FAFC;
+  padding: 64px 0 96px 0;
+}
+
+.legal-grid-layout {
+  display: grid;
+  grid-template-columns: 290px 1fr;
+  gap: 48px;
+  align-items: flex-start;
+}
+
+@media (max-width: 1024px) {
+  .legal-grid-layout {
+    grid-template-columns: 1fr;
+    gap: 36px;
+  }
+}
+
+/* Sticky Table of Contents Sidebar */
+.legal-toc-sidebar {
+  position: sticky;
+  top: 100px;
+  background: #FFFFFF;
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-lg);
+  padding: 24px;
+  box-shadow: var(--shadow-sm);
+  max-height: calc(100vh - 120px);
+  overflow-y: auto;
+}
+
+.legal-toc-header {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 0.9375rem;
+  font-weight: 700;
+  color: var(--color-primary-900);
+  margin-bottom: 16px;
+  padding-bottom: 12px;
+  border-bottom: 1px solid var(--color-border);
+}
+
+.legal-toc-header svg {
+  width: 18px;
+  height: 18px;
+  color: var(--color-primary-500);
+}
+
+.legal-toc-list {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.legal-toc-link {
+  font-size: 0.84375rem;
+  color: var(--color-text-muted);
+  padding: 8px 12px;
+  border-radius: var(--radius-sm);
+  text-decoration: none;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  transition: all var(--transition-fast);
+  line-height: 1.4;
+}
+
+.legal-toc-link span.num {
+  font-family: var(--font-heading);
+  font-size: 0.75rem;
+  font-weight: 700;
+  color: var(--color-primary-500);
+  min-width: 20px;
+}
+
+.legal-toc-link:hover,
+.legal-toc-link.active {
+  background: var(--color-primary-50);
+  color: var(--color-primary-700);
+  font-weight: 600;
+}
+
+.legal-toc-link.active span.num {
+  color: var(--color-primary-700);
+}
+
+/* Main Legal Content Container */
+.legal-content-card {
+  background: #FFFFFF;
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-xl);
+  padding: 48px;
+  box-shadow: var(--shadow-sm);
+}
+
+@media (max-width: 768px) {
+  .legal-content-card {
+    padding: 28px 20px;
+  }
+}
+
+/* Legal Notice Banner */
+.legal-alert-banner {
+  background: linear-gradient(135deg, rgba(2, 132, 199, 0.08) 0%, rgba(2, 132, 199, 0.02) 100%);
+  border: 1px solid rgba(2, 132, 199, 0.25);
+  border-left: 4px solid var(--color-primary-500);
+  border-radius: var(--radius-md);
+  padding: 20px 24px;
+  margin-bottom: 40px;
+  display: flex;
+  align-items: flex-start;
+  gap: 16px;
+}
+
+.legal-alert-banner svg {
+  width: 24px;
+  height: 24px;
+  color: var(--color-primary-500);
+  flex-shrink: 0;
+  margin-top: 2px;
+}
+
+.legal-alert-banner-text h4 {
+  font-size: 1rem;
+  font-weight: 700;
+  color: var(--color-primary-900);
+  margin-bottom: 6px;
+}
+
+.legal-alert-banner-text p {
+  font-size: 0.875rem;
+  color: var(--color-text-muted);
+  line-height: 1.6;
+}
+
+/* Legal Clauses & Sections */
+.legal-section {
+  padding-bottom: 36px;
+  margin-bottom: 36px;
+  border-bottom: 1px solid var(--color-border);
+  scroll-margin-top: 110px;
+}
+
+.legal-section:last-of-type {
+  border-bottom: none;
+  padding-bottom: 0;
+  margin-bottom: 0;
+}
+
+.legal-section-header {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  margin-bottom: 16px;
+}
+
+.legal-section-badge {
+  font-family: var(--font-heading);
+  font-size: 0.8125rem;
+  font-weight: 700;
+  color: var(--color-primary-600);
+  background: var(--color-primary-50);
+  border: 1px solid rgba(2, 132, 199, 0.2);
+  padding: 4px 10px;
+  border-radius: var(--radius-sm);
+}
+
+.legal-section-title {
+  font-size: 1.375rem;
+  font-weight: 700;
+  color: var(--color-primary-900);
+  letter-spacing: -0.01em;
+}
+
+.legal-text {
+  font-size: 0.9375rem;
+  line-height: 1.75;
+  color: var(--color-text-muted);
+  margin-bottom: 16px;
+}
+
+.legal-text:last-child {
+  margin-bottom: 0;
+}
+
+.legal-text strong {
+  color: var(--color-primary-900);
+}
+
+.legal-list {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  margin: 16px 0;
+  padding-left: 8px;
+}
+
+.legal-list-item {
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
+  font-size: 0.90625rem;
+  color: var(--color-text-muted);
+  line-height: 1.65;
+}
+
+.legal-list-item::before {
+  content: '•';
+  color: var(--color-primary-500);
+  font-size: 1.25rem;
+  line-height: 1;
+  margin-top: 2px;
+  flex-shrink: 0;
+}
+
+/* Callout Highlights within Legal text */
+.legal-callout-card {
+  background: var(--color-bg-surface-alt);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-md);
+  padding: 18px 22px;
+  margin: 20px 0;
+  font-size: 0.875rem;
+  color: var(--color-text-main);
+  line-height: 1.6;
+}
+
+.legal-callout-card.amber {
+  background: #FFFBEB;
+  border-color: #FDE68A;
+  color: #92400E;
+}
+
+.legal-callout-card.emerald {
+  background: #ECFDF5;
+  border-color: #A7F3D0;
+  color: #065F46;
+}
+
+/* --------------------------------------------------------------------------
+   3. Dedicated About Us Page Specific Elements
+   -------------------------------------------------------------------------- */
+.about-stats-row {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 24px;
+  margin-top: -36px;
+  position: relative;
+  z-index: 10;
+  margin-bottom: 64px;
+}
+
+@media (max-width: 900px) {
+  .about-stats-row {
+    grid-template-columns: repeat(2, 1fr);
+    margin-top: 24px;
+  }
+}
+
+@media (max-width: 500px) {
+  .about-stats-row {
+    grid-template-columns: 1fr;
+  }
+}
+
+.about-stat-card {
+  background: #FFFFFF;
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-lg);
+  padding: 28px 24px;
+  box-shadow: var(--shadow-md);
+  display: flex;
+  flex-direction: column;
+  transition: transform var(--transition-fast), border-color var(--transition-fast);
+}
+
+.about-stat-card:hover {
+  transform: translateY(-4px);
+  border-color: var(--color-primary-400);
+}
+
+.about-stat-card .num {
+  font-family: var(--font-heading);
+  font-size: 2.25rem;
+  font-weight: 800;
+  color: var(--color-primary-700);
+  line-height: 1;
+  margin-bottom: 8px;
+}
+
+.about-stat-card .label {
+  font-size: 0.875rem;
+  font-weight: 600;
+  color: var(--color-primary-900);
+  margin-bottom: 4px;
+}
+
+.about-stat-card .subtext {
+  font-size: 0.75rem;
+  color: var(--color-text-muted);
+}
+
+/* 5-Phase Assignment Lifecycle Timeline */
+.lifecycle-flow-grid {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 18px;
+  margin: 40px 0;
+}
+
+@media (max-width: 1200px) {
+  .lifecycle-flow-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+@media (max-width: 768px) {
+  .lifecycle-flow-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+.lifecycle-step-card {
+  background: #FFFFFF;
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-lg);
+  padding: 24px 20px;
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  transition: all var(--transition-normal);
+}
+
+.lifecycle-step-card:hover {
+  border-color: var(--color-primary-500);
+  transform: translateY(-5px);
+  box-shadow: var(--shadow-lg);
+}
+
+.lifecycle-step-top {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 16px;
+}
+
+.lifecycle-step-tag {
+  font-family: var(--font-heading);
+  font-size: 0.75rem;
+  font-weight: 700;
+  color: var(--color-primary-600);
+  background: var(--color-primary-50);
+  padding: 3px 8px;
+  border-radius: var(--radius-sm);
+}
+
+.lifecycle-step-icon {
+  width: 36px;
+  height: 36px;
+  border-radius: var(--radius-sm);
+  background: var(--color-primary-100);
+  color: var(--color-primary-700);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.lifecycle-step-icon svg {
+  width: 18px;
+  height: 18px;
+}
+
+.lifecycle-step-title {
+  font-size: 1rem;
+  font-weight: 700;
+  color: var(--color-primary-900);
+  margin-bottom: 8px;
+  line-height: 1.35;
+}
+
+.lifecycle-step-desc {
+  font-size: 0.8125rem;
+  color: var(--color-text-muted);
+  line-height: 1.6;
+}
+
+/* Institutional Governance Matrix Cards */
+.governance-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 32px;
+  margin-top: 40px;
+}
+
+@media (max-width: 800px) {
+  .governance-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+.governance-card {
+  background: #FFFFFF;
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-xl);
+  padding: 36px 32px;
+  box-shadow: var(--shadow-sm);
+  position: relative;
+  overflow: hidden;
+}
+
+.governance-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 5px;
+  height: 100%;
+  background: var(--color-primary-500);
+}
+
+.governance-card.amber::before {
+  background: var(--color-accent-amber);
+}
+
+.governance-card-header {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  margin-bottom: 18px;
+}
+
+.governance-icon {
+  width: 48px;
+  height: 48px;
+  border-radius: var(--radius-md);
+  background: var(--color-primary-50);
+  color: var(--color-primary-600);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.governance-card.amber .governance-icon {
+  background: #FEF3C7;
+  color: #D97706;
+}
+
+.governance-icon svg {
+  width: 24px;
+  height: 24px;
+}
+
+.governance-card h4 {
+  font-size: 1.1875rem;
+  font-weight: 700;
+  color: var(--color-primary-900);
+  line-height: 1.3;
+}
+
+.governance-card p {
+  font-size: 0.90625rem;
+  color: var(--color-text-muted);
+  line-height: 1.7;
+  margin-bottom: 16px;
+}
+
+.governance-card p:last-child {
+  margin-bottom: 0;
+}

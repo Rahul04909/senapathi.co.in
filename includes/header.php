@@ -3,9 +3,12 @@
  * Senapathi Alliance - Master Header & SEO Framework
  * Corporate & Government Advisory
  */
-$pageTitle = "Senapathi Alliance | Corporate & Government Advisory | Management & Technical Consulting";
-$pageDescription = "Senapathi Alliance provides multidisciplinary management, technical, financial, and institutional advisory to government departments, PSUs, multilateral institutions, and public-private projects across India.";
-$canonicalUrl = "https://senapathi.co.in/";
+$basePath = isset($basePath) ? $basePath : '';
+$pageTitle = isset($pageTitle) ? $pageTitle : "Senapathi Alliance | Corporate & Government Advisory | Management & Technical Consulting";
+$pageDescription = isset($pageDescription) ? $pageDescription : "Senapathi Alliance provides multidisciplinary management, technical, financial, and institutional advisory to government departments, PSUs, multilateral institutions, and public-private projects across India.";
+$canonicalUrl = isset($canonicalUrl) ? $canonicalUrl : "https://senapathi.co.in/";
+$pageKeywords = isset($pageKeywords) ? $pageKeywords : "Senapathi Alliance, Senapathi India, Government Advisory, PSU Consulting, Real Estate Transaction Advisory, Infrastructure Consulting, CAG Empanelled CA Partner, HR Advisory, Impact Consulting, SROI, Digital Transformation, Public Procurement, PPP Advisory";
+$activeNav = isset($activeNav) ? $activeNav : '';
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -18,7 +21,7 @@ $canonicalUrl = "https://senapathi.co.in/";
   <title><?php echo htmlspecialchars($pageTitle); ?></title>
   <meta name="title" content="<?php echo htmlspecialchars($pageTitle); ?>">
   <meta name="description" content="<?php echo htmlspecialchars($pageDescription); ?>">
-  <meta name="keywords" content="Senapathi Alliance, Senapathi India, Government Advisory, PSU Consulting, Real Estate Transaction Advisory, Infrastructure Consulting, CAG Empanelled CA Partner, HR Advisory, Impact Consulting, SROI, Digital Transformation, Public Procurement, PPP Advisory">
+  <meta name="keywords" content="<?php echo htmlspecialchars($pageKeywords); ?>">
   <meta name="author" content="Senapathi Alliance">
   <meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1">
   <link rel="canonical" href="<?php echo htmlspecialchars($canonicalUrl); ?>">
@@ -28,7 +31,7 @@ $canonicalUrl = "https://senapathi.co.in/";
   <meta property="og:url" content="<?php echo htmlspecialchars($canonicalUrl); ?>">
   <meta property="og:title" content="<?php echo htmlspecialchars($pageTitle); ?>">
   <meta property="og:description" content="<?php echo htmlspecialchars($pageDescription); ?>">
-  <meta property="og:image" content=" assets/images/logo.jpeg">
+  <meta property="og:image" content="<?php echo $basePath; ?>assets/images/logo.jpeg">
   <meta property="og:site_name" content="Senapathi Alliance">
 
   <!-- Twitter Meta Tags -->
@@ -36,10 +39,10 @@ $canonicalUrl = "https://senapathi.co.in/";
   <meta name="twitter:url" content="<?php echo htmlspecialchars($canonicalUrl); ?>">
   <meta name="twitter:title" content="<?php echo htmlspecialchars($pageTitle); ?>">
   <meta name="twitter:description" content="<?php echo htmlspecialchars($pageDescription); ?>">
-  <meta name="twitter:image" content="assets/logo.png">
+  <meta name="twitter:image" content="<?php echo $basePath; ?>assets/images/logo.jpeg">
 
   <!-- Favicon -->
-  <link rel="icon" type="image/png" href="assets/logo.png">
+  <link rel="icon" type="image/jpeg" href="<?php echo $basePath; ?>assets/images/logo.jpeg">
 
   <!-- Google Fonts Preconnect & Fonts (Outfit & Inter) -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -47,18 +50,22 @@ $canonicalUrl = "https://senapathi.co.in/";
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Outfit:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
 
   <!-- Component Stylesheets -->
-  <link rel="stylesheet" href="assets/css/variables.css">
-  <link rel="stylesheet" href="assets/css/header.css">
-  <link rel="stylesheet" href="assets/css/hero.css">
-  <link rel="stylesheet" href="assets/css/about.css">
-  <link rel="stylesheet" href="assets/css/services.css">
-  <link rel="stylesheet" href="assets/css/approach.css">
-  <link rel="stylesheet" href="assets/css/industries.css">
-  <link rel="stylesheet" href="assets/css/contact.css">
-  <link rel="stylesheet" href="assets/css/modal.css">
-  <link rel="stylesheet" href="assets/css/footer.css">
+  <link rel="stylesheet" href="<?php echo $basePath; ?>assets/css/variables.css">
+  <link rel="stylesheet" href="<?php echo $basePath; ?>assets/css/header.css">
+  <link rel="stylesheet" href="<?php echo $basePath; ?>assets/css/hero.css">
+  <link rel="stylesheet" href="<?php echo $basePath; ?>assets/css/about.css">
+  <link rel="stylesheet" href="<?php echo $basePath; ?>assets/css/services.css">
+  <link rel="stylesheet" href="<?php echo $basePath; ?>assets/css/approach.css">
+  <link rel="stylesheet" href="<?php echo $basePath; ?>assets/css/industries.css">
+  <link rel="stylesheet" href="<?php echo $basePath; ?>assets/css/contact.css">
+  <link rel="stylesheet" href="<?php echo $basePath; ?>assets/css/modal.css">
+  <link rel="stylesheet" href="<?php echo $basePath; ?>assets/css/pages.css">
+  <link rel="stylesheet" href="<?php echo $basePath; ?>assets/css/footer.css">
 
   <!-- Structured Data: Schema.org JSON-LD -->
+  <?php if (isset($customSchemaJson) && !empty($customSchemaJson)): ?>
+    <?php echo $customSchemaJson; ?>
+  <?php else: ?>
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
@@ -71,7 +78,7 @@ $canonicalUrl = "https://senapathi.co.in/";
         "url": "https://senapathi.co.in/",
         "logo": {
           "@type": "ImageObject",
-          "url": "https://senapathi.co.in/assets/logo.png",
+          "url": "https://senapathi.co.in/assets/images/logo.jpeg",
           "caption": "Senapathi Corporate and Government Advisory"
         },
         "description": "Multidisciplinary management and technical consulting firm supporting government departments, PSUs, multilateral institutions, and public-private enterprises.",
@@ -97,6 +104,7 @@ $canonicalUrl = "https://senapathi.co.in/";
     ]
   }
   </script>
+  <?php endif; ?>
 </head>
 <body>
 
@@ -109,7 +117,7 @@ $canonicalUrl = "https://senapathi.co.in/";
           <svg fill="none" stroke="currentColor" viewBox="0 0 24 24">
             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4"></path>
           </svg>
-          Serving Government, PSUs & Multilateral Institutions
+          Serving Government, PSUs &amp; Multilateral Institutions
         </span>
       </div>
       <div class="top-bar-right">
@@ -134,22 +142,22 @@ $canonicalUrl = "https://senapathi.co.in/";
     <div class="container">
       <div class="header-inner">
         <!-- Logo -->
-        <a href="index.php" class="brand-logo" aria-label="Senapathi Alliance Home">
-          <img src="assets/images/logo.jpeg" alt="Senapathi - Corporate and Government Advisory" width="220" height="52">
+        <a href="<?php echo $basePath; ?>index.php" class="brand-logo" aria-label="Senapathi Alliance Home">
+          <img src="<?php echo $basePath; ?>assets/images/logo.jpeg" alt="Senapathi - Corporate and Government Advisory" width="220" height="52">
         </a>
 
         <!-- Desktop Navigation -->
         <nav class="main-nav" aria-label="Primary Navigation">
-          <a href="#about" class="nav-link">About Us</a>
-          <a href="#services" class="nav-link">Core Service Lines</a>
-          <a href="#approach" class="nav-link">Our Approach</a>
-          <a href="#industries" class="nav-link">Industries We Serve</a>
-          <a href="#contact" class="nav-link">Contact</a>
+          <a href="<?php echo $basePath; ?>pages/about-us.php" class="nav-link <?php echo ($activeNav === 'about') ? 'active' : ''; ?>">About Us</a>
+          <a href="<?php echo $basePath; ?>index.php#services" class="nav-link <?php echo ($activeNav === 'services') ? 'active' : ''; ?>">Core Service Lines</a>
+          <a href="<?php echo $basePath; ?>index.php#approach" class="nav-link <?php echo ($activeNav === 'approach') ? 'active' : ''; ?>">Our Approach</a>
+          <a href="<?php echo $basePath; ?>index.php#industries" class="nav-link <?php echo ($activeNav === 'industries') ? 'active' : ''; ?>">Industries We Serve</a>
+          <a href="<?php echo $basePath; ?>index.php#contact" class="nav-link <?php echo ($activeNav === 'contact') ? 'active' : ''; ?>">Contact</a>
         </nav>
 
         <!-- Header CTA Actions -->
         <div class="header-actions">
-          <a href="#contact" class="btn btn-primary header-cta">
+          <a href="<?php echo $basePath; ?>index.php#contact" class="btn btn-primary header-cta">
             <span>Request Consultation / RFP</span>
             <svg class="btn-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24">
               <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"></path>
@@ -172,7 +180,7 @@ $canonicalUrl = "https://senapathi.co.in/";
   <!-- Mobile Drawer Menu -->
   <aside class="mobile-drawer" id="mobileDrawer" aria-label="Mobile Navigation Menu">
     <div class="drawer-header">
-      <img src="assets/logo.png" alt="Senapathi Logo">
+      <img src="<?php echo $basePath; ?>assets/images/logo.jpeg" alt="Senapathi Logo">
       <button class="drawer-close" id="drawerClose" aria-label="Close Menu">
         <svg fill="none" stroke="currentColor" viewBox="0 0 24 24" style="width:20px;height:20px;">
           <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path>
@@ -181,24 +189,32 @@ $canonicalUrl = "https://senapathi.co.in/";
     </div>
 
     <nav class="drawer-nav">
-      <a href="#about" class="drawer-link">
+      <a href="<?php echo $basePath; ?>pages/about-us.php" class="drawer-link <?php echo ($activeNav === 'about') ? 'active' : ''; ?>">
         <span>About Senapathi</span>
         <svg fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path></svg>
       </a>
-      <a href="#services" class="drawer-link">
+      <a href="<?php echo $basePath; ?>index.php#services" class="drawer-link">
         <span>9 Core Service Lines</span>
         <svg fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path></svg>
       </a>
-      <a href="#approach" class="drawer-link">
+      <a href="<?php echo $basePath; ?>index.php#approach" class="drawer-link">
         <span>Our Approach</span>
         <svg fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path></svg>
       </a>
-      <a href="#industries" class="drawer-link">
+      <a href="<?php echo $basePath; ?>index.php#industries" class="drawer-link">
         <span>Industries We Serve</span>
         <svg fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path></svg>
       </a>
-      <a href="#contact" class="drawer-link">
-        <span>Contact & RFP Submission</span>
+      <a href="<?php echo $basePath; ?>pages/terms-&-conditions.php" class="drawer-link <?php echo ($activeNav === 'terms') ? 'active' : ''; ?>">
+        <span>Terms &amp; Conditions</span>
+        <svg fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path></svg>
+      </a>
+      <a href="<?php echo $basePath; ?>pages/privacy-policy.php" class="drawer-link <?php echo ($activeNav === 'privacy') ? 'active' : ''; ?>">
+        <span>Privacy Policy</span>
+        <svg fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path></svg>
+      </a>
+      <a href="<?php echo $basePath; ?>index.php#contact" class="drawer-link">
+        <span>Contact &amp; RFP Submission</span>
         <svg fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path></svg>
       </a>
     </nav>
@@ -210,7 +226,7 @@ $canonicalUrl = "https://senapathi.co.in/";
         </svg>
         <span>contact@senapathi.co.in</span>
       </div>
-      <a href="#contact" class="btn btn-primary" style="width: 100%;">
+      <a href="<?php echo $basePath; ?>index.php#contact" class="btn btn-primary" style="width: 100%;">
         Request Consultation
       </a>
     </div>

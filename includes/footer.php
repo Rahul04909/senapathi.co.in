@@ -3,6 +3,7 @@
  * Senapathi Alliance - Master Footer Framework
  * Institutional Accreditations, Disclaimers & Sitemaps
  */
+$basePath = isset($basePath) ? $basePath : '';
 ?>
   <!-- Master Site Footer -->
   <footer class="site-footer">
@@ -14,7 +15,7 @@
           <!-- Col 1: Brand & Institutional Mandate -->
           <div class="footer-brand">
             <div class="footer-logo-wrap">
-              <img src="assets/images/logo.jpeg" alt="Senapathi Alliance Logo" width="200" height="48">
+              <img src="<?php echo $basePath; ?>assets/images/logo.jpeg" alt="Senapathi Alliance Logo" width="200" height="48">
             </div>
             <p class="footer-about-text">
               Senapathi Alliance (Senapathi India) is a multidisciplinary management and technical consulting firm supporting government departments, PSUs, multilateral institutions, programme implementation agencies, and responsible private-sector organizations.
@@ -24,7 +25,7 @@
                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"></path>
               </svg>
               <p>
-                <strong>Statutory Compliance & Assurance:</strong> Regulated financial services are delivered through a Partner Chartered Accountancy firm empanelled with the Comptroller and Auditor General of India (CAG). Regulated legal services are provided through a partner law firm.
+                <strong>Statutory Compliance &amp; Assurance:</strong> Regulated financial services are delivered through a Partner Chartered Accountancy firm empanelled with the Comptroller and Auditor General of India (CAG). Regulated legal services are provided through a partner law firm.
               </p>
             </div>
           </div>
@@ -33,12 +34,13 @@
           <div class="footer-col">
             <h4 class="footer-col-title">Quick Navigation</h4>
             <ul class="footer-links-list">
-              <li class="footer-link-item"><a href="#about">About Senapathi</a></li>
-              <li class="footer-link-item"><a href="#services">9 Core Service Lines</a></li>
-              <li class="footer-link-item"><a href="#approach">Our 5-Pillar Approach</a></li>
-              <li class="footer-link-item"><a href="#industries">Industries We Serve</a></li>
-              <li class="footer-link-item"><a href="#contact">Request for Proposal (RFP)</a></li>
-              <li class="footer-link-item"><a href="#contact">Consultation Office</a></li>
+              <li class="footer-link-item"><a href="<?php echo $basePath; ?>pages/about-us.php">About Senapathi</a></li>
+              <li class="footer-link-item"><a href="<?php echo $basePath; ?>index.php#services">9 Core Service Lines</a></li>
+              <li class="footer-link-item"><a href="<?php echo $basePath; ?>index.php#approach">Our 5-Pillar Approach</a></li>
+              <li class="footer-link-item"><a href="<?php echo $basePath; ?>index.php#industries">Industries We Serve</a></li>
+              <li class="footer-link-item"><a href="<?php echo $basePath; ?>pages/terms-&-conditions.php">Terms &amp; Conditions</a></li>
+              <li class="footer-link-item"><a href="<?php echo $basePath; ?>pages/privacy-policy.php">Privacy Policy</a></li>
+              <li class="footer-link-item"><a href="<?php echo $basePath; ?>index.php#contact">Request for Proposal (RFP)</a></li>
             </ul>
           </div>
 
@@ -46,15 +48,15 @@
           <div class="footer-col">
             <h4 class="footer-col-title">Core Service Lines</h4>
             <ul class="footer-links-list">
-              <li class="footer-link-item"><a href="#services" class="btn-service-detail" data-service-id="1">1. Real Estate Advisory</a></li>
-              <li class="footer-link-item"><a href="#services" class="btn-service-detail" data-service-id="2">2. Infrastructure Consulting</a></li>
-              <li class="footer-link-item"><a href="#services" class="btn-service-detail" data-service-id="3">3. Human Resource Advisory</a></li>
-              <li class="footer-link-item"><a href="#services" class="btn-service-detail" data-service-id="4">4. Learning & Development</a></li>
-              <li class="footer-link-item"><a href="#services" class="btn-service-detail" data-service-id="5">5. Impact Consulting & CSR</a></li>
-              <li class="footer-link-item"><a href="#services" class="btn-service-detail" data-service-id="6">6. Business Development</a></li>
-              <li class="footer-link-item"><a href="#services" class="btn-service-detail" data-service-id="7">7. Financial Services & Advisory</a></li>
-              <li class="footer-link-item"><a href="#services" class="btn-service-detail" data-service-id="8">8. Business Operations Opt.</a></li>
-              <li class="footer-link-item"><a href="#services" class="btn-service-detail" data-service-id="9">9. Digital Transformation</a></li>
+              <li class="footer-link-item"><a href="<?php echo $basePath; ?>index.php#services">1. Real Estate Advisory</a></li>
+              <li class="footer-link-item"><a href="<?php echo $basePath; ?>index.php#services">2. Infrastructure Consulting</a></li>
+              <li class="footer-link-item"><a href="<?php echo $basePath; ?>index.php#services">3. Human Resource Advisory</a></li>
+              <li class="footer-link-item"><a href="<?php echo $basePath; ?>index.php#services">4. Learning &amp; Development</a></li>
+              <li class="footer-link-item"><a href="<?php echo $basePath; ?>index.php#services">5. Impact Consulting &amp; CSR</a></li>
+              <li class="footer-link-item"><a href="<?php echo $basePath; ?>index.php#services">6. Business Development</a></li>
+              <li class="footer-link-item"><a href="<?php echo $basePath; ?>index.php#services">7. Financial Services &amp; Advisory</a></li>
+              <li class="footer-link-item"><a href="<?php echo $basePath; ?>index.php#services">8. Business Operations Opt.</a></li>
+              <li class="footer-link-item"><a href="<?php echo $basePath; ?>index.php#services">9. Digital Transformation</a></li>
             </ul>
           </div>
 
@@ -76,8 +78,8 @@
                   <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4"></path>
                 </svg>
                 <div>
-                  <span>Public & Private Sector:</span><br>
-                  Pan-India Engagements & PSU Advisory
+                  <span>Public &amp; Private Sector:</span><br>
+                  Pan-India Engagements &amp; PSU Advisory
                 </div>
               </div>
               <div class="footer-contact-row">
@@ -102,8 +104,11 @@
         <div class="footer-copyright">
           &copy; <?php echo date('Y'); ?> Senapathi Alliance. All Rights Reserved.
         </div>
-        <div class="footer-regulatory-disclaimer">
-          Regulated legal, audit, tax, or assurance services are delivered through appropriately qualified partner firms in accordance with applicable professional requirements and statutory empanelment standards.
+        <div style="display: flex; gap: 20px; align-items: center; flex-wrap: wrap;">
+          <a href="<?php echo $basePath; ?>pages/terms-&-conditions.php" style="color: #94A3B8; font-size: 0.8125rem; text-decoration: underline; transition: color 0.2s;">Terms &amp; Conditions</a>
+          <a href="<?php echo $basePath; ?>pages/privacy-policy.php" style="color: #94A3B8; font-size: 0.8125rem; text-decoration: underline; transition: color 0.2s;">Privacy Policy</a>
+          <span style="color: #475569;">|</span>
+          <span style="font-size: 0.75rem; color: #64748B;">Regulated services delivered via partner firms in accordance with CAG and statutory standards.</span>
         </div>
       </div>
     </div>
@@ -117,6 +122,6 @@
   </button>
 
   <!-- JavaScript Application Bundle -->
-  <script src="assets/js/main.js"></script>
+  <script src="<?php echo $basePath; ?>assets/js/main.js"></script>
 </body>
 </html>

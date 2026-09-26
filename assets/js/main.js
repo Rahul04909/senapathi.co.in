@@ -383,5 +383,27 @@ document.addEventListener('DOMContentLoaded', () => {
         link.classList.add('active');
       }
     });
+
+    // Table of contents spy for legal & policy pages
+    const tocLinks = document.querySelectorAll('.legal-toc-link[href^="#"]');
+    if (tocLinks.length > 0) {
+      const legalSections = document.querySelectorAll('.legal-section[id]');
+      let currentLegalSec = '';
+      legalSections.forEach(sec => {
+        const secTop = sec.offsetTop - 140;
+        const secHeight = sec.offsetHeight;
+        if (window.pageYOffset >= secTop && window.pageYOffset < secTop + secHeight) {
+          currentLegalSec = sec.getAttribute('id');
+        }
+      });
+      if (currentLegalSec) {
+        tocLinks.forEach(tl => {
+          tl.classList.remove('active');
+          if (tl.getAttribute('href') === `#${currentLegalSec}`) {
+            tl.classList.add('active');
+          }
+        });
+      }
+    }
   });
 });
