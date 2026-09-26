@@ -269,14 +269,20 @@ document.addEventListener('DOMContentLoaded', () => {
         return -(trackWidth - window.innerWidth + (window.innerWidth * 0.08));
       };
 
+      const getHeaderHeight = () => {
+        const header = document.getElementById('siteHeader');
+        return header ? header.offsetHeight : 72;
+      };
+
       const horizontalTween = gsap.to(horizontalTrack, {
         x: getScrollAmount,
         ease: "none",
         scrollTrigger: {
           trigger: pinWrapper,
-          start: "top top",
+          start: () => `top ${getHeaderHeight()}px`,
           end: () => `+=${horizontalTrack.scrollWidth - window.innerWidth + 800}`,
           pin: true,
+          pinSpacing: true,
           scrub: 1,
           invalidateOnRefresh: true,
           anticipatePin: 1,

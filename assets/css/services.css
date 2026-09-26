@@ -151,6 +151,10 @@
   width: 100%;
   overflow: hidden;
   background: #040914;
+  min-height: calc(100vh - 72px);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
 }
 
 .services-sticky-header {
@@ -160,6 +164,7 @@
   backdrop-filter: blur(20px);
   -webkit-backdrop-filter: blur(20px);
   border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+  flex-shrink: 0;
 }
 
 .services-header-inner {
@@ -350,13 +355,17 @@
 }
 
 /* ==========================================================================
-   3. Viewport-Fitted Horizontal Track & Cards (Buttons 100% In-View)
+   3. Viewport-Fitted Horizontal Track & Cards (Vertically Centered & Rich)
    ========================================================================== */
 .services-track-viewport {
   width: 100%;
   position: relative;
   overflow: hidden;
-  padding: 10px 0 16px;
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: clamp(14px, 2vh, 22px) 0;
 }
 
 .services-horizontal-track {
@@ -367,20 +376,21 @@
   will-change: transform;
 }
 
-/* Single Service Slide Card (Fitted to Viewport Height) */
+/* Single Service Slide Card (Fitted to Viewport Height & Grand Presence) */
 .service-slide-card {
-  flex: 0 0 1120px;
+  flex: 0 0 1140px;
   max-width: 86vw;
-  max-height: calc(100vh - 75px);
+  height: min(530px, calc(100vh - 190px));
+  min-height: 470px;
   background: rgba(10, 22, 40, 0.94);
   backdrop-filter: blur(24px);
   -webkit-backdrop-filter: blur(24px);
   border: 1px solid rgba(255, 255, 255, 0.12);
-  border-radius: 22px;
-  padding: 16px 24px;
+  border-radius: 24px;
+  padding: clamp(20px, 2.4vh, 28px) clamp(24px, 2.4vw, 36px);
   display: grid;
   grid-template-columns: 1.05fr 0.95fr;
-  gap: 24px;
+  gap: clamp(20px, 2.2vw, 32px);
   position: relative;
   box-shadow: 0 20px 60px rgba(0, 0, 0, 0.5), 0 2px 8px rgba(255, 255, 255, 0.03);
   transition: border-color 0.3s ease, box-shadow 0.3s ease;
@@ -394,10 +404,10 @@
 /* Watermark Number in Top Right Corner (Non-Intrusive) */
 .slide-watermark {
   position: absolute;
-  top: 8px;
-  right: 20px;
+  top: 10px;
+  right: 22px;
   font-family: var(--font-heading);
-  font-size: 4.8rem;
+  font-size: 5rem;
   font-weight: 900;
   line-height: 0.85;
   color: transparent;
@@ -423,7 +433,7 @@
   align-items: center;
   gap: 8px;
   flex-wrap: wrap;
-  margin-bottom: 6px;
+  margin-bottom: 8px;
 }
 
 .slide-category-pill {
@@ -432,7 +442,7 @@
   font-weight: 700;
   text-transform: uppercase;
   letter-spacing: 0.08em;
-  padding: 2px 9px;
+  padding: 3px 10px;
   border-radius: var(--radius-full);
   background: rgba(2, 132, 199, 0.2);
   border: 1px solid rgba(56, 189, 248, 0.35);
@@ -445,7 +455,7 @@
   gap: 5px;
   font-size: 0.65625rem;
   font-weight: 600;
-  padding: 2px 8px;
+  padding: 3px 8px;
   border-radius: var(--radius-full);
   background: rgba(245, 158, 11, 0.15);
   border: 1px solid rgba(245, 158, 11, 0.35);
@@ -465,11 +475,11 @@
 
 .slide-title {
   font-family: var(--font-heading);
-  font-size: clamp(1.25rem, 1.65vw, 1.6rem);
+  font-size: clamp(1.4rem, 1.85vw, 1.85rem);
   font-weight: 800;
-  line-height: 1.25;
+  line-height: 1.2;
   color: #FFFFFF;
-  margin-bottom: 6px;
+  margin-bottom: 8px;
   letter-spacing: -0.02em;
   word-break: normal;
   overflow-wrap: break-word;
@@ -481,31 +491,31 @@
 }
 
 .slide-overview {
-  font-size: 0.8125rem;
+  font-size: 0.84375rem;
   color: #94A3B8;
-  line-height: 1.45;
-  margin-bottom: 10px;
+  line-height: 1.55;
+  margin-bottom: 12px;
   display: -webkit-box;
-  -webkit-line-clamp: 3;
+  -webkit-line-clamp: 4;
   -webkit-box-orient: vertical;
   overflow: hidden;
 }
 
-/* Institutional Deliverable Strip (Compact) */
+/* Institutional Deliverable Strip (Compact & Prominent) */
 .slide-deliverable-strip {
   display: flex;
   align-items: flex-start;
-  gap: 8px;
+  gap: 10px;
   background: rgba(2, 132, 199, 0.08);
   border: 1px solid rgba(56, 189, 248, 0.2);
   border-radius: var(--radius-md);
-  padding: 6px 10px;
-  margin-bottom: 8px;
+  padding: 8px 12px;
+  margin-bottom: 12px;
 }
 
 .deliverable-icon-box {
-  width: 24px;
-  height: 24px;
+  width: 26px;
+  height: 26px;
   border-radius: var(--radius-sm);
   background: rgba(2, 132, 199, 0.2);
   border: 1px solid rgba(56, 189, 248, 0.35);
@@ -514,26 +524,26 @@
   align-items: center;
   justify-content: center;
   flex-shrink: 0;
-  margin-top: 2px;
+  margin-top: 1px;
 }
 
 .deliverable-icon-box svg {
-  width: 12px;
-  height: 12px;
+  width: 13px;
+  height: 13px;
 }
 
 .slide-deliverable-strip strong {
   display: block;
-  font-size: 0.71875rem;
+  font-size: 0.75rem;
   color: #BAE6FD;
   font-weight: 700;
-  margin-bottom: 1px;
+  margin-bottom: 2px;
 }
 
 .slide-deliverable-strip p {
-  font-size: 0.6875rem;
+  font-size: 0.71875rem;
   color: #94A3B8;
-  line-height: 1.3;
+  line-height: 1.35;
   margin: 0;
 }
 
@@ -541,23 +551,23 @@
 .slide-actions-row {
   display: flex;
   align-items: center;
-  gap: 8px;
+  gap: 10px;
   flex-wrap: wrap;
-  padding-top: 8px;
+  padding-top: 10px;
   border-top: 1px solid rgba(255, 255, 255, 0.08);
   margin-top: auto;
 }
 
 .slide-actions-row .btn {
-  padding: 7px 14px;
-  font-size: 0.78125rem;
-  font-weight: 600;
+  padding: 9px 18px;
+  font-size: 0.8125rem;
+  font-weight: 700;
   border-radius: var(--radius-full);
 }
 
 .slide-actions-row .btn svg {
-  width: 13px;
-  height: 13px;
+  width: 14px;
+  height: 14px;
 }
 
 .slide-rfp-btn {
@@ -586,8 +596,8 @@
   width: 100%;
   background: rgba(6, 15, 28, 0.88);
   border: 1px solid rgba(255, 255, 255, 0.12);
-  border-radius: 16px;
-  padding: 12px 14px;
+  border-radius: 18px;
+  padding: 16px 18px;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
@@ -600,13 +610,13 @@
   align-items: center;
   justify-content: space-between;
   gap: 8px;
-  padding-bottom: 6px;
+  padding-bottom: 8px;
   border-bottom: 1px solid rgba(255, 255, 255, 0.08);
 }
 
 .panel-code-badge {
   font-family: var(--font-heading);
-  font-size: 0.625rem;
+  font-size: 0.65625rem;
   font-weight: 700;
   text-transform: uppercase;
   color: #38BDF8;
@@ -615,16 +625,16 @@
 }
 
 .panel-title-block h4 {
-  font-size: 0.8125rem;
+  font-size: 0.875rem;
   font-weight: 700;
   color: #FFFFFF;
   margin: 1px 0 0;
 }
 
 .panel-modules-pill {
-  font-size: 0.625rem;
+  font-size: 0.65625rem;
   font-weight: 700;
-  padding: 2px 7px;
+  padding: 3px 8px;
   border-radius: var(--radius-full);
   background: rgba(56, 189, 248, 0.12);
   border: 1px solid rgba(56, 189, 248, 0.28);
@@ -636,9 +646,9 @@
 .blueprint-modules-grid {
   display: grid;
   grid-template-columns: 1fr 1fr;
-  gap: 5px;
+  gap: 6px;
   overflow-y: auto;
-  max-height: 195px;
+  max-height: 240px;
   padding-right: 2px;
 }
 
@@ -655,10 +665,10 @@
   background: rgba(255, 255, 255, 0.03);
   border: 1px solid rgba(255, 255, 255, 0.07);
   border-radius: var(--radius-sm);
-  padding: 5px 8px;
+  padding: 6px 10px;
   display: flex;
   align-items: flex-start;
-  gap: 6px;
+  gap: 8px;
   transition: all 0.2s ease;
 }
 
@@ -674,30 +684,30 @@
 
 .module-number {
   font-family: var(--font-heading);
-  font-size: 0.625rem;
+  font-size: 0.6875rem;
   font-weight: 800;
   color: #38BDF8;
   background: rgba(2, 132, 199, 0.2);
   border: 1px solid rgba(56, 189, 248, 0.3);
   border-radius: 3px;
-  padding: 1px 4px;
+  padding: 2px 5px;
   flex-shrink: 0;
   line-height: 1.1;
   margin-top: 1px;
 }
 
 .module-content h5 {
-  font-size: 0.735rem;
+  font-size: 0.78125rem;
   font-weight: 700;
   color: #F1F5F9;
-  margin-bottom: 1px;
-  line-height: 1.15;
+  margin-bottom: 2px;
+  line-height: 1.2;
 }
 
 .module-content p {
-  font-size: 0.64rem;
+  font-size: 0.6875rem;
   color: #94A3B8;
-  line-height: 1.25;
+  line-height: 1.3;
   margin: 0;
 }
 
@@ -705,34 +715,94 @@
 .panel-assurance-strip {
   display: flex;
   align-items: center;
-  gap: 8px;
-  padding-top: 6px;
+  gap: 10px;
+  padding-top: 8px;
   border-top: 1px solid rgba(255, 255, 255, 0.08);
   flex-wrap: wrap;
 }
 
 .assurance-tag {
-  font-size: 0.625rem;
+  font-size: 0.65625rem;
   font-weight: 600;
   color: #CBD5E1;
   display: inline-flex;
   align-items: center;
-  gap: 4px;
+  gap: 5px;
 }
 
-.assurance-tag .dot {
-  width: 5px;
-  height: 5px;
-  border-radius: 50%;
+/* ==========================================================================
+   5. Executive Bottom Footprint Strip (Eliminates Empty Space)
+   ========================================================================== */
+.services-track-footer {
+  height: 42px;
+  flex-shrink: 0;
+  background: rgba(4, 9, 20, 0.96);
+  border-top: 1px solid rgba(255, 255, 255, 0.08);
+  display: flex;
+  align-items: center;
+  position: relative;
+  z-index: 20;
+}
+
+.services-footer-inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 4vw;
+  width: 100%;
+}
+
+.footer-stat-group {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+}
+
+.footer-stat-item {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 0.71875rem;
+  color: #94A3B8;
+  font-weight: 500;
+}
+
+.footer-stat-item svg {
+  width: 13px;
+  height: 13px;
+  color: #38BDF8;
   flex-shrink: 0;
 }
 
-.assurance-tag .dot.green { background: #10B981; box-shadow: 0 0 5px #10B981; }
-.assurance-tag .dot.blue { background: #38BDF8; box-shadow: 0 0 5px #38BDF8; }
-.assurance-tag .dot.purple { background: #A855F7; box-shadow: 0 0 5px #A855F7; }
+.footer-dot {
+  color: rgba(255, 255, 255, 0.2);
+  font-size: 0.75rem;
+}
+
+.footer-scroll-hint {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 0.6875rem;
+  color: #38BDF8;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+}
+
+.footer-scroll-hint svg {
+  width: 13px;
+  height: 13px;
+  animation: arrowGlide 1.5s ease-in-out infinite alternate;
+}
+
+@keyframes arrowGlide {
+  0% { transform: translateX(0); }
+  100% { transform: translateX(4px); }
+}
 
 /* ==========================================================================
-   5. Mobile & Tablet Responsiveness
+   6. Mobile & Tablet Responsiveness
    ========================================================================== */
 @media (max-width: 1200px) {
   .service-slide-card {
