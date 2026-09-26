@@ -216,9 +216,22 @@ document.addEventListener('DOMContentLoaded', () => {
   const slideCards = document.querySelectorAll('.service-slide-card');
   const progressBar = document.getElementById('servicesScrollProgress');
   const counterCurrent = document.getElementById('currentServiceCounter');
+  const titleCurrent = document.getElementById('currentServiceTitle');
   const pillBtns = document.querySelectorAll('.service-pill-btn');
   const prevBtn = document.getElementById('prevServiceBtn');
   const nextBtn = document.getElementById('nextServiceBtn');
+
+  const serviceTitles = [
+    "Real Estate Transaction Advisory",
+    "Infrastructure Consulting",
+    "Human Resources (HR) Advisory",
+    "Learning & Development (L&D)",
+    "Impact Consulting & CSR",
+    "Strategic Growth & Procurement",
+    "Financial Services & Advisory",
+    "Business Operations Optimization",
+    "Digital Solutions & IT Strategy"
+  ];
 
   let currentActiveIndex = 0;
 
@@ -227,15 +240,18 @@ document.addEventListener('DOMContentLoaded', () => {
     if (counterCurrent) {
       counterCurrent.textContent = String(currentActiveIndex + 1).padStart(2, '0');
     }
+    if (titleCurrent && serviceTitles[currentActiveIndex]) {
+      titleCurrent.textContent = serviceTitles[currentActiveIndex];
+    }
     if (progressBar) {
       progressBar.style.width = `${((currentActiveIndex + 1) / slideCards.length) * 100}%`;
     }
 
-    pillBtns.forEach(pill => {
-      const targetIdx = parseInt(pill.getAttribute('data-target-index'));
-      if (targetIdx === currentActiveIndex) {
+    pillBtns.forEach((pill, idx) => {
+      if (idx === currentActiveIndex) {
         pill.classList.add('active');
-      } else if (targetIdx !== 0 && currentActiveIndex > 0) {
+        pill.scrollIntoView({ behavior: 'smooth', inline: 'center', block: 'nearest' });
+      } else {
         pill.classList.remove('active');
       }
     });
@@ -273,7 +289,20 @@ document.addEventListener('DOMContentLoaded', () => {
             if (counterCurrent) {
               counterCurrent.textContent = String(slideIdx + 1).padStart(2, '0');
             }
-            currentActiveIndex = slideIdx;
+            if (titleCurrent && serviceTitles[slideIdx] && titleCurrent.textContent !== serviceTitles[slideIdx]) {
+              titleCurrent.textContent = serviceTitles[slideIdx];
+            }
+            if (currentActiveIndex !== slideIdx) {
+              currentActiveIndex = slideIdx;
+              pillBtns.forEach((pill, idx) => {
+                if (idx === slideIdx) {
+                  pill.classList.add('active');
+                  pill.scrollIntoView({ behavior: 'smooth', inline: 'center', block: 'nearest' });
+                } else {
+                  pill.classList.remove('active');
+                }
+              });
+            }
           }
         }
       });
