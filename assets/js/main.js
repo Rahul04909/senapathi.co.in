@@ -772,4 +772,29 @@ document.addEventListener('DOMContentLoaded', () => {
       }
     });
   }
+
+  // 8. Footer Service Links Fast-Jump Navigator
+  const footerServiceLinks = document.querySelectorAll('.footer-link-item a[data-service-target]');
+  footerServiceLinks.forEach(link => {
+    link.addEventListener('click', (e) => {
+      const targetIdx = parseInt(link.getAttribute('data-service-target'));
+      if (isNaN(targetIdx)) return;
+
+      const servicesSection = document.getElementById('services');
+      if (!servicesSection) return; // If on another page, let default anchor link navigate to index.php#services
+
+      const currentPath = window.location.pathname;
+      const isHomePage = currentPath === '/' || currentPath.endsWith('/') || currentPath.endsWith('index.php');
+
+      if (isHomePage) {
+        e.preventDefault();
+        const targetPill = document.querySelector(`.service-pill-btn[data-target-index="${targetIdx}"]`);
+        if (targetPill) {
+          targetPill.click();
+        } else {
+          servicesSection.scrollIntoView({ behavior: 'smooth' });
+        }
+      }
+    });
+  });
 });

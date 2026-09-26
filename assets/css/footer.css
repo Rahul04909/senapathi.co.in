@@ -95,13 +95,14 @@
 /* Footer Column Headers */
 .footer-col-title {
   font-family: var(--font-heading);
-  font-size: 1.0625rem;
+  font-size: 0.9375rem;
   font-weight: 700;
-  color: #FFFFFF;
+  color: #F8FAFC;
   margin-bottom: 22px;
-  letter-spacing: -0.01em;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
   position: relative;
-  padding-bottom: 10px;
+  padding-bottom: 12px;
 }
 
 .footer-col-title::after {
@@ -109,29 +110,85 @@
   position: absolute;
   bottom: 0;
   left: 0;
-  width: 28px;
+  width: 32px;
   height: 2px;
-  background: var(--color-primary-400);
+  background: linear-gradient(90deg, #38BDF8, #818CF8);
+  box-shadow: 0 0 10px rgba(56, 189, 248, 0.5);
+  border-radius: 2px;
 }
 
+/* Dashboard-Grade Sitemaps & Navigation Links */
 .footer-links-list {
   display: flex;
   flex-direction: column;
-  gap: 12px;
+  gap: 10px;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.footer-link-item {
+  position: relative;
+  display: flex;
 }
 
 .footer-link-item a {
-  font-size: 0.875rem;
+  font-family: var(--font-body);
+  font-size: 0.855rem;
+  font-weight: 450;
   color: #94A3B8;
-  transition: all var(--transition-fast);
+  text-decoration: none;
   display: inline-flex;
   align-items: center;
-  gap: 6px;
+  gap: 10px;
+  padding: 5px 4px 6px 0;
+  position: relative;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.07);
+  transition: all 0.28s cubic-bezier(0.16, 1, 0.3, 1);
+  width: fit-content;
+  max-width: 100%;
+}
+
+/* Dashboard Tech Dash Indicator */
+.footer-link-item a::before {
+  content: '';
+  display: inline-block;
+  width: 7px;
+  height: 2px;
+  background: rgba(148, 163, 184, 0.35);
+  border-radius: 2px;
+  flex-shrink: 0;
+  transition: all 0.28s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+/* Dashboard Active Glowing Cyan Underline */
+.footer-link-item a::after {
+  content: '';
+  position: absolute;
+  bottom: -1px;
+  left: 0;
+  width: 0;
+  height: 2px;
+  background: linear-gradient(90deg, #38BDF8 0%, #0EA5E9 70%, #818CF8 100%);
+  box-shadow: 0 0 12px rgba(56, 189, 248, 0.8), 0 0 4px #38BDF8;
+  border-radius: 2px;
+  transition: width 0.32s cubic-bezier(0.16, 1, 0.3, 1);
 }
 
 .footer-link-item a:hover {
-  color: #38BDF8;
-  transform: translateX(4px);
+  color: #FFFFFF;
+  transform: translateX(5px);
+  border-bottom-color: transparent;
+}
+
+.footer-link-item a:hover::before {
+  width: 13px;
+  background: #38BDF8;
+  box-shadow: 0 0 8px #38BDF8;
+}
+
+.footer-link-item a:hover::after {
+  width: 100%;
 }
 
 /* Contact Column */
@@ -159,10 +216,18 @@
 
 .footer-contact-row a {
   color: #CBD5E1;
+  text-decoration: none;
+  position: relative;
+  border-bottom: 1px dashed rgba(56, 189, 248, 0.4);
+  padding-bottom: 1px;
+  transition: all 0.2s ease;
 }
 
 .footer-contact-row a:hover {
   color: #38BDF8;
+  border-bottom-style: solid;
+  border-bottom-color: #38BDF8;
+  text-shadow: 0 0 8px rgba(56, 189, 248, 0.4);
 }
 
 /* Bottom Disclaimer & Copyright Bar */

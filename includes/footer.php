@@ -48,15 +48,15 @@ $basePath = isset($basePath) ? $basePath : '';
           <div class="footer-col">
             <h4 class="footer-col-title">Core Service Lines</h4>
             <ul class="footer-links-list">
-              <li class="footer-link-item"><a href="<?php echo $basePath; ?>index.php#services">1. Real Estate Advisory</a></li>
-              <li class="footer-link-item"><a href="<?php echo $basePath; ?>index.php#services">2. Infrastructure Consulting</a></li>
-              <li class="footer-link-item"><a href="<?php echo $basePath; ?>index.php#services">3. Human Resource Advisory</a></li>
-              <li class="footer-link-item"><a href="<?php echo $basePath; ?>index.php#services">4. Learning &amp; Development</a></li>
-              <li class="footer-link-item"><a href="<?php echo $basePath; ?>index.php#services">5. Impact Consulting &amp; CSR</a></li>
-              <li class="footer-link-item"><a href="<?php echo $basePath; ?>index.php#services">6. Business Development</a></li>
-              <li class="footer-link-item"><a href="<?php echo $basePath; ?>index.php#services">7. Financial Services &amp; Advisory</a></li>
-              <li class="footer-link-item"><a href="<?php echo $basePath; ?>index.php#services">8. Business Operations Opt.</a></li>
-              <li class="footer-link-item"><a href="<?php echo $basePath; ?>index.php#services">9. Digital Transformation</a></li>
+              <li class="footer-link-item"><a href="<?php echo $basePath; ?>index.php#services" data-service-target="0">Real Estate Advisory</a></li>
+              <li class="footer-link-item"><a href="<?php echo $basePath; ?>index.php#services" data-service-target="1">Infrastructure Consulting</a></li>
+              <li class="footer-link-item"><a href="<?php echo $basePath; ?>index.php#services" data-service-target="2">Human Resource Advisory</a></li>
+              <li class="footer-link-item"><a href="<?php echo $basePath; ?>index.php#services" data-service-target="3">Learning &amp; Development</a></li>
+              <li class="footer-link-item"><a href="<?php echo $basePath; ?>index.php#services" data-service-target="4">Impact Consulting &amp; CSR</a></li>
+              <li class="footer-link-item"><a href="<?php echo $basePath; ?>index.php#services" data-service-target="5">Business Development</a></li>
+              <li class="footer-link-item"><a href="<?php echo $basePath; ?>index.php#services" data-service-target="6">Financial Services &amp; Advisory</a></li>
+              <li class="footer-link-item"><a href="<?php echo $basePath; ?>index.php#services" data-service-target="7">Business Operations Opt.</a></li>
+              <li class="footer-link-item"><a href="<?php echo $basePath; ?>index.php#services" data-service-target="8">Digital Transformation</a></li>
             </ul>
           </div>
 
