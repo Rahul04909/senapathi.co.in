@@ -1,272 +1,669 @@
 /* ==========================================================================
-   SENAPATHI ALLIANCE - 9 CORE SERVICE LINES STYLES
-   Interactive Filter Tabs, Dribbble Card Grid, & Sub-Offering Chips
+   SENAPATHI ALLIANCE - 9 CORE SERVICE LINES
+   Award-Winning Dark Horizontal Scroll Showcase (GSAP ScrollTrigger Pinned)
+   Matching Apple / Awwwards Dribbble-Grade Executive Design System
    ========================================================================== */
 
+/* Main Section Wrapper (Deep Futuristic Dark) */
 .services-section {
-  background: var(--color-bg-body);
-  position: relative;
-}
-
-/* Category Filter Bar */
-.services-filter-container {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  gap: 10px;
-  flex-wrap: wrap;
-  margin-bottom: 48px;
-}
-
-.filter-btn {
-  font-family: var(--font-heading);
-  font-size: 0.875rem;
-  font-weight: 600;
-  padding: 10px 20px;
-  border-radius: var(--radius-full);
-  border: 1px solid var(--color-border);
-  background: #FFFFFF;
-  color: var(--color-text-muted);
-  cursor: pointer;
-  transition: all var(--transition-normal);
-  box-shadow: var(--shadow-xs);
-}
-
-.filter-btn:hover {
-  border-color: var(--color-primary-300);
-  color: var(--color-primary-600);
-  background: var(--color-primary-50);
-}
-
-.filter-btn.active {
-  background: var(--color-primary-800);
+  background: #040914;
   color: #FFFFFF;
-  border-color: var(--color-primary-800);
-  box-shadow: 0 4px 12px rgba(11, 37, 69, 0.25);
-}
-
-/* Services Grid */
-.services-grid {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 30px;
-}
-
-@media (max-width: 1120px) {
-  .services-grid {
-    grid-template-columns: repeat(2, 1fr);
-  }
-}
-
-@media (max-width: 768px) {
-  .services-grid {
-    grid-template-columns: 1fr;
-  }
-}
-
-/* Service Card Component */
-.service-card {
-  background: #FFFFFF;
-  border: 1px solid var(--color-border);
-  border-radius: var(--radius-xl);
-  padding: 32px 28px;
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-  transition: all var(--transition-normal);
   position: relative;
   overflow: hidden;
-  box-shadow: var(--shadow-sm);
 }
 
-.service-card::before {
+/* Ambient Radial Mesh Gradients */
+.services-section::before {
   content: '';
+  position: absolute;
+  top: 10%;
+  left: -200px;
+  width: 700px;
+  height: 700px;
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(2, 132, 199, 0.12) 0%, transparent 70%);
+  pointer-events: none;
+  z-index: 0;
+}
+
+.services-section::after {
+  content: '';
+  position: absolute;
+  bottom: 10%;
+  right: -200px;
+  width: 700px;
+  height: 700px;
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(14, 165, 233, 0.09) 0%, transparent 70%);
+  pointer-events: none;
+  z-index: 0;
+}
+
+/* ==========================================================================
+   1. Dramatic Intro Hero (Matching Reference Image 1)
+   ========================================================================== */
+.services-hero-intro {
+  padding: 110px 0 80px;
+  position: relative;
+  z-index: 2;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+  background: radial-gradient(circle at 50% 30%, rgba(15, 33, 64, 0.5) 0%, #040914 80%);
+}
+
+.services-intro-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 0.78125rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+  padding: 6px 16px;
+  border-radius: var(--radius-full);
+  background: rgba(2, 132, 199, 0.15);
+  border: 1px solid rgba(56, 189, 248, 0.3);
+  color: #7DD3FC;
+  margin-bottom: 24px;
+}
+
+.services-intro-badge svg {
+  width: 14px;
+  height: 14px;
+  color: #38BDF8;
+}
+
+.services-intro-title {
+  font-family: var(--font-heading);
+  font-size: clamp(2.35rem, 5vw, 4rem);
+  font-weight: 800;
+  line-height: 1.15;
+  color: #FFFFFF;
+  max-width: 960px;
+  margin: 0 auto 20px;
+  letter-spacing: -0.03em;
+}
+
+.services-intro-title .shining-text {
+  background: linear-gradient(110deg, #FFFFFF 15%, #38BDF8 40%, #0284C7 60%, #BAE6FD 80%, #FFFFFF 95%);
+  background-size: 200% auto;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  animation: shineSweep 4s linear infinite;
+  display: inline;
+}
+
+.services-intro-subtitle {
+  font-size: clamp(1rem, 1.3vw, 1.2rem);
+  color: #94A3B8;
+  line-height: 1.65;
+  max-width: 760px;
+  margin: 0 auto 40px;
+  font-weight: 400;
+}
+
+/* Keep Scrolling Indicator */
+.services-scroll-cue {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 12px;
+  margin-top: 10px;
+}
+
+.cue-text {
+  font-family: var(--font-heading);
+  font-size: 0.75rem;
+  font-weight: 700;
+  color: #64748B;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+}
+
+.cue-line-container {
+  width: 2px;
+  height: 48px;
+  background: rgba(255, 255, 255, 0.1);
+  position: relative;
+  overflow: hidden;
+  border-radius: var(--radius-full);
+}
+
+.cue-pulsing-line {
   position: absolute;
   top: 0;
   left: 0;
   width: 100%;
-  height: 4px;
-  background: linear-gradient(90deg, var(--color-primary-600), var(--color-primary-400));
-  opacity: 0;
-  transition: opacity var(--transition-normal);
+  height: 50%;
+  background: linear-gradient(180deg, transparent, #38BDF8);
+  animation: scrollLineDrop 2s cubic-bezier(0.16, 1, 0.3, 1) infinite;
 }
 
-.service-card:hover {
-  transform: translateY(-6px);
-  border-color: rgba(2, 132, 199, 0.35);
-  box-shadow: var(--shadow-xl);
+@keyframes scrollLineDrop {
+  0% { transform: translateY(-100%); opacity: 0; }
+  40% { opacity: 1; }
+  100% { transform: translateY(220%); opacity: 0; }
 }
 
-.service-card:hover::before {
-  opacity: 1;
+/* ==========================================================================
+   2. Sticky / Pinned Horizontal Container (Matching Reference Image 2)
+   ========================================================================= */
+.services-pin-wrapper {
+  position: relative;
+  width: 100%;
+  overflow: hidden;
+  background: #040914;
 }
 
-/* Card Top Section */
-.service-card-top {
+/* Top Sticky Control Bar */
+.services-top-bar {
+  padding: 20px 0 0;
+  position: relative;
+  z-index: 10;
+  background: rgba(4, 9, 20, 0.95);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.services-bar-flex {
   display: flex;
-  align-items: flex-start;
+  align-items: center;
   justify-content: space-between;
-  margin-bottom: 20px;
+  gap: 20px;
+  padding-bottom: 16px;
+  flex-wrap: wrap;
 }
 
-.service-icon-box {
-  width: 52px;
-  height: 52px;
-  border-radius: var(--radius-md);
-  background: linear-gradient(135deg, var(--color-primary-50) 0%, var(--color-primary-100) 100%);
-  color: var(--color-primary-600);
+/* Filter Jump Pills */
+.services-filter-pills {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  overflow-x: auto;
+  padding-bottom: 4px;
+  -webkit-overflow-scrolling: touch;
+  scrollbar-width: none;
+}
+
+.services-filter-pills::-webkit-scrollbar {
+  display: none;
+}
+
+.service-pill-btn {
+  font-family: var(--font-heading);
+  font-size: 0.8125rem;
+  font-weight: 600;
+  padding: 8px 16px;
+  border-radius: var(--radius-full);
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  color: #94A3B8;
+  cursor: pointer;
+  white-space: nowrap;
+  transition: all 0.25s ease;
+}
+
+.service-pill-btn:hover {
+  background: rgba(255, 255, 255, 0.1);
+  color: #FFFFFF;
+  border-color: rgba(56, 189, 248, 0.4);
+}
+
+.service-pill-btn.active {
+  background: linear-gradient(135deg, #0284C7 0%, #0369A1 100%);
+  color: #FFFFFF;
+  border-color: #38BDF8;
+  box-shadow: 0 4px 14px rgba(2, 132, 199, 0.4);
+}
+
+/* Navigation Controls: Counter & Prev/Next Arrows */
+.services-nav-controls {
+  display: flex;
+  align-items: center;
+  gap: 18px;
+  flex-shrink: 0;
+}
+
+.services-counter {
+  font-family: var(--font-heading);
+  font-size: 1.125rem;
+  font-weight: 800;
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  letter-spacing: 0.05em;
+}
+
+.counter-current {
+  color: #38BDF8;
+  font-size: 1.35rem;
+}
+
+.counter-divider {
+  color: #475569;
+}
+
+.counter-total {
+  color: #64748B;
+}
+
+.services-arrow-buttons {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.service-arrow-btn {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.08);
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  color: #FFFFFF;
   display: flex;
   align-items: center;
   justify-content: center;
-  transition: all var(--transition-normal);
+  cursor: pointer;
+  transition: all 0.25s ease;
 }
 
-.service-card:hover .service-icon-box {
-  background: linear-gradient(135deg, var(--color-primary-700) 0%, var(--color-primary-500) 100%);
-  color: #FFFFFF;
-  transform: rotate(-4deg) scale(1.05);
+.service-arrow-btn:hover {
+  background: #0284C7;
+  border-color: #38BDF8;
+  transform: scale(1.06);
+  box-shadow: 0 0 16px rgba(56, 189, 248, 0.5);
 }
 
-.service-icon-box svg {
-  width: 26px;
-  height: 26px;
+.service-arrow-btn svg {
+  width: 18px;
+  height: 18px;
 }
 
-.service-card-number {
-  font-family: var(--font-heading);
-  font-size: 1.25rem;
-  font-weight: 800;
-  color: #CBD5E1;
-  letter-spacing: -0.02em;
+/* Glowing Progress Track */
+.services-progress-track {
+  width: 100%;
+  height: 3px;
+  background: rgba(255, 255, 255, 0.06);
+  position: relative;
+  overflow: hidden;
 }
 
-.service-card-title {
-  font-size: 1.25rem;
-  font-weight: 700;
-  color: var(--color-primary-900);
-  margin-bottom: 12px;
-  line-height: 1.3;
+.services-progress-bar {
+  width: 11.11%; /* starts at 1/9th */
+  height: 100%;
+  background: linear-gradient(90deg, #0284C7, #38BDF8, #67E8F9);
+  box-shadow: 0 0 12px rgba(56, 189, 248, 0.9);
+  transition: width 0.15s ease-out;
 }
 
-.service-card-overview {
-  font-size: 0.90625rem;
-  color: var(--color-text-muted);
-  line-height: 1.65;
-  margin-bottom: 20px;
+/* ==========================================================================
+   3. Horizontal Track & Service Slide Cards
+   ========================================================================== */
+.services-track-viewport {
+  width: 100%;
+  position: relative;
+  overflow: hidden;
+  padding: 40px 0 60px;
 }
 
-/* Sub-Services Pill Tag Showcase */
-.service-sub-offerings {
-  margin-bottom: 24px;
-}
-
-.sub-offering-header {
-  font-size: 0.75rem;
-  text-transform: uppercase;
-  letter-spacing: 0.06em;
-  font-weight: 700;
-  color: var(--color-primary-700);
-  margin-bottom: 10px;
+.services-horizontal-track {
   display: flex;
-  align-items: center;
-  gap: 6px;
+  gap: 40px;
+  padding: 0 5vw;
+  width: max-content;
+  will-change: transform;
 }
 
-.sub-offerings-list {
+/* Single Service Slide Card (Glassmorphic Dribbble Style) */
+.service-slide-card {
+  flex: 0 0 1140px;
+  max-width: 86vw;
+  background: rgba(10, 22, 40, 0.85);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  border-radius: 32px;
+  padding: 48px;
+  display: grid;
+  grid-template-columns: 1.15fr 0.85fr;
+  gap: 44px;
+  position: relative;
+  overflow: hidden;
+  box-shadow: 0 28px 70px rgba(0, 0, 0, 0.5), 0 2px 10px rgba(255, 255, 255, 0.03);
+  transition: border-color 0.35s ease, box-shadow 0.35s ease;
+}
+
+.service-slide-card:hover {
+  border-color: rgba(56, 189, 248, 0.35);
+  box-shadow: 0 32px 80px rgba(0, 0, 0, 0.65), 0 0 30px rgba(2, 132, 199, 0.18);
+}
+
+/* Massive Watermark Number (Matching Reference Image 2) */
+.slide-watermark {
+  position: absolute;
+  top: 10px;
+  right: 48%;
+  font-family: var(--font-heading);
+  font-size: 8.5rem;
+  font-weight: 900;
+  line-height: 0.9;
+  color: transparent;
+  -webkit-text-stroke: 1.5px rgba(255, 255, 255, 0.06);
+  pointer-events: none;
+  z-index: 1;
+  user-select: none;
+  letter-spacing: -0.05em;
+}
+
+/* Left Content Column */
+.slide-content-left {
+  position: relative;
+  z-index: 2;
   display: flex;
   flex-direction: column;
-  gap: 8px;
-}
-
-.sub-offering-item {
-  font-size: 0.8125rem;
-  color: var(--color-text-main);
-  background: var(--color-bg-surface-alt);
-  padding: 6px 12px;
-  border-radius: var(--radius-sm);
-  display: flex;
-  align-items: center;
-  gap: 8px;
-  font-weight: 500;
-  border-left: 2.5px solid var(--color-primary-500);
-}
-
-.sub-offering-item span.code {
-  font-size: 0.75rem;
-  font-weight: 700;
-  color: var(--color-primary-600);
-}
-
-/* Regulatory Partner Badge */
-.partner-tag-badge {
-  display: inline-flex;
-  align-items: center;
-  gap: 6px;
-  padding: 5px 10px;
-  background: #EFF6FF;
-  border: 1px solid #BFDBFE;
-  color: #1D4ED8;
-  border-radius: var(--radius-sm);
-  font-size: 0.75rem;
-  font-weight: 600;
-  margin-bottom: 16px;
-}
-
-.partner-tag-badge.cag {
-  background: #FEF3C7;
-  border-color: #FDE68A;
-  color: #92400E;
-}
-
-.partner-tag-badge svg {
-  width: 14px;
-  height: 14px;
-}
-
-/* Card Bottom Action Area */
-.service-card-bottom {
-  padding-top: 18px;
-  border-top: 1px solid var(--color-border);
-  display: flex;
-  align-items: center;
   justify-content: space-between;
 }
 
-.service-deliverable-teaser {
-  font-size: 0.8125rem;
-  color: var(--color-accent-emerald);
-  font-weight: 600;
+.slide-badge-row {
   display: flex;
   align-items: center;
-  gap: 6px;
+  gap: 10px;
+  flex-wrap: wrap;
+  margin-bottom: 14px;
 }
 
-.service-deliverable-teaser svg {
-  width: 14px;
-  height: 14px;
-}
-
-.btn-service-detail {
+.slide-category-pill {
   font-family: var(--font-heading);
-  font-size: 0.8125rem;
-  font-weight: 600;
-  color: var(--color-primary-600);
-  background: transparent;
-  border: none;
-  cursor: pointer;
+  font-size: 0.71875rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  padding: 4px 12px;
+  border-radius: var(--radius-full);
+  background: rgba(2, 132, 199, 0.2);
+  border: 1px solid rgba(56, 189, 248, 0.4);
+  color: #BAE6FD;
+}
+
+.slide-partner-pill {
   display: inline-flex;
   align-items: center;
   gap: 6px;
-  padding: 6px 0;
-  transition: gap var(--transition-fast), color var(--transition-fast);
+  font-size: 0.6875rem;
+  font-weight: 600;
+  padding: 4px 10px;
+  border-radius: var(--radius-full);
+  background: rgba(245, 158, 11, 0.15);
+  border: 1px solid rgba(245, 158, 11, 0.35);
+  color: #FDE68A;
 }
 
-.btn-service-detail:hover {
-  color: var(--color-primary-800);
-  gap: 9px;
+.slide-partner-pill.cag {
+  background: rgba(16, 185, 129, 0.15);
+  border-color: rgba(16, 185, 129, 0.35);
+  color: #A7F3D0;
 }
 
-.btn-service-detail svg {
-  width: 14px;
-  height: 14px;
+.slide-partner-pill svg {
+  width: 12px;
+  height: 12px;
+}
+
+.slide-title {
+  font-family: var(--font-heading);
+  font-size: clamp(1.75rem, 2.6vw, 2.4rem);
+  font-weight: 800;
+  line-height: 1.2;
+  color: #FFFFFF;
+  margin-bottom: 14px;
+  letter-spacing: -0.02em;
+}
+
+.slide-overview {
+  font-size: 0.96875rem;
+  color: #94A3B8;
+  line-height: 1.65;
+  margin-bottom: 22px;
+}
+
+/* Practice Modules Box (Preserves 100% of Module Content) */
+.slide-modules-box {
+  background: rgba(255, 255, 255, 0.03);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: var(--radius-lg);
+  padding: 16px 18px;
+  margin-bottom: 24px;
+}
+
+.modules-header {
+  font-family: var(--font-heading);
+  font-size: 0.6875rem;
+  font-weight: 700;
+  color: #7DD3FC;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  margin-bottom: 10px;
+}
+
+.modules-chip-grid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.module-chip {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 0.78125rem;
+  color: #E2E8F0;
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  padding: 5px 10px;
+  border-radius: var(--radius-sm);
+  transition: all 0.2s ease;
+}
+
+.module-chip:hover {
+  background: rgba(2, 132, 199, 0.2);
+  border-color: rgba(56, 189, 248, 0.4);
+  color: #FFFFFF;
+}
+
+.chip-code {
+  font-weight: 800;
+  color: #38BDF8;
+  font-size: 0.71875rem;
+}
+
+/* Footer Row with Deliverable & Action Button */
+.slide-footer-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  flex-wrap: wrap;
+  padding-top: 14px;
+  border-top: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.slide-deliverable-strip {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 0.8125rem;
+  color: #CBD5E1;
+  font-weight: 500;
+}
+
+.slide-deliverable-strip svg {
+  width: 16px;
+  height: 16px;
+  color: #38BDF8;
+  flex-shrink: 0;
+}
+
+/* Right Visual Mockup Frame (Matching Reference Image 2 Phone/Device Frame) */
+.slide-visual-right {
+  position: relative;
+  z-index: 2;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.slide-visual-frame {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  min-height: 440px;
+  border-radius: 28px;
+  overflow: hidden;
+  border: 1px solid rgba(255, 255, 255, 0.16);
+  box-shadow: 0 20px 50px rgba(0, 0, 0, 0.7);
+  background: #000000;
+}
+
+.slide-visual-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.6s cubic-bezier(0.16, 1, 0.3, 1), filter 0.6s ease;
+  filter: brightness(0.9) contrast(1.05);
+  display: block;
+}
+
+.service-slide-card:hover .slide-visual-img {
+  transform: scale(1.05);
+  filter: brightness(1) contrast(1.1);
+}
+
+.slide-visual-overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(180deg, transparent 40%, rgba(4, 9, 20, 0.7) 100%);
+  pointer-events: none;
+}
+
+.visual-floating-tag {
+  position: absolute;
+  bottom: 16px;
+  left: 16px;
+  right: 16px;
+  background: rgba(7, 21, 39, 0.82);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid rgba(255, 255, 255, 0.16);
+  border-radius: var(--radius-md);
+  padding: 10px 14px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  color: #E0F2FE;
+  font-size: 0.75rem;
+  font-weight: 600;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.4);
+}
+
+.tag-dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: #10B981;
+  box-shadow: 0 0 8px #10B981;
+  flex-shrink: 0;
+}
+
+/* ==========================================================================
+   4. Mobile & Tablet Responsiveness
+   ========================================================================== */
+@media (max-width: 1200px) {
+  .service-slide-card {
+    flex: 0 0 960px;
+    padding: 38px;
+    gap: 32px;
+  }
+  
+  .slide-watermark {
+    font-size: 6.5rem;
+  }
+}
+
+@media (max-width: 991px) {
+  /* On touch devices, transform track into fluid horizontal snap scroll */
+  .services-pin-wrapper {
+    overflow: visible;
+  }
+
+  .services-track-viewport {
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+    scroll-snap-type: x mandatory;
+    padding: 24px 16px 40px;
+  }
+
+  .services-horizontal-track {
+    display: flex;
+    gap: 18px;
+    padding: 0;
+    width: max-content;
+    transform: none !important;
+  }
+
+  .service-slide-card {
+    flex: 0 0 88vw;
+    max-width: 88vw;
+    grid-template-columns: 1fr;
+    gap: 28px;
+    padding: 28px 22px;
+    scroll-snap-align: center;
+    border-radius: 24px;
+  }
+
+  .slide-watermark {
+    font-size: 5rem;
+    top: 6px;
+    right: 18px;
+  }
+
+  .slide-visual-frame {
+    min-height: 240px;
+    height: 240px;
+    border-radius: 18px;
+  }
+
+  .slide-footer-row {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .slide-footer-row .btn {
+    width: 100%;
+    justify-content: center;
+  }
+}
+
+@media (max-width: 640px) {
+  .services-hero-intro {
+    padding: 70px 0 50px;
+  }
+
+  .service-slide-card {
+    flex: 0 0 92vw;
+    max-width: 92vw;
+    padding: 22px 16px;
+  }
+
+  .slide-title {
+    font-size: 1.45rem;
+  }
+
+  .modules-chip-grid {
+    gap: 6px;
+  }
+
+  .module-chip {
+    font-size: 0.71875rem;
+    padding: 4px 8px;
+  }
 }

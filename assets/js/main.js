@@ -210,28 +210,156 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   }
 
-  // 3. Service Category Filtering
-  const filterBtns = document.querySelectorAll('.filter-btn');
-  const serviceCards = document.querySelectorAll('.service-card');
+  // 3. Award-Winning Horizontal Services Scroll Showcase Controller
+  const pinWrapper = document.getElementById('servicesPinWrapper');
+  const horizontalTrack = document.getElementById('servicesHorizontalTrack');
+  const slideCards = document.querySelectorAll('.service-slide-card');
+  const progressBar = document.getElementById('servicesScrollProgress');
+  const counterCurrent = document.getElementById('currentServiceCounter');
+  const pillBtns = document.querySelectorAll('.service-pill-btn');
+  const prevBtn = document.getElementById('prevServiceBtn');
+  const nextBtn = document.getElementById('nextServiceBtn');
 
-  filterBtns.forEach(btn => {
-    btn.addEventListener('click', () => {
-      filterBtns.forEach(b => b.classList.remove('active'));
-      btn.classList.add('active');
+  let currentActiveIndex = 0;
 
-      const filterVal = btn.getAttribute('data-filter');
+  function updateServiceActiveState(index) {
+    currentActiveIndex = Math.max(0, Math.min(index, slideCards.length - 1));
+    if (counterCurrent) {
+      counterCurrent.textContent = String(currentActiveIndex + 1).padStart(2, '0');
+    }
+    if (progressBar) {
+      progressBar.style.width = `${((currentActiveIndex + 1) / slideCards.length) * 100}%`;
+    }
 
-      serviceCards.forEach(card => {
-        const cardCategory = card.getAttribute('data-category');
-        if (filterVal === 'all' || cardCategory.includes(filterVal)) {
-          card.style.display = 'flex';
-          card.style.animation = 'fadeInCard 0.4s ease';
-        } else {
-          card.style.display = 'none';
+    pillBtns.forEach(pill => {
+      const targetIdx = parseInt(pill.getAttribute('data-target-index'));
+      if (targetIdx === currentActiveIndex) {
+        pill.classList.add('active');
+      } else if (targetIdx !== 0 && currentActiveIndex > 0) {
+        pill.classList.remove('active');
+      }
+    });
+  }
+
+  // Setup GSAP ScrollTrigger for desktop pinning
+  if (typeof gsap !== 'undefined' && typeof ScrollTrigger !== 'undefined' && pinWrapper && horizontalTrack && slideCards.length > 0) {
+    gsap.registerPlugin(ScrollTrigger);
+
+    let mm = gsap.matchMedia();
+
+    mm.add("(min-width: 992px)", () => {
+      const getScrollAmount = () => {
+        const trackWidth = horizontalTrack.scrollWidth;
+        return -(trackWidth - window.innerWidth + (window.innerWidth * 0.08));
+      };
+
+      const horizontalTween = gsap.to(horizontalTrack, {
+        x: getScrollAmount,
+        ease: "none",
+        scrollTrigger: {
+          trigger: pinWrapper,
+          start: "top top",
+          end: () => `+=${horizontalTrack.scrollWidth - window.innerWidth + 800}`,
+          pin: true,
+          scrub: 1,
+          invalidateOnRefresh: true,
+          anticipatePin: 1,
+          onUpdate: (self) => {
+            const progress = self.progress;
+            if (progressBar) {
+              progressBar.style.width = `${Math.max(11, progress * 100)}%`;
+            }
+            const slideIdx = Math.min(Math.floor(progress * slideCards.length), slideCards.length - 1);
+            if (counterCurrent) {
+              counterCurrent.textContent = String(slideIdx + 1).padStart(2, '0');
+            }
+            currentActiveIndex = slideIdx;
+          }
         }
       });
+
+      // Jump pill handler on desktop
+      pillBtns.forEach(pill => {
+        pill.addEventListener('click', () => {
+          pillBtns.forEach(p => p.classList.remove('active'));
+          pill.classList.add('active');
+
+          const targetIdx = parseInt(pill.getAttribute('data-target-index'));
+          if (isNaN(targetIdx)) return;
+
+          const totalDistance = horizontalTrack.scrollWidth - window.innerWidth + 800;
+          const targetProgress = targetIdx / (slideCards.length - 1);
+          const startScroll = horizontalTween.scrollTrigger.start;
+          const targetScrollPos = startScroll + (targetProgress * totalDistance);
+
+          window.scrollTo({
+            top: targetScrollPos,
+            behavior: 'smooth'
+          });
+        });
+      });
+
+      // Prev / Next button handlers on desktop
+      if (prevBtn) {
+        prevBtn.addEventListener('click', () => {
+          const prevIdx = Math.max(0, currentActiveIndex - 1);
+          const totalDistance = horizontalTrack.scrollWidth - window.innerWidth + 800;
+          const targetProgress = prevIdx / (slideCards.length - 1);
+          const targetScrollPos = horizontalTween.scrollTrigger.start + (targetProgress * totalDistance);
+          window.scrollTo({ top: targetScrollPos, behavior: 'smooth' });
+        });
+      }
+
+      if (nextBtn) {
+        nextBtn.addEventListener('click', () => {
+          const nextIdx = Math.min(slideCards.length - 1, currentActiveIndex + 1);
+          const totalDistance = horizontalTrack.scrollWidth - window.innerWidth + 800;
+          const targetProgress = nextIdx / (slideCards.length - 1);
+          const targetScrollPos = horizontalTween.scrollTrigger.start + (targetProgress * totalDistance);
+          window.scrollTo({ top: targetScrollPos, behavior: 'smooth' });
+        });
+      }
+
+      return () => {
+        horizontalTween.kill();
+      };
     });
-  });
+
+    mm.add("(max-width: 991px)", () => {
+      const viewport = document.querySelector('.services-track-viewport');
+      if (viewport) {
+        viewport.addEventListener('scroll', () => {
+          const scrollLeft = viewport.scrollLeft;
+          const cardWidth = slideCards[0].offsetWidth + 18;
+          const activeIdx = Math.min(Math.round(scrollLeft / cardWidth), slideCards.length - 1);
+          updateServiceActiveState(activeIdx);
+        }, { passive: true });
+
+        if (prevBtn) {
+          prevBtn.addEventListener('click', () => {
+            const cardWidth = slideCards[0].offsetWidth + 18;
+            viewport.scrollBy({ left: -cardWidth, behavior: 'smooth' });
+          });
+        }
+        if (nextBtn) {
+          nextBtn.addEventListener('click', () => {
+            const cardWidth = slideCards[0].offsetWidth + 18;
+            viewport.scrollBy({ left: cardWidth, behavior: 'smooth' });
+          });
+        }
+
+        pillBtns.forEach(pill => {
+          pill.addEventListener('click', () => {
+            pillBtns.forEach(p => p.classList.remove('active'));
+            pill.classList.add('active');
+            const targetIdx = parseInt(pill.getAttribute('data-target-index'));
+            const cardWidth = slideCards[0].offsetWidth + 18;
+            viewport.scrollTo({ left: targetIdx * cardWidth, behavior: 'smooth' });
+          });
+        });
+      }
+    });
+  }
 
   // 4. In-Depth Service Detail Modal System
   const modalOverlay = document.getElementById('serviceModalOverlay');
