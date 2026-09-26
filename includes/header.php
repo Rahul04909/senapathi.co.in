@@ -28,7 +28,7 @@ $canonicalUrl = "https://senapathi.co.in/";
   <meta property="og:url" content="<?php echo htmlspecialchars($canonicalUrl); ?>">
   <meta property="og:title" content="<?php echo htmlspecialchars($pageTitle); ?>">
   <meta property="og:description" content="<?php echo htmlspecialchars($pageDescription); ?>">
-  <meta property="og:image" content="assets/logo.png">
+  <meta property="og:image" content=" assets/images/logo.jpeg">
   <meta property="og:site_name" content="Senapathi Alliance">
 
   <!-- Twitter Meta Tags -->
@@ -135,7 +135,7 @@ $canonicalUrl = "https://senapathi.co.in/";
       <div class="header-inner">
         <!-- Logo -->
         <a href="index.php" class="brand-logo" aria-label="Senapathi Alliance Home">
-          <img src="assets/logo.png" alt="Senapathi - Corporate and Government Advisory" width="220" height="52">
+          <img src="assets/images/logo.jpeg" alt="Senapathi - Corporate and Government Advisory" width="220" height="52">
         </a>
 
         <!-- Desktop Navigation -->
