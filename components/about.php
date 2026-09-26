@@ -9,7 +9,7 @@ $basePath = isset($basePath) ? $basePath : '';
   <div class="container">
     
     <!-- Section Header with Shining Text Effects -->
-    <div class="section-header text-left">
+    <div class="section-header">
       <div class="section-badge">
         <svg fill="none" stroke="currentColor" viewBox="0 0 24 24">
           <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path>
@@ -19,12 +19,15 @@ $basePath = isset($basePath) ? $basePath : '';
       <h2 class="section-title">
         Bridging Policy, Engineering, Finance &amp; <span class="shining-text">Digital Transformation</span>
       </h2>
+      <p class="section-subtitle">
+        Senapathi India is a multidisciplinary management and technical consulting firm combining sector knowledge, structured programme governance, and digital capability across the full assignment lifecycle.
+      </p>
     </div>
 
     <div class="about-grid">
       
       <!-- ===================================================================
-           LEFT: Executive Video Frame (Clean Autoplaying MP4, No Overlays)
+           LEFT: Executive Video Frame & Trust Accreditations
            =================================================================== -->
       <div class="about-visual">
         <div class="about-video-frame">
@@ -38,6 +41,38 @@ $basePath = isset($basePath) ? $basePath : '';
             playsinline 
             preload="auto"
           ></video>
+        </div>
+
+        <!-- Sleek Accreditation & Institutional Metrics Strip -->
+        <div class="about-video-meta">
+          <div class="video-meta-card">
+            <div class="meta-icon-box">
+              <svg fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"></path>
+              </svg>
+            </div>
+            <div class="meta-info">
+              <h6>CAG Empanelled Partner CA Firm</h6>
+              <p>Statutory audits, forensic accounting &amp; public expenditure governance.</p>
+            </div>
+          </div>
+
+          <div class="video-meta-stats">
+            <div class="meta-stat-item">
+              <span class="stat-number">09</span>
+              <span class="stat-label">Core Verticals</span>
+            </div>
+            <div class="meta-stat-divider"></div>
+            <div class="meta-stat-item">
+              <span class="stat-number">50+</span>
+              <span class="stat-label">Advisory Lines</span>
+            </div>
+            <div class="meta-stat-divider"></div>
+            <div class="meta-stat-item">
+              <span class="stat-number">100%</span>
+              <span class="stat-label">Audit Defensible</span>
+            </div>
+          </div>
         </div>
       </div>
 
@@ -53,10 +88,6 @@ $basePath = isset($basePath) ? $basePath : '';
         </div>
 
         <p class="about-lead">
-          Senapathi India is a multidisciplinary management and technical consulting firm combining sector knowledge, structured programme management, technical expertise, financial discipline, and digital capability.
-        </p>
-
-        <p class="about-body">
           From due diligence, project readiness, procurement, and EPC advisory to workforce systems, capacity building, monitoring and evaluation, process improvement, cybersecurity, and technology implementation, we provide support across the <strong style="color:var(--color-primary-900);">full assignment lifecycle</strong>.
         </p>
 
