@@ -406,4 +406,148 @@ document.addEventListener('DOMContentLoaded', () => {
       }
     }
   });
+
+  // 6. Hero Visual Showcase: Floating Matrix Bubbles & 3D Interactive Parallax
+  const heroShowcase = document.getElementById('heroVisualShowcase');
+  const heroAgentWrap = document.getElementById('heroAgentWrap');
+  const heroBubbles = document.querySelectorAll('.hero-bubble');
+
+  if (heroShowcase && heroBubbles.length > 0) {
+    if (typeof gsap !== 'undefined') {
+      // 1. Organic floating animation for each bubble
+      heroBubbles.forEach((bubble, index) => {
+        const floatY = 10 + (index % 3) * 4;
+        const floatX = 6 + (index % 2) * 5;
+        const duration = 3.2 + index * 0.45;
+        const delay = index * 0.25;
+
+        gsap.to(bubble, {
+          y: `-=${floatY}`,
+          x: `+=${floatX}`,
+          rotation: (index % 2 === 0 ? 1.5 : -1.5),
+          duration: duration,
+          repeat: -1,
+          yoyo: true,
+          ease: "sine.inOut",
+          delay: delay
+        });
+
+        // Bubble Hover & Touch scale
+        bubble.addEventListener('mouseenter', () => {
+          gsap.to(bubble, {
+            scale: 1.08,
+            boxShadow: "0 22px 48px rgba(2, 132, 199, 0.32)",
+            duration: 0.3,
+            ease: "back.out(1.7)"
+          });
+        });
+
+        bubble.addEventListener('mouseleave', () => {
+          gsap.to(bubble, {
+            scale: 1,
+            boxShadow: "0 14px 34px rgba(11, 37, 69, 0.14)",
+            duration: 0.3,
+            ease: "power2.out"
+          });
+        });
+
+        // Interactive click/tap response
+        bubble.addEventListener('click', () => {
+          gsap.timeline()
+            .to(bubble, { scale: 0.95, duration: 0.1, ease: "power1.in" })
+            .to(bubble, { scale: 1.05, duration: 0.2, ease: "back.out(2)" })
+            .to(bubble, { scale: 1, duration: 0.2 });
+
+          // Smooth navigation depending on bubble clicked
+          if (bubble.classList.contains('bubble-top-right') || bubble.classList.contains('bubble-mid-right')) {
+            const servSec = document.getElementById('services');
+            if (servSec) servSec.scrollIntoView({ behavior: 'smooth' });
+          } else if (bubble.classList.contains('bubble-bottom-left')) {
+            // CAG Partner card click -> open Financial Services modal
+            const caBtn = document.querySelector('.btn-service-detail[data-service-id="7"]');
+            if (caBtn) {
+              caBtn.click();
+            } else {
+              const servSec = document.getElementById('services');
+              if (servSec) servSec.scrollIntoView({ behavior: 'smooth' });
+            }
+          } else if (bubble.classList.contains('bubble-top-left')) {
+            const appSec = document.getElementById('approach');
+            if (appSec) appSec.scrollIntoView({ behavior: 'smooth' });
+          } else if (bubble.classList.contains('bubble-bottom-right')) {
+            const indSec = document.getElementById('industries');
+            if (indSec) indSec.scrollIntoView({ behavior: 'smooth' });
+          }
+        });
+      });
+
+      // 2. 3D Mouse Parallax on Desktop
+      const heroSection = document.getElementById('hero');
+      if (heroSection && window.innerWidth > 992) {
+        heroSection.addEventListener('mousemove', (e) => {
+          const rect = heroShowcase.getBoundingClientRect();
+          const centerX = rect.left + rect.width / 2;
+          const centerY = rect.top + rect.height / 2;
+
+          const deltaX = (e.clientX - centerX) / (rect.width / 2);
+          const deltaY = (e.clientY - centerY) / (rect.height / 2);
+
+          // Subtle tilt for central agent image
+          if (heroAgentWrap) {
+            gsap.to(heroAgentWrap, {
+              x: deltaX * 12,
+              y: deltaY * 12,
+              rotationY: deltaX * 4,
+              rotationX: -deltaY * 4,
+              duration: 0.8,
+              ease: "power2.out"
+            });
+          }
+
+          // Depth-based movement for each floating bubble
+          heroBubbles.forEach((bubble) => {
+            const depth = parseFloat(bubble.getAttribute('data-depth')) || 25;
+            gsap.to(bubble, {
+              x: deltaX * depth,
+              y: deltaY * depth,
+              duration: 0.7,
+              ease: "power2.out"
+            });
+          });
+        });
+
+        heroSection.addEventListener('mouseleave', () => {
+          if (heroAgentWrap) {
+            gsap.to(heroAgentWrap, {
+              x: 0,
+              y: 0,
+              rotationY: 0,
+              rotationX: 0,
+              duration: 1.2,
+              ease: "elastic.out(1, 0.4)"
+            });
+          }
+
+          heroBubbles.forEach((bubble) => {
+            gsap.to(bubble, {
+              x: 0,
+              y: 0,
+              duration: 1,
+              ease: "power2.out"
+            });
+          });
+        });
+      }
+    } else {
+      // Fallback if GSAP is not loaded
+      heroBubbles.forEach(bubble => {
+        bubble.addEventListener('click', () => {
+          bubble.style.transform = 'scale(0.96)';
+          setTimeout(() => {
+            bubble.style.transform = '';
+          }, 200);
+        });
+      });
+    }
+  }
 });

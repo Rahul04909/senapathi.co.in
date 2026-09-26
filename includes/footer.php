@@ -121,6 +121,9 @@ $basePath = isset($basePath) ? $basePath : '';
     </svg>
   </button>
 
+  <!-- GSAP Animation Library for Interactive Floating Motion & 3D Parallax -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+
   <!-- JavaScript Application Bundle -->
   <script src="<?php echo $basePath; ?>assets/js/main.js"></script>
 </body>

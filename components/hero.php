@@ -65,69 +65,94 @@
         </div>
       </div>
 
-      <!-- Hero Right: Dynamic Metric Card & Credentials Display -->
+      <!-- Hero Right: Dynamic Visual Showcase with Floating Matrix Bubbles -->
       <div class="hero-visual-card">
-        <div class="hero-card-main">
+        <div class="hero-visual-showcase" id="heroVisualShowcase">
           
-          <div class="hero-card-header">
-            <div>
-              <div class="hero-card-title">Senapathi Capability Matrix</div>
-              <small style="color: #64748B;">Institutional Mandate &amp; Governance</small>
-            </div>
-            <div class="hero-verified-badge">
+          <!-- Glowing Ambient Backdrop & Orbit Rings -->
+          <div class="hero-image-backdrop-glow"></div>
+          <div class="hero-orbit-ring hero-orbit-ring-1"></div>
+          <div class="hero-orbit-ring hero-orbit-ring-2"></div>
+
+          <!-- Central Featured Consultant/Agent Image -->
+          <div class="hero-agent-image-wrap" id="heroAgentWrap">
+            <img 
+              src="https://www.bajajgeneralinsurance.com/content/dam/revampbagic/agent/become-an-agent.webp" 
+              alt="Senapathi Corporate and Government Advisory Leadership" 
+              class="hero-agent-img"
+              id="heroAgentImg"
+              loading="eager"
+            >
+          </div>
+
+          <!-- Bubble 1: Verified Governance & 100% Compliance (Top Left) -->
+          <div class="hero-bubble bubble-top-left" data-speed="1.4" data-depth="22">
+            <div class="bubble-icon-wrap emerald">
               <svg fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M5 13l4 4L19 7"></path>
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"></path>
               </svg>
-              <span>Verified Governance</span>
+            </div>
+            <div class="bubble-content">
+              <div class="bubble-title">100% Compliance</div>
+              <div class="bubble-desc">Verified Governance</div>
             </div>
           </div>
 
-          <!-- Quick Metrics Grid -->
-          <div class="hero-stats-grid">
-            <div class="stat-item">
-              <div class="stat-number">09</div>
-              <div class="stat-label">Core Integrated Service Verticals</div>
-            </div>
-            <div class="stat-item">
-              <div class="stat-number">50+</div>
-              <div class="stat-label">Specialized Advisory Offerings</div>
-            </div>
-            <div class="stat-item">
-              <div class="stat-number">06</div>
-              <div class="stat-label">Key Sectoral Industries Served</div>
-            </div>
-            <div class="stat-item">
-              <div class="stat-number">100%</div>
-              <div class="stat-label">Statutory &amp; Policy Compliance</div>
+          <!-- Bubble 2: 09 Core Integrated Service Verticals (Top Right) -->
+          <div class="hero-bubble bubble-top-right" data-speed="1.8" data-depth="32">
+            <div class="bubble-stat-badge">09</div>
+            <div class="bubble-content">
+              <div class="bubble-title">Core Service Lines</div>
+              <div class="bubble-desc">Integrated Advisory</div>
             </div>
           </div>
 
-          <!-- CAG Empanelled Partner Card -->
-          <div class="hero-cag-card">
-            <div class="hero-cag-icon">
+          <!-- Bubble 3: 50+ Specialized Advisory Offerings (Middle Right) -->
+          <div class="hero-bubble bubble-mid-right" data-speed="1.2" data-depth="20">
+            <div class="bubble-icon-wrap cyan">
+              <svg fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"></path>
+              </svg>
+            </div>
+            <div class="bubble-content">
+              <div class="bubble-title"><span class="highlight-stat">50+</span> Practice Areas</div>
+              <div class="bubble-desc">Full Assignment Scope</div>
+            </div>
+          </div>
+
+          <!-- Bubble 4: CAG Empanelled Partner CA Firm (Bottom Left) -->
+          <div class="hero-bubble bubble-bottom-left cag-special" data-speed="2.2" data-depth="38">
+            <div class="bubble-icon-wrap amber">
               <svg fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"></path>
               </svg>
             </div>
-            <div class="hero-cag-text">
-              <h4>CAG Empanelled Partner CA Firm</h4>
-              <p>Financial, audit, tax, and assurance services provided in compliance with Comptroller &amp; Auditor General of India standards.</p>
+            <div class="bubble-content">
+              <div class="bubble-title">CAG Empanelled Partner</div>
+              <div class="bubble-desc">Statutory Audit &amp; Assurance CA Firm</div>
             </div>
           </div>
 
-        </div>
-
-        <!-- Floating Badge -->
-        <div class="hero-floating-badge">
-          <svg fill="none" stroke="currentColor" viewBox="0 0 24 24">
-            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"></path>
-          </svg>
-          <div class="hero-floating-text">
-            <h5>Multidisciplinary Advisory</h5>
-            <span>Public Sector • Infrastructure • Digital</span>
+          <!-- Bubble 5: 06 Key Sectoral Verticals & Multidisciplinary (Bottom Right) -->
+          <div class="hero-bubble bubble-bottom-right" data-speed="1.6" data-depth="28">
+            <div class="bubble-icon-wrap navy">
+              <svg fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4"></path>
+              </svg>
+            </div>
+            <div class="bubble-content">
+              <div class="bubble-title">06 Sector Verticals</div>
+              <div class="bubble-desc">Public Sector • Infra • Digital</div>
+            </div>
           </div>
-        </div>
 
+          <!-- Live Interactive Badge -->
+          <div class="hero-floating-indicator">
+            <span class="live-pulse-dot"></span>
+            <span>Live Interactive Matrix</span>
+          </div>
+
+        </div>
       </div>
 
     </div>
