@@ -247,10 +247,19 @@ document.addEventListener('DOMContentLoaded', () => {
       progressBar.style.width = `${((currentActiveIndex + 1) / slideCards.length) * 100}%`;
     }
 
+    const pillsContainer = document.getElementById('servicesFilterPills');
     pillBtns.forEach((pill, idx) => {
       if (idx === currentActiveIndex) {
         pill.classList.add('active');
-        pill.scrollIntoView({ behavior: 'smooth', inline: 'center', block: 'nearest' });
+        if (pillsContainer) {
+          const pillLeft = pill.offsetLeft;
+          const pillWidth = pill.offsetWidth;
+          const cWidth = pillsContainer.offsetWidth;
+          pillsContainer.scrollTo({
+            left: pillLeft - (cWidth / 2) + (pillWidth / 2),
+            behavior: 'smooth'
+          });
+        }
       } else {
         pill.classList.remove('active');
       }
@@ -265,8 +274,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
     mm.add("(min-width: 992px)", () => {
       const getScrollAmount = () => {
-        const trackWidth = horizontalTrack.scrollWidth;
-        return -(trackWidth - window.innerWidth + (window.innerWidth * 0.08));
+        return -(horizontalTrack.scrollWidth - window.innerWidth);
       };
 
       const getHeaderHeight = () => {
@@ -274,16 +282,18 @@ document.addEventListener('DOMContentLoaded', () => {
         return header ? header.offsetHeight : 72;
       };
 
+      const pillsContainer = document.getElementById('servicesFilterPills');
+
       const horizontalTween = gsap.to(horizontalTrack, {
         x: getScrollAmount,
         ease: "none",
         scrollTrigger: {
           trigger: pinWrapper,
           start: () => `top ${getHeaderHeight()}px`,
-          end: () => `+=${horizontalTrack.scrollWidth - window.innerWidth + 800}`,
+          end: () => `+=${horizontalTrack.scrollWidth - window.innerWidth}`,
           pin: true,
           pinSpacing: true,
-          scrub: 1,
+          scrub: 0.6,
           invalidateOnRefresh: true,
           anticipatePin: 1,
           onUpdate: (self) => {
@@ -303,7 +313,15 @@ document.addEventListener('DOMContentLoaded', () => {
               pillBtns.forEach((pill, idx) => {
                 if (idx === slideIdx) {
                   pill.classList.add('active');
-                  pill.scrollIntoView({ behavior: 'smooth', inline: 'center', block: 'nearest' });
+                  if (pillsContainer) {
+                    const pillLeft = pill.offsetLeft;
+                    const pillWidth = pill.offsetWidth;
+                    const cWidth = pillsContainer.offsetWidth;
+                    pillsContainer.scrollTo({
+                      left: pillLeft - (cWidth / 2) + (pillWidth / 2),
+                      behavior: 'smooth'
+                    });
+                  }
                 } else {
                   pill.classList.remove('active');
                 }
@@ -316,13 +334,10 @@ document.addEventListener('DOMContentLoaded', () => {
       // Jump pill handler on desktop
       pillBtns.forEach(pill => {
         pill.addEventListener('click', () => {
-          pillBtns.forEach(p => p.classList.remove('active'));
-          pill.classList.add('active');
-
           const targetIdx = parseInt(pill.getAttribute('data-target-index'));
           if (isNaN(targetIdx)) return;
 
-          const totalDistance = horizontalTrack.scrollWidth - window.innerWidth + 800;
+          const totalDistance = horizontalTrack.scrollWidth - window.innerWidth;
           const targetProgress = targetIdx / (slideCards.length - 1);
           const startScroll = horizontalTween.scrollTrigger.start;
           const targetScrollPos = startScroll + (targetProgress * totalDistance);
@@ -338,7 +353,7 @@ document.addEventListener('DOMContentLoaded', () => {
       if (prevBtn) {
         prevBtn.addEventListener('click', () => {
           const prevIdx = Math.max(0, currentActiveIndex - 1);
-          const totalDistance = horizontalTrack.scrollWidth - window.innerWidth + 800;
+          const totalDistance = horizontalTrack.scrollWidth - window.innerWidth;
           const targetProgress = prevIdx / (slideCards.length - 1);
           const targetScrollPos = horizontalTween.scrollTrigger.start + (targetProgress * totalDistance);
           window.scrollTo({ top: targetScrollPos, behavior: 'smooth' });
@@ -348,7 +363,7 @@ document.addEventListener('DOMContentLoaded', () => {
       if (nextBtn) {
         nextBtn.addEventListener('click', () => {
           const nextIdx = Math.min(slideCards.length - 1, currentActiveIndex + 1);
-          const totalDistance = horizontalTrack.scrollWidth - window.innerWidth + 800;
+          const totalDistance = horizontalTrack.scrollWidth - window.innerWidth;
           const targetProgress = nextIdx / (slideCards.length - 1);
           const targetScrollPos = horizontalTween.scrollTrigger.start + (targetProgress * totalDistance);
           window.scrollTo({ top: targetScrollPos, behavior: 'smooth' });
