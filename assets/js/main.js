@@ -551,47 +551,47 @@ document.addEventListener('DOMContentLoaded', () => {
     }
   }
 
-  // 7. About Video Briefing Modal Controller
-  const videoTrigger = document.getElementById('aboutVideoTrigger');
-  const videoModalBtn = document.getElementById('aboutVideoModalBtn');
-  const videoModalOverlay = document.getElementById('videoModalOverlay');
-  const videoModalClose = document.getElementById('videoModalClose');
-  const videoIframe = document.getElementById('videoIframe');
+  // 7. About Video Frame Autoplay on Viewport Scroll / Intersection
+  const aboutFrameVideo = document.getElementById('aboutFrameVideo');
+  const aboutSection = document.getElementById('about');
 
-  function openVideoModal() {
-    if (videoModalOverlay) {
-      if (videoIframe && videoIframe.getAttribute('data-src')) {
-        videoIframe.src = videoIframe.getAttribute('data-src');
-      }
-      videoModalOverlay.classList.add('active');
-      document.body.style.overflow = 'hidden';
+  if (aboutFrameVideo) {
+    // Ensure video is muted so modern browsers permit autoplay
+    aboutFrameVideo.muted = true;
+
+    if ('IntersectionObserver' in window) {
+      const videoScrollObserver = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            const playPromise = aboutFrameVideo.play();
+            if (playPromise !== undefined) {
+              playPromise.catch(() => {
+                // Fallback: re-assert muted and retry
+                aboutFrameVideo.muted = true;
+                aboutFrameVideo.play().catch(() => {});
+              });
+            }
+          } else {
+            aboutFrameVideo.pause();
+          }
+        });
+      }, {
+        threshold: 0.2
+      });
+
+      videoScrollObserver.observe(aboutSection || aboutFrameVideo);
+    } else {
+      // Fallback for older browsers
+      aboutFrameVideo.play().catch(() => {});
     }
-  }
 
-  function closeVideoModal() {
-    if (videoModalOverlay) {
-      videoModalOverlay.classList.remove('active');
-      document.body.style.overflow = '';
-      if (videoIframe) {
-        videoIframe.src = 'about:blank';
+    // Toggle play/pause on click
+    aboutFrameVideo.addEventListener('click', () => {
+      if (aboutFrameVideo.paused) {
+        aboutFrameVideo.play().catch(() => {});
+      } else {
+        aboutFrameVideo.pause();
       }
-    }
-  }
-
-  if (videoTrigger) videoTrigger.addEventListener('click', openVideoModal);
-  if (videoModalBtn) videoModalBtn.addEventListener('click', openVideoModal);
-  if (videoModalClose) videoModalClose.addEventListener('click', closeVideoModal);
-
-  if (videoModalOverlay) {
-    videoModalOverlay.addEventListener('click', (e) => {
-      if (e.target === videoModalOverlay) closeVideoModal();
     });
   }
-
-  // Close video modal on ESC key
-  document.addEventListener('keydown', (e) => {
-    if (e.key === 'Escape') {
-      closeVideoModal();
-    }
-  });
 });
