@@ -550,4 +550,48 @@ document.addEventListener('DOMContentLoaded', () => {
       });
     }
   }
+
+  // 7. About Video Briefing Modal Controller
+  const videoTrigger = document.getElementById('aboutVideoTrigger');
+  const videoModalBtn = document.getElementById('aboutVideoModalBtn');
+  const videoModalOverlay = document.getElementById('videoModalOverlay');
+  const videoModalClose = document.getElementById('videoModalClose');
+  const videoIframe = document.getElementById('videoIframe');
+
+  function openVideoModal() {
+    if (videoModalOverlay) {
+      if (videoIframe && videoIframe.getAttribute('data-src')) {
+        videoIframe.src = videoIframe.getAttribute('data-src');
+      }
+      videoModalOverlay.classList.add('active');
+      document.body.style.overflow = 'hidden';
+    }
+  }
+
+  function closeVideoModal() {
+    if (videoModalOverlay) {
+      videoModalOverlay.classList.remove('active');
+      document.body.style.overflow = '';
+      if (videoIframe) {
+        videoIframe.src = 'about:blank';
+      }
+    }
+  }
+
+  if (videoTrigger) videoTrigger.addEventListener('click', openVideoModal);
+  if (videoModalBtn) videoModalBtn.addEventListener('click', openVideoModal);
+  if (videoModalClose) videoModalClose.addEventListener('click', closeVideoModal);
+
+  if (videoModalOverlay) {
+    videoModalOverlay.addEventListener('click', (e) => {
+      if (e.target === videoModalOverlay) closeVideoModal();
+    });
+  }
+
+  // Close video modal on ESC key
+  document.addEventListener('keydown', (e) => {
+    if (e.key === 'Escape') {
+      closeVideoModal();
+    }
+  });
 });
