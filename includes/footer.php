@@ -14,7 +14,7 @@
           <!-- Col 1: Brand & Institutional Mandate -->
           <div class="footer-brand">
             <div class="footer-logo-wrap">
-              <img src="assets/logo.png" alt="Senapathi Alliance Logo" width="200" height="48">
+              <img src="assets/images/logo.jpeg" alt="Senapathi Alliance Logo" width="200" height="48">
             </div>
             <p class="footer-about-text">
               Senapathi Alliance (Senapathi India) is a multidisciplinary management and technical consulting firm supporting government departments, PSUs, multilateral institutions, programme implementation agencies, and responsible private-sector organizations.
