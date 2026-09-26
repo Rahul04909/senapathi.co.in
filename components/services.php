@@ -1,8 +1,8 @@
 <?php
 /**
  * Senapathi Alliance - 9 Core Service Lines Component
- * Interactive Horizontal Scroll Showcase with GSAP Pinned Scrub & Deep-Dive Modals
- * Preserves 100% Comprehensive Content across all 9 Strategic Domains
+ * Image-Free Executive Capability Blueprint with GSAP Pinned Horizontal Scrub
+ * Preserves 100% Comprehensive Content Across All 9 Strategic Domains
  */
 $basePath = isset($basePath) ? $basePath : '';
 ?>
@@ -17,7 +17,7 @@ $basePath = isset($basePath) ? $basePath : '';
         <svg fill="none" stroke="currentColor" viewBox="0 0 24 24">
           <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19.428 15.428a2 2 0 00-1.022-.547l-2.387-.477a6 6 0 00-3.86.517l-.318.158a6 6 0 01-3.86.517L6.05 15.21a2 2 0 00-1.806.547M8 4h8l-1 1v5.172a2 2 0 00.586 1.414l5 5c1.26 1.26.367 3.414-1.415 3.414H4.828c-1.782 0-2.674-2.154-1.414-3.414l5-5A2 2 0 009 10.172V5L8 4z"></path>
         </svg>
-        <span>Our Core Capabilities</span>
+        <span>Institutional Practice Domains</span>
       </div>
       
       <h2 class="services-intro-title">
@@ -115,49 +115,92 @@ $basePath = isset($basePath) ? $basePath : '';
             <h3 class="slide-title">Real Estate Transaction <span class="shining-text">Advisory</span></h3>
             
             <p class="slide-overview">
-              We support government bodies, PSUs, institutional landowners, developers, and public-private project entities in real estate transactions with market review, document checking, approval coordination, and transaction support.
+              We support government bodies, PSUs, institutional landowners, developers, and public-private project entities in real estate transactions. Our work covers market review, title verification, approval coordination, and transaction structuring to ensure compliance, transparency, and informed institutional decision-making.
             </p>
 
-            <div class="slide-modules-box">
-              <div class="modules-header">Key Practice Areas (5 Specialized Modules):</div>
-              <div class="modules-chip-grid">
-                <div class="module-chip"><span class="chip-code">1.1</span> Apartment Sales, Purchases &amp; Rental</div>
-                <div class="module-chip"><span class="chip-code">1.2</span> Commercial &amp; Residential Due Diligence</div>
-                <div class="module-chip"><span class="chip-code">1.3</span> Project Approval Facilitation</div>
-                <div class="module-chip"><span class="chip-code">1.4</span> Change of Land Use (CLU)</div>
-                <div class="module-chip"><span class="chip-code">1.5</span> Legal &amp; Regulatory Risk Advisory</div>
+            <div class="slide-deliverable-strip">
+              <div class="deliverable-icon-box">
+                <svg fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"></path>
+                </svg>
+              </div>
+              <div>
+                <strong>Institutional Deliverable &amp; Safeguards</strong>
+                <p>Verified title records, clear approval status, legal risk mitigation &amp; audit-ready transaction files.</p>
               </div>
             </div>
 
-            <div class="slide-footer-row">
-              <div class="slide-deliverable-strip">
-                <svg fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
-                </svg>
-                <span>Outcome: Verified Records, Clear Approvals &amp; Audit Trail</span>
-              </div>
-              
+            <div class="slide-actions-row">
               <button class="btn btn-primary btn-service-detail" data-service-id="1">
                 <span>View Full Scope &amp; Methodology</span>
                 <svg fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"></path>
                 </svg>
               </button>
+
+              <a href="#contact" class="btn btn-secondary slide-rfp-btn">
+                <span>Request Scope Briefing</span>
+              </a>
             </div>
           </div>
 
-          <div class="slide-visual-right">
-            <div class="slide-visual-frame">
-              <img 
-                src="https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?auto=format&fit=crop&w=1200&q=80" 
-                alt="Real Estate Transaction Advisory" 
-                class="slide-visual-img" 
-                loading="lazy"
-              >
-              <div class="slide-visual-overlay"></div>
-              <div class="visual-floating-tag">
-                <span class="tag-dot"></span>
-                <span>Institutional Asset Valuation &amp; Land Title Due Diligence</span>
+          <!-- Right Column: Institutional Practice Blueprint Panel -->
+          <div class="slide-architecture-right">
+            <div class="architecture-panel">
+              <div class="panel-top-header">
+                <div class="panel-title-block">
+                  <span class="panel-code-badge">Practice Vertical 01</span>
+                  <h4>Practice Architecture &amp; Modules</h4>
+                </div>
+                <span class="panel-modules-pill">05 Specialized Modules</span>
+              </div>
+
+              <div class="blueprint-modules-grid">
+                <div class="blueprint-module-card">
+                  <span class="module-number">1.1</span>
+                  <div class="module-content">
+                    <h5>Apartment Sales, Purchases &amp; Rental</h5>
+                    <p>Market assessment, counterparty coordination &amp; procedural leasing support.</p>
+                  </div>
+                </div>
+
+                <div class="blueprint-module-card">
+                  <span class="module-number">1.2</span>
+                  <div class="module-content">
+                    <h5>Commercial &amp; Residential Due Diligence</h5>
+                    <p>Title, land-use, approval, encumbrance, and regulatory transaction reviews.</p>
+                  </div>
+                </div>
+
+                <div class="blueprint-module-card">
+                  <span class="module-number">1.3</span>
+                  <div class="module-content">
+                    <h5>Real Estate Project Approval Facilitation</h5>
+                    <p>Preparation, tracking &amp; interdepartmental coordination for statutory approvals.</p>
+                  </div>
+                </div>
+
+                <div class="blueprint-module-card">
+                  <span class="module-number">1.4</span>
+                  <div class="module-content">
+                    <h5>Change of Land Use (CLU)</h5>
+                    <p>Eligibility assessment, procedural compliance, and state framework documentation.</p>
+                  </div>
+                </div>
+
+                <div class="blueprint-module-card">
+                  <span class="module-number">1.5</span>
+                  <div class="module-content">
+                    <h5>Legal &amp; Regulatory Advisory</h5>
+                    <p>Land, planning, registration, and development rules review via partner law firm.</p>
+                  </div>
+                </div>
+              </div>
+
+              <div class="panel-assurance-strip">
+                <span class="assurance-tag"><span class="dot green"></span> Partner Law Firm</span>
+                <span class="assurance-tag"><span class="dot blue"></span> Statutory Compliance</span>
+                <span class="assurance-tag"><span class="dot purple"></span> Pan-India Execution</span>
               </div>
             </div>
           </div>
@@ -177,50 +220,99 @@ $basePath = isset($basePath) ? $basePath : '';
             <h3 class="slide-title">Infrastructure <span class="shining-text">Consulting</span></h3>
 
             <p class="slide-overview">
-              Planning, technical assistance, procurement, project management, and monitoring support for public infrastructure programmes and PPP projects, focusing on value for money, safeguards, and climate resilience.
+              We provide planning, technical assistance, procurement, project management, and monitoring support for public infrastructure programmes and PPP projects. Our focus is project readiness, value for money, environmental and social safeguards, climate resilience, and long-term service delivery.
             </p>
 
-            <div class="slide-modules-box">
-              <div class="modules-header">Key Practice Areas (6 Specialized Modules):</div>
-              <div class="modules-chip-grid">
-                <div class="module-chip"><span class="chip-code">2.1</span> TA &amp; Project Management Consultancy (PMC)</div>
-                <div class="module-chip"><span class="chip-code">2.2</span> Engineering, Procurement &amp; Construction (EPC) Advisory</div>
-                <div class="module-chip"><span class="chip-code">2.3</span> Water, Sanitation &amp; Hygiene (WASH) Projects</div>
-                <div class="module-chip"><span class="chip-code">2.4</span> Climate-Resilient &amp; Smart Infrastructure</div>
-                <div class="module-chip"><span class="chip-code">2.5</span> ESG &amp; Sustainability / Green Building Audits</div>
-                <div class="module-chip"><span class="chip-code">2.6</span> Stakeholder &amp; Community Communication</div>
+            <div class="slide-deliverable-strip">
+              <div class="deliverable-icon-box">
+                <svg fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 11H5m14 0a2 2 0 012 2v6a2 2 0 01-2 2H5a2 2 0 01-2-2v-6a2 2 0 012-2m14 0V9a2 2 0 00-2-2M5 11V9a2 2 0 012-2m0 0V5a2 2 0 012-2h6a2 2 0 012 2v2M7 7h10"></path>
+                </svg>
+              </div>
+              <div>
+                <strong>Institutional Deliverable &amp; Safeguards</strong>
+                <p>Transparent procurement, cost and schedule monitoring, safeguard compliance &amp; formal handover.</p>
               </div>
             </div>
 
-            <div class="slide-footer-row">
-              <div class="slide-deliverable-strip">
-                <svg fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
-                </svg>
-                <span>Outcome: Value for Public Expenditure &amp; Service Delivery</span>
-              </div>
-
+            <div class="slide-actions-row">
               <button class="btn btn-primary btn-service-detail" data-service-id="2">
                 <span>View Full Scope &amp; Methodology</span>
                 <svg fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"></path>
                 </svg>
               </button>
+
+              <a href="#contact" class="btn btn-secondary slide-rfp-btn">
+                <span>Request Scope Briefing</span>
+              </a>
             </div>
           </div>
 
-          <div class="slide-visual-right">
-            <div class="slide-visual-frame">
-              <img 
-                src="https://images.unsplash.com/photo-1545558014-8692077e9b5c?auto=format&fit=crop&w=1200&q=80" 
-                alt="Infrastructure Consulting" 
-                class="slide-visual-img" 
-                loading="lazy"
-              >
-              <div class="slide-visual-overlay"></div>
-              <div class="visual-floating-tag">
-                <span class="tag-dot"></span>
-                <span>Public Works EPC • Smart Cities • WASH Frameworks</span>
+          <div class="slide-architecture-right">
+            <div class="architecture-panel">
+              <div class="panel-top-header">
+                <div class="panel-title-block">
+                  <span class="panel-code-badge">Practice Vertical 02</span>
+                  <h4>Practice Architecture &amp; Modules</h4>
+                </div>
+                <span class="panel-modules-pill">06 Specialized Modules</span>
+              </div>
+
+              <div class="blueprint-modules-grid">
+                <div class="blueprint-module-card">
+                  <span class="module-number">2.1</span>
+                  <div class="module-content">
+                    <h5>Technical Assistance (TA) &amp; PMC</h5>
+                    <p>Implementation frameworks, governance, risk registers, and reporting protocols.</p>
+                  </div>
+                </div>
+
+                <div class="blueprint-module-card">
+                  <span class="module-number">2.2</span>
+                  <div class="module-content">
+                    <h5>Engineering, Procurement &amp; EPC Advisory</h5>
+                    <p>Bid strategy, technical and contractual review, evaluation, and contract management.</p>
+                  </div>
+                </div>
+
+                <div class="blueprint-module-card">
+                  <span class="module-number">2.3</span>
+                  <div class="module-content">
+                    <h5>WASH Infrastructure Programmes</h5>
+                    <p>Needs assessment, service-level planning, institutional arrangements &amp; outcome M&amp;E.</p>
+                  </div>
+                </div>
+
+                <div class="blueprint-module-card">
+                  <span class="module-number">2.4</span>
+                  <div class="module-content">
+                    <h5>Climate-Resilient &amp; Smart Infrastructure</h5>
+                    <p>Disaster resilience, resource efficiency, digital monitoring, and inclusive planning.</p>
+                  </div>
+                </div>
+
+                <div class="blueprint-module-card">
+                  <span class="module-number">2.5</span>
+                  <div class="module-content">
+                    <h5>ESG &amp; Sustainability / Green Building Audits</h5>
+                    <p>Environmental and social safeguard compliance, performance reviews &amp; green certification.</p>
+                  </div>
+                </div>
+
+                <div class="blueprint-module-card">
+                  <span class="module-number">2.6</span>
+                  <div class="module-content">
+                    <h5>Stakeholder &amp; Community Communication</h5>
+                    <p>Consultation frameworks, messaging plans, and public acceptance strategies.</p>
+                  </div>
+                </div>
+              </div>
+
+              <div class="panel-assurance-strip">
+                <span class="assurance-tag"><span class="dot green"></span> Value for Money</span>
+                <span class="assurance-tag"><span class="dot blue"></span> EPC &amp; FIDIC Standards</span>
+                <span class="assurance-tag"><span class="dot purple"></span> ESG Safeguards</span>
               </div>
             </div>
           </div>
@@ -240,49 +332,91 @@ $basePath = isset($basePath) ? $basePath : '';
             <h3 class="slide-title">Human Resource <span class="shining-text">Advisory</span></h3>
 
             <p class="slide-overview">
-              Supporting government institutions, PSUs, and programme units in establishing suitable, compliant, and accountable workforce systems across recruitment, administration, and digital HRIS.
+              We support government institutions, PSUs, programme units, and project teams in establishing suitable, compliant, and accountable workforce systems. Our services cover organization structure, transparent hiring, administration, and digital HRIS platforms.
             </p>
 
-            <div class="slide-modules-box">
-              <div class="modules-header">Key Practice Areas (5 Specialized Modules):</div>
-              <div class="modules-chip-grid">
-                <div class="module-chip"><span class="chip-code">3.1</span> Executive Search &amp; Leadership Hiring</div>
-                <div class="module-chip"><span class="chip-code">3.2</span> Background Verification (BGV) Services</div>
-                <div class="module-chip"><span class="chip-code">3.3</span> HR Policy &amp; HRIS Systems Implementation</div>
-                <div class="module-chip"><span class="chip-code">3.4</span> Payroll &amp; HR Outsourcing Controls</div>
-                <div class="module-chip"><span class="chip-code">3.5</span> Diversity, Equity &amp; Inclusion (DEI) Advisory</div>
+            <div class="slide-deliverable-strip">
+              <div class="deliverable-icon-box">
+                <svg fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z"></path>
+                </svg>
+              </div>
+              <div>
+                <strong>Institutional Deliverable &amp; Safeguards</strong>
+                <p>Verified personnel records, compliant service rules, reliable employee data &amp; continuity of operations.</p>
               </div>
             </div>
 
-            <div class="slide-footer-row">
-              <div class="slide-deliverable-strip">
-                <svg fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
-                </svg>
-                <span>Outcome: Transparent Recruitment &amp; Controlled Workforce Systems</span>
-              </div>
-
+            <div class="slide-actions-row">
               <button class="btn btn-primary btn-service-detail" data-service-id="3">
                 <span>View Full Scope &amp; Methodology</span>
                 <svg fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"></path>
                 </svg>
               </button>
+
+              <a href="#contact" class="btn btn-secondary slide-rfp-btn">
+                <span>Request Scope Briefing</span>
+              </a>
             </div>
           </div>
 
-          <div class="slide-visual-right">
-            <div class="slide-visual-frame">
-              <img 
-                src="https://images.unsplash.com/photo-1522071820081-009f0129c71c?auto=format&fit=crop&w=1200&q=80" 
-                alt="Human Resource Advisory" 
-                class="slide-visual-img" 
-                loading="lazy"
-              >
-              <div class="slide-visual-overlay"></div>
-              <div class="visual-floating-tag">
-                <span class="tag-dot"></span>
-                <span>Leadership Hiring • BGV Vetting • Digital HRIS Architecture</span>
+          <div class="slide-architecture-right">
+            <div class="architecture-panel">
+              <div class="panel-top-header">
+                <div class="panel-title-block">
+                  <span class="panel-code-badge">Practice Vertical 03</span>
+                  <h4>Practice Architecture &amp; Modules</h4>
+                </div>
+                <span class="panel-modules-pill">05 Specialized Modules</span>
+              </div>
+
+              <div class="blueprint-modules-grid">
+                <div class="blueprint-module-card">
+                  <span class="module-number">3.1</span>
+                  <div class="module-content">
+                    <h5>Executive Search &amp; Leadership Hiring</h5>
+                    <p>Transparent role definition, talent identification, and panel appointment support.</p>
+                  </div>
+                </div>
+
+                <div class="blueprint-module-card">
+                  <span class="module-number">3.2</span>
+                  <div class="module-content">
+                    <h5>Background Verification (BGV) Services</h5>
+                    <p>Structured verification of identity, education, employment, and credentials.</p>
+                  </div>
+                </div>
+
+                <div class="blueprint-module-card">
+                  <span class="module-number">3.3</span>
+                  <div class="module-content">
+                    <h5>HR Policy &amp; HRIS Implementation</h5>
+                    <p>Standard operating procedures, approval workflows, and digital HR platforms.</p>
+                  </div>
+                </div>
+
+                <div class="blueprint-module-card">
+                  <span class="module-number">3.4</span>
+                  <div class="module-content">
+                    <h5>Payroll &amp; HR Outsourcing</h5>
+                    <p>Controlled payroll processing, statutory benefits compliance, and SLA reporting.</p>
+                  </div>
+                </div>
+
+                <div class="blueprint-module-card">
+                  <span class="module-number">3.5</span>
+                  <div class="module-content">
+                    <h5>Diversity, Equity &amp; Inclusion (DEI) Advisory</h5>
+                    <p>Fair workplace access, accessibility assessments, and non-discrimination audits.</p>
+                  </div>
+                </div>
+              </div>
+
+              <div class="panel-assurance-strip">
+                <span class="assurance-tag"><span class="dot green"></span> Sanctioned Posts Compliance</span>
+                <span class="assurance-tag"><span class="dot blue"></span> BGV Integrity</span>
+                <span class="assurance-tag"><span class="dot purple"></span> Digital HRIS</span>
               </div>
             </div>
           </div>
@@ -302,50 +436,99 @@ $basePath = isset($basePath) ? $basePath : '';
             <h3 class="slide-title">Learning &amp; <span class="shining-text">Development</span></h3>
 
             <p class="slide-overview">
-              Structured capacity-building programmes for government staff, PSU officers, and partners based on role readiness, verified skill gaps, approved learning outcomes, and digital LMS adoption.
+              We design and implement capacity-building programmes for government staff, PSU employees, programme teams, and partner institutions based on identified skill gaps, approved learning outcomes, and assessment of workplace application.
             </p>
 
-            <div class="slide-modules-box">
-              <div class="modules-header">Key Practice Areas (6 Specialized Modules):</div>
-              <div class="modules-chip-grid">
-                <div class="module-chip"><span class="chip-code">4.1</span> Training Needs Analysis (TNA)</div>
-                <div class="module-chip"><span class="chip-code">4.2</span> Curriculum &amp; Pedagogical Development</div>
-                <div class="module-chip"><span class="chip-code">4.3</span> LMS Platform Implementation &amp; Content</div>
-                <div class="module-chip"><span class="chip-code">4.4</span> Competency Assessment &amp; Certification</div>
-                <div class="module-chip"><span class="chip-code">4.5</span> Capacity Building &amp; Technical Upskilling</div>
-                <div class="module-chip"><span class="chip-code">4.6</span> Executive Leadership &amp; Succession Coaching</div>
+            <div class="slide-deliverable-strip">
+              <div class="deliverable-icon-box">
+                <svg fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253"></path>
+                </svg>
+              </div>
+              <div>
+                <strong>Institutional Deliverable &amp; Safeguards</strong>
+                <p>Structured learning systems linking training expenditure with tested role readiness and skills.</p>
               </div>
             </div>
 
-            <div class="slide-footer-row">
-              <div class="slide-deliverable-strip">
-                <svg fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
-                </svg>
-                <span>Outcome: Measurable Role Readiness &amp; Enduring Capabilities</span>
-              </div>
-
+            <div class="slide-actions-row">
               <button class="btn btn-primary btn-service-detail" data-service-id="4">
                 <span>View Full Scope &amp; Methodology</span>
                 <svg fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"></path>
                 </svg>
               </button>
+
+              <a href="#contact" class="btn btn-secondary slide-rfp-btn">
+                <span>Request Scope Briefing</span>
+              </a>
             </div>
           </div>
 
-          <div class="slide-visual-right">
-            <div class="slide-visual-frame">
-              <img 
-                src="https://images.unsplash.com/photo-1531482615713-2afd69097998?auto=format&fit=crop&w=1200&q=80" 
-                alt="Learning and Development" 
-                class="slide-visual-img" 
-                loading="lazy"
-              >
-              <div class="slide-visual-overlay"></div>
-              <div class="visual-floating-tag">
-                <span class="tag-dot"></span>
-                <span>Institutional TNA • Digital LMS • Executive Competencies</span>
+          <div class="slide-architecture-right">
+            <div class="architecture-panel">
+              <div class="panel-top-header">
+                <div class="panel-title-block">
+                  <span class="panel-code-badge">Practice Vertical 04</span>
+                  <h4>Practice Architecture &amp; Modules</h4>
+                </div>
+                <span class="panel-modules-pill">06 Specialized Modules</span>
+              </div>
+
+              <div class="blueprint-modules-grid">
+                <div class="blueprint-module-card">
+                  <span class="module-number">4.1</span>
+                  <div class="module-content">
+                    <h5>Training Needs Analysis (TNA)</h5>
+                    <p>Evidence-based gap analysis, surveys, records review, and competency audits.</p>
+                  </div>
+                </div>
+
+                <div class="blueprint-module-card">
+                  <span class="module-number">4.2</span>
+                  <div class="module-content">
+                    <h5>Curriculum &amp; Module Development</h5>
+                    <p>Facilitator guides, participant materials, assessments, and digital learning assets.</p>
+                  </div>
+                </div>
+
+                <div class="blueprint-module-card">
+                  <span class="module-number">4.3</span>
+                  <div class="module-content">
+                    <h5>LMS Platform Implementation</h5>
+                    <p>Course architecture, digital roles, content migration, reporting, and adoption.</p>
+                  </div>
+                </div>
+
+                <div class="blueprint-module-card">
+                  <span class="module-number">4.4</span>
+                  <div class="module-content">
+                    <h5>Competency Assessment &amp; Certification</h5>
+                    <p>Transparent evaluation frameworks and credible role-certification decisions.</p>
+                  </div>
+                </div>
+
+                <div class="blueprint-module-card">
+                  <span class="module-number">4.5</span>
+                  <div class="module-content">
+                    <h5>Technical Upskilling Workshops</h5>
+                    <p>Role-based clinics, field handholding, and last-mile capability improvement.</p>
+                  </div>
+                </div>
+
+                <div class="blueprint-module-card">
+                  <span class="module-number">4.6</span>
+                  <div class="module-content">
+                    <h5>Leadership &amp; Succession Coaching</h5>
+                    <p>Executive leadership transition, institutional continuity, and succession planning.</p>
+                  </div>
+                </div>
+              </div>
+
+              <div class="panel-assurance-strip">
+                <span class="assurance-tag"><span class="dot green"></span> Tested Knowledge</span>
+                <span class="assurance-tag"><span class="dot blue"></span> Digital LMS</span>
+                <span class="assurance-tag"><span class="dot purple"></span> Workplace Application</span>
               </div>
             </div>
           </div>
@@ -365,51 +548,107 @@ $basePath = isset($basePath) ? $basePath : '';
             <h3 class="slide-title">Impact <span class="shining-text">Consulting</span></h3>
 
             <p class="slide-overview">
-              Design, monitoring, evaluation, and improvement of social and environmental programmes using field evidence, stakeholder engagement, CSR execution roadmaps, and SROI assessment.
+              We support government agencies, PSUs, and development partners in the design, monitoring, evaluation, and improvement of social and environmental programmes. Our work utilizes field data, stakeholder consultations, CSR execution, and SROI modeling.
             </p>
 
-            <div class="slide-modules-box">
-              <div class="modules-header">Key Practice Areas (7 Specialized Modules):</div>
-              <div class="modules-chip-grid">
-                <div class="module-chip"><span class="chip-code">5.1</span> Social Return on Investment (SROI)</div>
-                <div class="module-chip"><span class="chip-code">5.2</span> Baseline, Midline &amp; Endline Studies</div>
-                <div class="module-chip"><span class="chip-code">5.3</span> Project Monitoring &amp; Evaluation (M&amp;E)</div>
-                <div class="module-chip"><span class="chip-code">5.4</span> Comprehensive Impact Assessments</div>
-                <div class="module-chip"><span class="chip-code">5.5</span> CSR Strategy &amp; Execution Oversight</div>
-                <div class="module-chip"><span class="chip-code">5.6</span> Carbon Offsetting &amp; Net-Zero Roadmaps</div>
-                <div class="module-chip"><span class="chip-code">5.7</span> CSR Communications &amp; Impact Reporting</div>
+            <div class="slide-deliverable-strip">
+              <div class="deliverable-icon-box">
+                <svg fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3.055 11H5a2 2 0 012 2v1a2 2 0 002 2 2 2 0 012 2v2.945M8 3.935V5.5A2.5 2.5 0 0010.5 8h.5a2 2 0 012 2 2 2 0 104 0 2 2 0 012-2h1.064M15 20.488V18a2 2 0 012-2h3.064M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+                </svg>
+              </div>
+              <div>
+                <strong>Institutional Deliverable &amp; Safeguards</strong>
+                <p>Auditable evidence on results, beneficiary coverage, CSR accountability &amp; verified social value.</p>
               </div>
             </div>
 
-            <div class="slide-footer-row">
-              <div class="slide-deliverable-strip">
-                <svg fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
-                </svg>
-                <span>Outcome: Defensible Evidence, Triangulated Field Data &amp; SROI</span>
-              </div>
-
+            <div class="slide-actions-row">
               <button class="btn btn-primary btn-service-detail" data-service-id="5">
                 <span>View Full Scope &amp; Methodology</span>
                 <svg fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"></path>
                 </svg>
               </button>
+
+              <a href="#contact" class="btn btn-secondary slide-rfp-btn">
+                <span>Request Scope Briefing</span>
+              </a>
             </div>
           </div>
 
-          <div class="slide-visual-right">
-            <div class="slide-visual-frame">
-              <img 
-                src="https://images.unsplash.com/photo-1497435334941-8c899ee9e8e9?auto=format&fit=crop&w=1200&q=80" 
-                alt="Impact Consulting" 
-                class="slide-visual-img" 
-                loading="lazy"
-              >
-              <div class="slide-visual-overlay"></div>
-              <div class="visual-floating-tag">
-                <span class="tag-dot"></span>
-                <span>SROI Valuations • M&amp;E Frameworks • Carbon Net-Zero</span>
+          <div class="slide-architecture-right">
+            <div class="architecture-panel">
+              <div class="panel-top-header">
+                <div class="panel-title-block">
+                  <span class="panel-code-badge">Practice Vertical 05</span>
+                  <h4>Practice Architecture &amp; Modules</h4>
+                </div>
+                <span class="panel-modules-pill">07 Specialized Modules</span>
+              </div>
+
+              <div class="blueprint-modules-grid">
+                <div class="blueprint-module-card">
+                  <span class="module-number">5.1</span>
+                  <div class="module-content">
+                    <h5>Social Return on Investment (SROI)</h5>
+                    <p>Material outcome valuation, deadweight assessment, and social value ratio calculation.</p>
+                  </div>
+                </div>
+
+                <div class="blueprint-module-card">
+                  <span class="module-number">5.2</span>
+                  <div class="module-content">
+                    <h5>Baseline, Midline &amp; Endline Studies</h5>
+                    <p>Quantitative and qualitative reference tracking during programme implementation.</p>
+                  </div>
+                </div>
+
+                <div class="blueprint-module-card">
+                  <span class="module-number">5.3</span>
+                  <div class="module-content">
+                    <h5>Project Monitoring &amp; Evaluation (M&amp;E)</h5>
+                    <p>Results frameworks, dashboards, data protocols, and corrective-action tracking.</p>
+                  </div>
+                </div>
+
+                <div class="blueprint-module-card">
+                  <span class="module-number">5.4</span>
+                  <div class="module-content">
+                    <h5>Comprehensive Impact Assessments</h5>
+                    <p>Relevance, effectiveness, efficiency, inclusion, and sustainability evaluation.</p>
+                  </div>
+                </div>
+
+                <div class="blueprint-module-card">
+                  <span class="module-number">5.5</span>
+                  <div class="module-content">
+                    <h5>CSR Strategy &amp; Execution</h5>
+                    <p>Needs prioritization, partner due diligence, and statutory Schedule VII compliance.</p>
+                  </div>
+                </div>
+
+                <div class="blueprint-module-card">
+                  <span class="module-number">5.6</span>
+                  <div class="module-content">
+                    <h5>Carbon Offsetting &amp; Net-Zero Roadmaps</h5>
+                    <p>Emissions baselining, decarbonization pathways, and carbon offset screening.</p>
+                  </div>
+                </div>
+
+                <div class="blueprint-module-card">
+                  <span class="module-number">5.7</span>
+                  <div class="module-content">
+                    <h5>CSR Communications &amp; Reporting</h5>
+                    <p>Conveying outcomes clearly to stakeholders, regulators, and the public.</p>
+                  </div>
+                </div>
+              </div>
+
+              <div class="panel-assurance-strip">
+                <span class="assurance-tag"><span class="dot green"></span> Verified SROI</span>
+                <span class="assurance-tag"><span class="dot blue"></span> Statutory CSR Compliance</span>
+                <span class="assurance-tag"><span class="dot purple"></span> Field Evidence</span>
               </div>
             </div>
           </div>
@@ -429,49 +668,91 @@ $basePath = isset($basePath) ? $basePath : '';
             <h3 class="slide-title">Strategic Growth &amp; <span class="shining-text">Market Advisory</span></h3>
 
             <p class="slide-overview">
-              Assisting institutions and enterprises in qualifying and winning opportunities arising from government programmes, public sector procurement, tender bid strategies, and economic reforms.
+              We support institutions and private entities in qualifying and securing opportunities arising from government policies, public procurement plans, sector reforms, and tenders based on proper procedure, ethical engagement, and realistic delivery planning.
             </p>
 
-            <div class="slide-modules-box">
-              <div class="modules-header">Key Practice Areas (5 Specialized Modules):</div>
-              <div class="modules-chip-grid">
-                <div class="module-chip"><span class="chip-code">6.1</span> Pre-Sales Support &amp; Bid Preparation</div>
-                <div class="module-chip"><span class="chip-code">6.2</span> Market Intelligence &amp; Competitor Analysis</div>
-                <div class="module-chip"><span class="chip-code">6.3</span> Go-To-Market (GTM) Expansion Strategy</div>
-                <div class="module-chip"><span class="chip-code">6.4</span> Government Relations &amp; Public Policy</div>
-                <div class="module-chip"><span class="chip-code">6.5</span> Brand &amp; Marketing Advisory</div>
+            <div class="slide-deliverable-strip">
+              <div class="deliverable-icon-box">
+                <svg fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 7h8m0 0v8m0-8l-8 8-4-4-6 6"></path>
+                </svg>
+              </div>
+              <div>
+                <strong>Institutional Deliverable &amp; Safeguards</strong>
+                <p>Compliant pre-sales proposals, verified bid matrices, clear GTM roadmaps &amp; risk registers.</p>
               </div>
             </div>
 
-            <div class="slide-footer-row">
-              <div class="slide-deliverable-strip">
-                <svg fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
-                </svg>
-                <span>Outcome: High-Win Rate Bids &amp; Compliant Market Penetration</span>
-              </div>
-
+            <div class="slide-actions-row">
               <button class="btn btn-primary btn-service-detail" data-service-id="6">
                 <span>View Full Scope &amp; Methodology</span>
                 <svg fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"></path>
                 </svg>
               </button>
+
+              <a href="#contact" class="btn btn-secondary slide-rfp-btn">
+                <span>Request Scope Briefing</span>
+              </a>
             </div>
           </div>
 
-          <div class="slide-visual-right">
-            <div class="slide-visual-frame">
-              <img 
-                src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&w=1200&q=80" 
-                alt="Business Development and Strategic Growth" 
-                class="slide-visual-img" 
-                loading="lazy"
-              >
-              <div class="slide-visual-overlay"></div>
-              <div class="visual-floating-tag">
-                <span class="tag-dot"></span>
-                <span>Public Procurement Bids • GTM Strategy • Market Policy</span>
+          <div class="slide-architecture-right">
+            <div class="architecture-panel">
+              <div class="panel-top-header">
+                <div class="panel-title-block">
+                  <span class="panel-code-badge">Practice Vertical 06</span>
+                  <h4>Practice Architecture &amp; Modules</h4>
+                </div>
+                <span class="panel-modules-pill">05 Specialized Modules</span>
+              </div>
+
+              <div class="blueprint-modules-grid">
+                <div class="blueprint-module-card">
+                  <span class="module-number">6.1</span>
+                  <div class="module-content">
+                    <h5>Pre-Sales Support &amp; Bid Preparation</h5>
+                    <p>Opportunity qualification, compliance matrices, methodologies, and proposal drafting.</p>
+                  </div>
+                </div>
+
+                <div class="blueprint-module-card">
+                  <span class="module-number">6.2</span>
+                  <div class="module-content">
+                    <h5>Market Intelligence &amp; Analysis</h5>
+                    <p>Programme budgets, policy priorities, procurement pipelines, and competitor reviews.</p>
+                  </div>
+                </div>
+
+                <div class="blueprint-module-card">
+                  <span class="module-number">6.3</span>
+                  <div class="module-content">
+                    <h5>Go-To-Market (GTM) Strategy</h5>
+                    <p>Sector-entry pathways, institutional stakeholder maps, and capability packaging.</p>
+                  </div>
+                </div>
+
+                <div class="blueprint-module-card">
+                  <span class="module-number">6.4</span>
+                  <div class="module-content">
+                    <h5>Government Relations &amp; Public Policy</h5>
+                    <p>Policy tracking, consultation papers, and compliant procedural representations.</p>
+                  </div>
+                </div>
+
+                <div class="blueprint-module-card">
+                  <span class="module-number">6.5</span>
+                  <div class="module-content">
+                    <h5>Brand &amp; Marketing Advisory</h5>
+                    <p>Institutional messaging, factual credentials, and compliant external visibility.</p>
+                  </div>
+                </div>
+              </div>
+
+              <div class="panel-assurance-strip">
+                <span class="assurance-tag"><span class="dot green"></span> Procurement Integrity</span>
+                <span class="assurance-tag"><span class="dot blue"></span> Bid Success Rate</span>
+                <span class="assurance-tag"><span class="dot purple"></span> Policy Alignment</span>
               </div>
             </div>
           </div>
@@ -497,49 +778,91 @@ $basePath = isset($basePath) ? $basePath : '';
             <h3 class="slide-title">Financial Services &amp; <span class="shining-text">Assurance</span></h3>
 
             <p class="slide-overview">
-              Comprehensive financial governance, statutory audit, international taxation, internal risk reviews, forensic accounting, M&amp;A valuation, and ESG financial risk frameworks for regulated bodies.
+              Through our partner Chartered Accountancy firm empanelled with the Comptroller &amp; Auditor General (CAG) of India, we provide accounting, audit, tax, assurance, transaction support, and financial governance to institutions, PSUs, and corporate clients.
             </p>
 
-            <div class="slide-modules-box">
-              <div class="modules-header">Key Practice Areas (5 Specialized Modules):</div>
-              <div class="modules-chip-grid">
-                <div class="module-chip"><span class="chip-code">7.1</span> Corporate &amp; International Taxation</div>
-                <div class="module-chip"><span class="chip-code">7.2</span> Statutory Audit &amp; Financial Reporting</div>
-                <div class="module-chip"><span class="chip-code">7.3</span> Internal, Risk &amp; Forensic Audit</div>
-                <div class="module-chip"><span class="chip-code">7.4</span> Accounting &amp; Bookkeeping Services</div>
-                <div class="module-chip"><span class="chip-code">7.5</span> M&amp;A Advisory, Valuation &amp; Structuring</div>
+            <div class="slide-deliverable-strip">
+              <div class="deliverable-icon-box">
+                <svg fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+                </svg>
+              </div>
+              <div>
+                <strong>Institutional Deliverable &amp; Safeguards</strong>
+                <p>Audit-tested accounts, verified statutory filings, forensic risk mitigation &amp; defended public expenditure.</p>
               </div>
             </div>
 
-            <div class="slide-footer-row">
-              <div class="slide-deliverable-strip">
-                <svg fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
-                </svg>
-                <span>Outcome: Statutory Compliance, Risk Mitigation &amp; Defensible Books</span>
-              </div>
-
+            <div class="slide-actions-row">
               <button class="btn btn-primary btn-service-detail" data-service-id="7">
                 <span>View Full Scope &amp; Methodology</span>
                 <svg fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"></path>
                 </svg>
               </button>
+
+              <a href="#contact" class="btn btn-secondary slide-rfp-btn">
+                <span>Request Scope Briefing</span>
+              </a>
             </div>
           </div>
 
-          <div class="slide-visual-right">
-            <div class="slide-visual-frame">
-              <img 
-                src="https://images.unsplash.com/photo-1554224155-6726b3ff858f?auto=format&fit=crop&w=1200&q=80" 
-                alt="Financial Services and Advisory" 
-                class="slide-visual-img" 
-                loading="lazy"
-              >
-              <div class="slide-visual-overlay"></div>
-              <div class="visual-floating-tag">
-                <span class="tag-dot"></span>
-                <span>CAG Standards • Forensic Assurance • M&amp;A Structuring</span>
+          <div class="slide-architecture-right">
+            <div class="architecture-panel">
+              <div class="panel-top-header">
+                <div class="panel-title-block">
+                  <span class="panel-code-badge">Practice Vertical 07</span>
+                  <h4>Practice Architecture &amp; Modules</h4>
+                </div>
+                <span class="panel-modules-pill">05 Specialized Modules</span>
+              </div>
+
+              <div class="blueprint-modules-grid">
+                <div class="blueprint-module-card">
+                  <span class="module-number">7.1</span>
+                  <div class="module-content">
+                    <h5>Corporate &amp; International Taxation</h5>
+                    <p>Direct/indirect tax compliance, GST returns, transfer pricing, and representations.</p>
+                  </div>
+                </div>
+
+                <div class="blueprint-module-card">
+                  <span class="module-number">7.2</span>
+                  <div class="module-content">
+                    <h5>Statutory Audit &amp; Reporting</h5>
+                    <p>Independent verification under Companies Act, CAG guidelines, and accounting standards.</p>
+                  </div>
+                </div>
+
+                <div class="blueprint-module-card">
+                  <span class="module-number">7.3</span>
+                  <div class="module-content">
+                    <h5>Internal, Risk &amp; Forensic Audit</h5>
+                    <p>Internal controls, transaction testing, fund-use verification, and fraud detection.</p>
+                  </div>
+                </div>
+
+                <div class="blueprint-module-card">
+                  <span class="module-number">7.4</span>
+                  <div class="module-content">
+                    <h5>Accounting &amp; Bookkeeping Services</h5>
+                    <p>Ledger maintenance, financial statements, MIS reports, and statutory reconciliations.</p>
+                  </div>
+                </div>
+
+                <div class="blueprint-module-card">
+                  <span class="module-number">7.5</span>
+                  <div class="module-content">
+                    <h5>M&amp;A Advisory, Valuation &amp; Restructuring</h5>
+                    <p>Financial due diligence, business valuation, and capital-structuring advisory.</p>
+                  </div>
+                </div>
+              </div>
+
+              <div class="panel-assurance-strip">
+                <span class="assurance-tag"><span class="dot green"></span> CAG Empanelled CA</span>
+                <span class="assurance-tag"><span class="dot blue"></span> Statutory Standards</span>
+                <span class="assurance-tag"><span class="dot purple"></span> Forensic Assurance</span>
               </div>
             </div>
           </div>
@@ -559,49 +882,91 @@ $basePath = isset($basePath) ? $basePath : '';
             <h3 class="slide-title">Business Operations <span class="shining-text">Optimization</span></h3>
 
             <p class="slide-overview">
-              Diagnosing institutional bottlenecks, Lean Six Sigma process re-engineering, supply chain enhancement, corporate resource allocation, RPA digitization, and managed change implementation.
+              We assist public institutions, PSUs, and growing businesses in improving operational performance, reducing bottlenecks, optimizing resource allocation, and implementing robust process controls and workflow digitization.
             </p>
 
-            <div class="slide-modules-box">
-              <div class="modules-header">Key Practice Areas (5 Specialized Modules):</div>
-              <div class="modules-chip-grid">
-                <div class="module-chip"><span class="chip-code">8.1</span> Supply Chain &amp; Logistics Optimization</div>
-                <div class="module-chip"><span class="chip-code">8.2</span> Corporate Resource Allocation</div>
-                <div class="module-chip"><span class="chip-code">8.3</span> Process Re-Engineering &amp; Lean Six Sigma</div>
-                <div class="module-chip"><span class="chip-code">8.4</span> RPA &amp; Workflow Automation</div>
-                <div class="module-chip"><span class="chip-code">8.5</span> Organizational Change Management</div>
+            <div class="slide-deliverable-strip">
+              <div class="deliverable-icon-box">
+                <svg fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10.325 4.317c.426-1.756 2.924-1.756 3.35 0a1.724 1.724 0 002.573 1.066c1.543-.94 3.31.826 2.37 2.37a1.724 1.724 0 001.065 2.572c1.756.426 1.756 2.924 0 3.35a1.724 1.724 0 00-1.066 2.573c.94 1.543-.826 3.31-2.37 2.37a1.724 1.724 0 00-2.572 1.065c-.426 1.756-2.924 1.756-3.35 0a1.724 1.724 0 00-2.573-1.066c-1.543.94-3.31-.826-2.37-2.37a1.724 1.724 0 00-1.065-2.572c-1.756-.426-1.756-2.924 0-3.35a1.724 1.724 0 001.066-2.573c-.94-1.543.826-3.31 2.37-2.37.996.608 2.296.07 2.572-1.065z"></path>
+                </svg>
+              </div>
+              <div>
+                <strong>Institutional Deliverable &amp; Safeguards</strong>
+                <p>Documented SOPs, verified process KPIs, reduced cycle times &amp; measurable cost efficiencies.</p>
               </div>
             </div>
 
-            <div class="slide-footer-row">
-              <div class="slide-deliverable-strip">
-                <svg fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
-                </svg>
-                <span>Outcome: Lower Operating Friction, Cost Savings &amp; Streamlined SOPs</span>
-              </div>
-
+            <div class="slide-actions-row">
               <button class="btn btn-primary btn-service-detail" data-service-id="8">
                 <span>View Full Scope &amp; Methodology</span>
                 <svg fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"></path>
                 </svg>
               </button>
+
+              <a href="#contact" class="btn btn-secondary slide-rfp-btn">
+                <span>Request Scope Briefing</span>
+              </a>
             </div>
           </div>
 
-          <div class="slide-visual-right">
-            <div class="slide-visual-frame">
-              <img 
-                src="https://images.unsplash.com/photo-1586528116311-ad8dd3c8310d?auto=format&fit=crop&w=1200&q=80" 
-                alt="Business Operations Optimization" 
-                class="slide-visual-img" 
-                loading="lazy"
-              >
-              <div class="slide-visual-overlay"></div>
-              <div class="visual-floating-tag">
-                <span class="tag-dot"></span>
-                <span>Supply Chain Logistics • Lean Six Sigma • RPA Automation</span>
+          <div class="slide-architecture-right">
+            <div class="architecture-panel">
+              <div class="panel-top-header">
+                <div class="panel-title-block">
+                  <span class="panel-code-badge">Practice Vertical 08</span>
+                  <h4>Practice Architecture &amp; Modules</h4>
+                </div>
+                <span class="panel-modules-pill">05 Specialized Modules</span>
+              </div>
+
+              <div class="blueprint-modules-grid">
+                <div class="blueprint-module-card">
+                  <span class="module-number">8.1</span>
+                  <div class="module-content">
+                    <h5>Supply Chain &amp; Logistics Optimization</h5>
+                    <p>Procurement flows, inventory management, warehousing, and vendor service levels.</p>
+                  </div>
+                </div>
+
+                <div class="blueprint-module-card">
+                  <span class="module-number">8.2</span>
+                  <div class="module-content">
+                    <h5>Corporate Resource Allocation</h5>
+                    <p>Operating expenditure review, workload-balancing, and asset utilization models.</p>
+                  </div>
+                </div>
+
+                <div class="blueprint-module-card">
+                  <span class="module-number">8.3</span>
+                  <div class="module-content">
+                    <h5>Process Re-Engineering &amp; Lean Six Sigma</h5>
+                    <p>Workflow mapping, friction elimination, standard operating procedures, and controls.</p>
+                  </div>
+                </div>
+
+                <div class="blueprint-module-card">
+                  <span class="module-number">8.4</span>
+                  <div class="module-content">
+                    <h5>RPA &amp; Workflow Automation</h5>
+                    <p>Automating routine data entry, approval routes, reconciliations, and reporting.</p>
+                  </div>
+                </div>
+
+                <div class="blueprint-module-card">
+                  <span class="module-number">8.5</span>
+                  <div class="module-content">
+                    <h5>Organizational Change Management</h5>
+                    <p>Stakeholder communication, user training, and phased adoption management.</p>
+                  </div>
+                </div>
+              </div>
+
+              <div class="panel-assurance-strip">
+                <span class="assurance-tag"><span class="dot green"></span> Lean Six Sigma</span>
+                <span class="assurance-tag"><span class="dot blue"></span> RPA Digitization</span>
+                <span class="assurance-tag"><span class="dot purple"></span> Cost Optimization</span>
               </div>
             </div>
           </div>
@@ -621,48 +986,83 @@ $basePath = isset($basePath) ? $basePath : '';
             <h3 class="slide-title">Digital Transformation &amp; <span class="shining-text">Technology</span></h3>
 
             <p class="slide-overview">
-              Architecting secure, user-centric digital platforms, IT enterprise blueprints, systems integration, process automation, and statutory cybersecurity risk assessments for institutional scale.
+              We assist public sector bodies, institutions, and businesses in planning, procuring, implementing, and governing digital systems. Our focus is secure, scalable, and user-adopted technology solutions aligned with policy rules and organizational goals.
             </p>
 
-            <div class="slide-modules-box">
-              <div class="modules-header">Key Practice Areas (4 Specialized Modules):</div>
-              <div class="modules-chip-grid">
-                <div class="module-chip"><span class="chip-code">9.1</span> IT Strategy &amp; Enterprise Architecture</div>
-                <div class="module-chip"><span class="chip-code">9.2</span> Process Automation &amp; Systems Integration</div>
-                <div class="module-chip"><span class="chip-code">9.3</span> Cybersecurity Risk Assessment &amp; Compliance</div>
-                <div class="module-chip"><span class="chip-code">9.4</span> Custom Software &amp; Platform Engineering</div>
+            <div class="slide-deliverable-strip">
+              <div class="deliverable-icon-box">
+                <svg fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9.75 17L9 20l-1 1h8l-1-1-.75-3M3 13h18M5 17h14a2 2 0 002-2V5a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"></path>
+                </svg>
+              </div>
+              <div>
+                <strong>Institutional Deliverable &amp; Safeguards</strong>
+                <p>Auditable enterprise architecture, data security certification, zero vendor lock-in &amp; high adoption.</p>
               </div>
             </div>
 
-            <div class="slide-footer-row">
-              <div class="slide-deliverable-strip">
-                <svg fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
-                </svg>
-                <span>Outcome: Connected Systems, Zero Data Loss &amp; High User Adoption</span>
-              </div>
-
+            <div class="slide-actions-row">
               <button class="btn btn-primary btn-service-detail" data-service-id="9">
                 <span>View Full Scope &amp; Methodology</span>
                 <svg fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"></path>
                 </svg>
               </button>
+
+              <a href="#contact" class="btn btn-secondary slide-rfp-btn">
+                <span>Request Scope Briefing</span>
+              </a>
             </div>
           </div>
 
-          <div class="slide-visual-right">
-            <div class="slide-visual-frame">
-              <img 
-                src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?auto=format&fit=crop&w=1200&q=80" 
-                alt="Digital Transformation and Technology Advisory" 
-                class="slide-visual-img" 
-                loading="lazy"
-              >
-              <div class="slide-visual-overlay"></div>
-              <div class="visual-floating-tag">
-                <span class="tag-dot"></span>
-                <span>Enterprise Architecture • Cybersecurity • Platform Engineering</span>
+          <div class="slide-architecture-right">
+            <div class="architecture-panel">
+              <div class="panel-top-header">
+                <div class="panel-title-block">
+                  <span class="panel-code-badge">Practice Vertical 09</span>
+                  <h4>Practice Architecture &amp; Modules</h4>
+                </div>
+                <span class="panel-modules-pill">04 Specialized Modules</span>
+              </div>
+
+              <div class="blueprint-modules-grid">
+                <div class="blueprint-module-card">
+                  <span class="module-number">9.1</span>
+                  <div class="module-content">
+                    <h5>IT Strategy &amp; Enterprise Architecture</h5>
+                    <p>Current-state audit, future architecture roadmap, technology selection, and budgets.</p>
+                  </div>
+                </div>
+
+                <div class="blueprint-module-card">
+                  <span class="module-number">9.2</span>
+                  <div class="module-content">
+                    <h5>Process Automation &amp; Systems Integration</h5>
+                    <p>Interfacing legacy databases, core transactional workflows, and departmental portals.</p>
+                  </div>
+                </div>
+
+                <div class="blueprint-module-card">
+                  <span class="module-number">9.3</span>
+                  <div class="module-content">
+                    <h5>Cybersecurity Risk Assessment &amp; Compliance</h5>
+                    <p>Vulnerability testing, data protection, security SOPs, and statutory CERT-In alignment.</p>
+                  </div>
+                </div>
+
+                <div class="blueprint-module-card">
+                  <span class="module-number">9.4</span>
+                  <div class="module-content">
+                    <h5>Custom Software &amp; Platform Engineering</h5>
+                    <p>Web applications, mobile portals, MIS dashboards, and citizen-facing services.</p>
+                  </div>
+                </div>
+              </div>
+
+              <div class="panel-assurance-strip">
+                <span class="assurance-tag"><span class="dot green"></span> CERT-In Compliance</span>
+                <span class="assurance-tag"><span class="dot blue"></span> Open-Standards Architecture</span>
+                <span class="assurance-tag"><span class="dot purple"></span> Zero Data Loss</span>
               </div>
             </div>
           </div>
