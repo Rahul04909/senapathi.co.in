@@ -212,22 +212,8 @@ document.addEventListener('DOMContentLoaded', () => {
       siteHeader.classList.remove('scrolled');
     }
 
-    if (window.scrollY > 450) {
-      // Hide floating back-to-top while browsing the mobile services horizontal track
-      let insideServices = false;
-      const servicesSection = document.getElementById('services');
-      if (window.innerWidth <= 991 && servicesSection) {
-        const sRect = servicesSection.getBoundingClientRect();
-        if (sRect.top <= 120 && sRect.bottom >= 150) {
-          insideServices = true;
-        }
-      }
-
-      if (insideServices) {
-        backToTop.classList.remove('visible');
-      } else {
-        backToTop.classList.add('visible');
-      }
+    if (window.scrollY > 400) {
+      backToTop.classList.add('visible');
     } else {
       backToTop.classList.remove('visible');
     }
@@ -239,241 +225,41 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   }
 
-  // 3. Award-Winning Horizontal Services Scroll Showcase Controller
-  const pinWrapper = document.getElementById('servicesPinWrapper');
-  const horizontalTrack = document.getElementById('servicesHorizontalTrack');
-  const slideCards = document.querySelectorAll('.service-slide-card');
-  const progressBar = document.getElementById('servicesScrollProgress');
-  const counterCurrent = document.getElementById('currentServiceCounter');
-  const titleCurrent = document.getElementById('currentServiceTitle');
-  const pillBtns = document.querySelectorAll('.service-pill-btn');
-  const prevBtn = document.getElementById('prevServiceBtn');
-  const nextBtn = document.getElementById('nextServiceBtn');
+  // 3. Professional Institutional Services Category Filtering & Module Drawers
+  const filterBtns = document.querySelectorAll('.service-filter-btn');
+  const serviceCards = document.querySelectorAll('.service-grid-card');
 
-  const serviceTitles = [
-    "Real Estate Transaction Advisory",
-    "Infrastructure Consulting",
-    "Human Resources (HR) Advisory",
-    "Learning & Development (L&D)",
-    "Impact Consulting & CSR",
-    "Strategic Growth & Procurement",
-    "Financial Services & Advisory",
-    "Business Operations Optimization",
-    "Digital Solutions & IT Strategy"
-  ];
-
-  let currentActiveIndex = 0;
-
-  function updateServiceActiveState(index) {
-    currentActiveIndex = Math.max(0, Math.min(index, slideCards.length - 1));
-    if (counterCurrent) {
-      counterCurrent.textContent = String(currentActiveIndex + 1).padStart(2, '0');
-    }
-    if (titleCurrent && serviceTitles[currentActiveIndex]) {
-      titleCurrent.textContent = serviceTitles[currentActiveIndex];
-    }
-    if (progressBar) {
-      progressBar.style.width = `${((currentActiveIndex + 1) / slideCards.length) * 100}%`;
-    }
-
-    const pillsContainer = document.getElementById('servicesFilterPills');
-    pillBtns.forEach((pill, idx) => {
-      if (idx === currentActiveIndex) {
-        pill.classList.add('active');
-        if (pillsContainer) {
-          const pillLeft = pill.offsetLeft;
-          const pillWidth = pill.offsetWidth;
-          const cWidth = pillsContainer.offsetWidth;
-          pillsContainer.scrollTo({
-            left: pillLeft - (cWidth / 2) + (pillWidth / 2),
-            behavior: 'smooth'
-          });
-        }
-      } else {
-        pill.classList.remove('active');
-      }
-    });
-  }
-
-  // Setup GSAP ScrollTrigger for desktop pinning
-  if (typeof gsap !== 'undefined' && typeof ScrollTrigger !== 'undefined' && pinWrapper && horizontalTrack && slideCards.length > 0) {
-    gsap.registerPlugin(ScrollTrigger);
-
-    let mm = gsap.matchMedia();
-
-    mm.add("(min-width: 992px)", () => {
-      const getScrollAmount = () => {
-        return -(horizontalTrack.scrollWidth - window.innerWidth);
-      };
-
-      const getHeaderHeight = () => {
-        const header = document.getElementById('siteHeader');
-        return header ? header.offsetHeight : 72;
-      };
-
-      const pillsContainer = document.getElementById('servicesFilterPills');
-
-      const horizontalTween = gsap.to(horizontalTrack, {
-        x: getScrollAmount,
-        ease: "none",
-        scrollTrigger: {
-          trigger: pinWrapper,
-          start: () => `top ${getHeaderHeight()}px`,
-          end: () => `+=${horizontalTrack.scrollWidth - window.innerWidth}`,
-          pin: true,
-          pinSpacing: true,
-          scrub: 0.6,
-          invalidateOnRefresh: true,
-          anticipatePin: 1,
-          onUpdate: (self) => {
-            const progress = self.progress;
-            if (progressBar) {
-              progressBar.style.width = `${Math.max(11, progress * 100)}%`;
-            }
-            const slideIdx = Math.min(Math.floor(progress * slideCards.length), slideCards.length - 1);
-            if (counterCurrent) {
-              counterCurrent.textContent = String(slideIdx + 1).padStart(2, '0');
-            }
-            if (titleCurrent && serviceTitles[slideIdx] && titleCurrent.textContent !== serviceTitles[slideIdx]) {
-              titleCurrent.textContent = serviceTitles[slideIdx];
-            }
-            if (currentActiveIndex !== slideIdx) {
-              currentActiveIndex = slideIdx;
-              pillBtns.forEach((pill, idx) => {
-                if (idx === slideIdx) {
-                  pill.classList.add('active');
-                  if (pillsContainer) {
-                    const pillLeft = pill.offsetLeft;
-                    const pillWidth = pill.offsetWidth;
-                    const cWidth = pillsContainer.offsetWidth;
-                    pillsContainer.scrollTo({
-                      left: pillLeft - (cWidth / 2) + (pillWidth / 2),
-                      behavior: 'smooth'
-                    });
-                  }
-                } else {
-                  pill.classList.remove('active');
-                }
-              });
-            }
-          }
-        }
-      });
-
-      // Jump pill handler on desktop
-      pillBtns.forEach(pill => {
-        pill.addEventListener('click', () => {
-          const targetIdx = parseInt(pill.getAttribute('data-target-index'));
-          if (isNaN(targetIdx)) return;
-
-          const totalDistance = horizontalTrack.scrollWidth - window.innerWidth;
-          const targetProgress = targetIdx / (slideCards.length - 1);
-          const startScroll = horizontalTween.scrollTrigger.start;
-          const targetScrollPos = startScroll + (targetProgress * totalDistance);
-
-          window.scrollTo({
-            top: targetScrollPos,
-            behavior: 'smooth'
-          });
-        });
-      });
-
-      // Prev / Next button handlers on desktop
-      if (prevBtn) {
-        prevBtn.addEventListener('click', () => {
-          const prevIdx = Math.max(0, currentActiveIndex - 1);
-          const totalDistance = horizontalTrack.scrollWidth - window.innerWidth;
-          const targetProgress = prevIdx / (slideCards.length - 1);
-          const targetScrollPos = horizontalTween.scrollTrigger.start + (targetProgress * totalDistance);
-          window.scrollTo({ top: targetScrollPos, behavior: 'smooth' });
-        });
-      }
-
-      if (nextBtn) {
-        nextBtn.addEventListener('click', () => {
-          const nextIdx = Math.min(slideCards.length - 1, currentActiveIndex + 1);
-          const totalDistance = horizontalTrack.scrollWidth - window.innerWidth;
-          const targetProgress = nextIdx / (slideCards.length - 1);
-          const targetScrollPos = horizontalTween.scrollTrigger.start + (targetProgress * totalDistance);
-          window.scrollTo({ top: targetScrollPos, behavior: 'smooth' });
-        });
-      }
-
-      return () => {
-        horizontalTween.kill();
-      };
-    });
-
-    mm.add("(max-width: 991px)", () => {
-      const viewport = document.querySelector('.services-track-viewport');
-      if (viewport && slideCards.length > 0) {
-        function scrollToServiceCard(idx) {
-          if (!slideCards[idx] || !viewport) return;
-          const targetLeft = slideCards[idx].offsetLeft - (viewport.clientWidth - slideCards[idx].offsetWidth) / 2;
-          viewport.scrollTo({ left: Math.max(0, targetLeft), behavior: 'smooth' });
-          updateServiceActiveState(idx);
-        }
-
-        let scrollTimeout;
-        viewport.addEventListener('scroll', () => {
-          clearTimeout(scrollTimeout);
-          scrollTimeout = setTimeout(() => {
-            const viewportCenter = viewport.scrollLeft + (viewport.clientWidth / 2);
-            let closestIdx = 0;
-            let minDiff = Infinity;
-            slideCards.forEach((card, idx) => {
-              const cardCenter = card.offsetLeft + (card.offsetWidth / 2);
-              const diff = Math.abs(viewportCenter - cardCenter);
-              if (diff < minDiff) {
-                minDiff = diff;
-                closestIdx = idx;
-              }
-            });
-            updateServiceActiveState(closestIdx);
-          }, 50);
-        }, { passive: true });
-
-        if (prevBtn) {
-          prevBtn.addEventListener('click', () => {
-            const prevIdx = Math.max(0, currentActiveIndex - 1);
-            scrollToServiceCard(prevIdx);
-          });
-        }
-        if (nextBtn) {
-          nextBtn.addEventListener('click', () => {
-            const nextIdx = Math.min(slideCards.length - 1, currentActiveIndex + 1);
-            scrollToServiceCard(nextIdx);
-          });
-        }
-
-        pillBtns.forEach(pill => {
-          pill.addEventListener('click', () => {
-            const targetIdx = parseInt(pill.getAttribute('data-target-index'));
-            if (!isNaN(targetIdx)) {
-              scrollToServiceCard(targetIdx);
-            }
-          });
-        });
-      }
-    });
-  }
-
-  // Mobile Card Segmented Tabs Controller (Scope & Deliverables vs Architecture Modules)
-  document.querySelectorAll('.service-slide-card').forEach(card => {
-    const tabBtns = card.querySelectorAll('.card-tab-btn');
-    tabBtns.forEach(btn => {
-      btn.addEventListener('click', (e) => {
-        e.preventDefault();
-        e.stopPropagation();
-        const tab = btn.getAttribute('data-tab');
-        tabBtns.forEach(b => b.classList.remove('active'));
+  if (filterBtns.length > 0 && serviceCards.length > 0) {
+    filterBtns.forEach(btn => {
+      btn.addEventListener('click', () => {
+        const filterVal = btn.getAttribute('data-filter');
+        filterBtns.forEach(b => b.classList.remove('active'));
         btn.classList.add('active');
-        if (tab === 'modules') {
-          card.classList.add('show-modules');
-        } else {
-          card.classList.remove('show-modules');
-        }
+
+        serviceCards.forEach(card => {
+          const category = card.getAttribute('data-category');
+          if (filterVal === 'all' || category === filterVal) {
+            card.classList.remove('filtered-out');
+          } else {
+            card.classList.add('filtered-out');
+          }
+        });
       });
+    });
+  }
+
+  // Module Accordion Drawer Toggle inside each card
+  document.querySelectorAll('.card-modules-toggle').forEach(toggleBtn => {
+    toggleBtn.addEventListener('click', (e) => {
+      e.preventDefault();
+      e.stopPropagation();
+      const isExpanded = toggleBtn.getAttribute('aria-expanded') === 'true';
+      const drawer = toggleBtn.nextElementSibling;
+      
+      toggleBtn.setAttribute('aria-expanded', String(!isExpanded));
+      if (drawer) {
+        drawer.classList.toggle('open', !isExpanded);
+      }
     });
   });
 
