@@ -433,20 +433,90 @@
 }
 
 /* ==========================================================================
-   4. Mobile Responsiveness
+   4. Mobile Responsiveness & Touch Interactions
    ========================================================================== */
+.about-actions-row {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  flex-wrap: wrap;
+}
+
 @media (max-width: 768px) {
   .about-video-frame {
-    aspect-ratio: 16 / 10;
+    aspect-ratio: 16 / 9;
+    border-radius: var(--radius-xl);
+  }
+
+  .about-video-meta {
+    padding: 16px 14px;
+    border-radius: var(--radius-lg);
   }
 
   .about-features-list {
     grid-template-columns: 1fr;
-    gap: 12px;
+    gap: 10px;
+  }
+
+  .about-feature-card {
+    padding: 14px 16px;
+    -webkit-tap-highlight-color: transparent;
+  }
+
+  .about-feature-card:active {
+    transform: scale(0.98);
+    background: var(--color-primary-50);
+    border-color: var(--color-primary-400);
   }
 
   .about-lead {
-    font-size: 1.0625rem;
+    font-size: 1rem;
+    line-height: 1.6;
+    margin-bottom: 20px;
+  }
+}
+
+@media (max-width: 576px) {
+  .about-actions-row {
+    flex-direction: column;
+    width: 100%;
+    gap: 12px;
+  }
+
+  .about-actions-row .btn {
+    width: 100%;
+    justify-content: center;
+    min-height: 48px;
+  }
+
+  .video-meta-card {
+    gap: 10px;
+  }
+
+  .meta-icon-box {
+    width: 38px;
+    height: 38px;
+  }
+
+  .meta-icon-box svg {
+    width: 19px;
+    height: 19px;
+  }
+
+  .meta-info h6 {
+    font-size: 0.875rem;
+  }
+
+  .meta-info p {
+    font-size: 0.75rem;
+  }
+
+  .stat-number {
+    font-size: 1.125rem;
+  }
+
+  .stat-label {
+    font-size: 0.625rem;
   }
 }
 

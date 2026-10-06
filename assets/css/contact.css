@@ -151,12 +151,32 @@
 
 @media (max-width: 600px) {
   .contact-form-container {
-    padding: 28px 20px;
+    padding: 24px 16px;
+    border-radius: var(--radius-lg);
+  }
+
+  .form-header h3 {
+    font-size: 1.3rem;
+  }
+
+  .contact-card-box {
+    padding: 16px 14px;
+    -webkit-tap-highlight-color: transparent;
+  }
+
+  .contact-card-box:active {
+    transform: scale(0.98);
+    background: var(--color-primary-50);
+    border-color: var(--color-primary-300);
+  }
+
+  .confidentiality-badge {
+    padding: 14px 16px;
   }
 }
 
 .form-header {
-  margin-bottom: 28px;
+  margin-bottom: 24px;
 }
 
 .form-header h3 {
@@ -174,18 +194,19 @@
 .contact-form {
   display: flex;
   flex-direction: column;
-  gap: 20px;
+  gap: 18px;
 }
 
 .form-row {
   display: grid;
   grid-template-columns: 1fr 1fr;
-  gap: 20px;
+  gap: 16px;
 }
 
 @media (max-width: 600px) {
   .form-row {
     grid-template-columns: 1fr;
+    gap: 16px;
   }
 }
 
@@ -204,12 +225,23 @@
 .form-control {
   width: 100%;
   padding: 12px 16px;
+  min-height: 48px;
   border: 1.5px solid var(--color-border);
   border-radius: var(--radius-md);
-  font-size: 0.9375rem;
+  font-size: 16px; /* 16px prevents iOS Safari auto-zoom bug on focus */
   color: var(--color-text-main);
   background: #FFFFFF;
   transition: all var(--transition-fast);
+  -webkit-appearance: none;
+  appearance: none;
+}
+
+select.form-control {
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' fill='none' viewBox='0 0 24 24' stroke='%230F3B6C'%3E%3Cpath stroke-linecap='round' stroke-linejoin='round' stroke-width='2' d='M19 9l-7 7-7-7'%3E%3C/path%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-position: right 14px center;
+  background-size: 16px;
+  padding-right: 40px;
 }
 
 .form-control:focus {
@@ -225,8 +257,10 @@ textarea.form-control {
 .btn-submit-rfp {
   width: 100%;
   padding: 15px;
+  min-height: 50px;
   font-size: 1rem;
-  margin-top: 8px;
+  margin-top: 6px;
+  -webkit-tap-highlight-color: transparent;
 }
 
 /* Toast alert notification */

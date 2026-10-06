@@ -180,54 +180,93 @@ $activeNav = isset($activeNav) ? $activeNav : '';
   <!-- Mobile Drawer Menu -->
   <aside class="mobile-drawer" id="mobileDrawer" aria-label="Mobile Navigation Menu">
     <div class="drawer-header">
-      <img src="<?php echo $basePath; ?>assets/images/logo.jpeg" alt="Senapathi Logo">
+      <a href="<?php echo $basePath; ?>index.php" class="drawer-logo" aria-label="Home">
+        <img src="<?php echo $basePath; ?>assets/images/logo.jpeg" alt="Senapathi Logo">
+      </a>
       <button class="drawer-close" id="drawerClose" aria-label="Close Menu">
         <svg fill="none" stroke="currentColor" viewBox="0 0 24 24" style="width:20px;height:20px;">
-          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path>
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M6 18L18 6M6 6l12 12"></path>
         </svg>
       </button>
     </div>
 
+    <!-- Quick Institutional Credentials Badge -->
+    <div class="drawer-cag-pill">
+      <svg fill="none" stroke="currentColor" viewBox="0 0 24 24">
+        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"></path>
+      </svg>
+      <span>Partner CA Firm Empanelled with CAG of India</span>
+    </div>
+
     <nav class="drawer-nav">
       <a href="<?php echo $basePath; ?>pages/about-us.php" class="drawer-link <?php echo ($activeNav === 'about') ? 'active' : ''; ?>">
-        <span>About Senapathi</span>
+        <div class="drawer-link-title">
+          <span class="drawer-icon-dot"></span>
+          <span>About Senapathi</span>
+        </div>
         <svg fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path></svg>
       </a>
       <a href="<?php echo $basePath; ?>index.php#services" class="drawer-link">
-        <span>9 Core Service Lines</span>
-        <svg fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path></svg>
+        <div class="drawer-link-title">
+          <span class="drawer-icon-dot"></span>
+          <span>Core Service Lines</span>
+        </div>
+        <span class="drawer-badge">09 Verticals</span>
       </a>
       <a href="<?php echo $basePath; ?>index.php#approach" class="drawer-link">
-        <span>Our Approach</span>
-        <svg fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path></svg>
+        <div class="drawer-link-title">
+          <span class="drawer-icon-dot"></span>
+          <span>Our Approach</span>
+        </div>
+        <span class="drawer-badge">5 Pillars</span>
       </a>
       <a href="<?php echo $basePath; ?>index.php#industries" class="drawer-link">
-        <span>Industries We Serve</span>
-        <svg fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path></svg>
+        <div class="drawer-link-title">
+          <span class="drawer-icon-dot"></span>
+          <span>Industries We Serve</span>
+        </div>
+        <span class="drawer-badge">6 Sectors</span>
       </a>
       <a href="<?php echo $basePath; ?>pages/terms-&-conditions.php" class="drawer-link <?php echo ($activeNav === 'terms') ? 'active' : ''; ?>">
-        <span>Terms &amp; Conditions</span>
+        <div class="drawer-link-title">
+          <span class="drawer-icon-dot"></span>
+          <span>Terms &amp; Conditions</span>
+        </div>
         <svg fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path></svg>
       </a>
       <a href="<?php echo $basePath; ?>pages/privacy-policy.php" class="drawer-link <?php echo ($activeNav === 'privacy') ? 'active' : ''; ?>">
-        <span>Privacy Policy</span>
+        <div class="drawer-link-title">
+          <span class="drawer-icon-dot"></span>
+          <span>Privacy Policy</span>
+        </div>
         <svg fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path></svg>
       </a>
       <a href="<?php echo $basePath; ?>index.php#contact" class="drawer-link">
-        <span>Contact &amp; RFP Submission</span>
+        <div class="drawer-link-title">
+          <span class="drawer-icon-dot"></span>
+          <span>Contact &amp; RFP</span>
+        </div>
         <svg fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path></svg>
       </a>
     </nav>
 
     <div class="drawer-footer">
-      <div class="drawer-contact-item">
-        <svg fill="none" stroke="currentColor" viewBox="0 0 24 24">
-          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"></path>
-        </svg>
-        <span>contact@senapathi.co.in</span>
-      </div>
+      <a href="mailto:contact@senapathi.co.in" class="drawer-contact-item">
+        <div class="drawer-contact-icon">
+          <svg fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"></path>
+          </svg>
+        </div>
+        <div class="drawer-contact-text">
+          <small>Electronic Inquiries</small>
+          <strong>contact@senapathi.co.in</strong>
+        </div>
+      </a>
       <a href="<?php echo $basePath; ?>index.php#contact" class="btn btn-primary" style="width: 100%;">
-        Request Consultation
+        <span>Request Consultation / RFP</span>
+        <svg class="btn-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"></path>
+        </svg>
       </a>
     </div>
   </aside>

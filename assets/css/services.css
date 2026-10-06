@@ -804,6 +804,33 @@
 /* ==========================================================================
    6. Mobile & Tablet Responsiveness
    ========================================================================== */
+.services-mobile-swipe-cue {
+  display: none;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  padding: 7px 16px;
+  font-size: 0.71875rem;
+  font-weight: 600;
+  color: #7DD3FC;
+  background: rgba(2, 132, 199, 0.12);
+  border-top: 1px solid rgba(255, 255, 255, 0.05);
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+}
+
+.services-mobile-swipe-cue svg {
+  width: 15px;
+  height: 15px;
+  animation: swipeNudge 2s ease-in-out infinite;
+  color: #38BDF8;
+}
+
+@keyframes swipeNudge {
+  0%, 100% { transform: translateX(0); }
+  50% { transform: translateX(6px); }
+}
+
 @media (max-width: 1200px) {
   .service-slide-card {
     flex: 0 0 980px;
@@ -813,6 +840,10 @@
 }
 
 @media (max-width: 991px) {
+  .services-mobile-swipe-cue {
+    display: flex;
+  }
+
   .services-header-inner {
     height: auto;
     padding: 10px 16px;
@@ -828,21 +859,39 @@
     order: 2;
   }
 
+  .service-arrow-btn {
+    width: 34px;
+    height: 34px;
+  }
+
   .services-filter-pills {
     order: 3;
     width: 100%;
     justify-content: flex-start;
+    padding: 4px 0 6px 0;
+  }
+
+  .service-pill-btn {
+    padding: 5px 12px;
+    font-size: 0.75rem;
+    -webkit-tap-highlight-color: transparent;
+  }
+
+  .service-pill-btn:active {
+    transform: scale(0.94);
   }
 
   .services-pin-wrapper {
     overflow: visible;
+    min-height: auto;
   }
 
   .services-track-viewport {
     overflow-x: auto;
     -webkit-overflow-scrolling: touch;
     scroll-snap-type: x mandatory;
-    padding: 16px 16px 36px;
+    scroll-behavior: smooth;
+    padding: 16px 16px 32px;
   }
 
   .services-horizontal-track {
@@ -859,14 +908,25 @@
     max-height: none;
     grid-template-columns: 1fr;
     gap: 20px;
-    padding: 20px 16px;
+    padding: 22px 18px;
     scroll-snap-align: center;
     border-radius: 20px;
+    -webkit-tap-highlight-color: transparent;
   }
 
   .blueprint-modules-grid {
     grid-template-columns: 1fr;
     max-height: none;
+    gap: 8px;
+  }
+
+  .blueprint-module-card {
+    padding: 8px 12px;
+  }
+
+  .blueprint-module-card:active {
+    background: rgba(2, 132, 199, 0.2);
+    transform: scale(0.98);
   }
 
   .blueprint-module-card.full-width {
@@ -882,17 +942,34 @@
   .slide-actions-row {
     flex-direction: column;
     align-items: stretch;
+    gap: 10px;
   }
 
   .slide-actions-row .btn {
     width: 100%;
     justify-content: center;
+    min-height: 48px;
+  }
+
+  .services-track-footer {
+    height: auto;
+    padding: 12px 0;
+  }
+
+  .services-footer-inner {
+    flex-wrap: wrap;
+    gap: 10px;
+    justify-content: center;
+  }
+
+  .footer-scroll-hint {
+    display: none;
   }
 }
 
 @media (max-width: 640px) {
   .services-hero-intro {
-    padding: 60px 0 40px;
+    padding: 50px 0 36px;
   }
 
   .service-slide-card {
@@ -903,5 +980,20 @@
 
   .slide-title {
     font-size: 1.35rem;
+    line-height: 1.25;
+  }
+
+  .slide-overview {
+    font-size: 0.84375rem;
+    line-height: 1.55;
+  }
+
+  .slide-deliverable-strip {
+    padding: 10px 12px;
+    gap: 10px;
+  }
+
+  .architecture-panel {
+    padding: 14px 14px;
   }
 }

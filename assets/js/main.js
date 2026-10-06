@@ -181,8 +181,23 @@ document.addEventListener('DOMContentLoaded', () => {
   if (drawerOverlay) drawerOverlay.addEventListener('click', closeDrawer);
 
   drawerLinks.forEach(link => {
-    link.addEventListener('click', () => {
+    link.addEventListener('click', (e) => {
+      const href = link.getAttribute('href');
       closeDrawer();
+      if (href && href.includes('#')) {
+        const hash = href.split('#')[1];
+        const targetElement = document.getElementById(hash);
+        if (targetElement) {
+          const currentPath = window.location.pathname;
+          const isHomePage = currentPath === '/' || currentPath.endsWith('/') || currentPath.endsWith('index.php');
+          if (isHomePage) {
+            e.preventDefault();
+            setTimeout(() => {
+              targetElement.scrollIntoView({ behavior: 'smooth' });
+            }, 150);
+          }
+        }
+      }
     });
   });
 
@@ -377,34 +392,52 @@ document.addEventListener('DOMContentLoaded', () => {
 
     mm.add("(max-width: 991px)", () => {
       const viewport = document.querySelector('.services-track-viewport');
-      if (viewport) {
+      if (viewport && slideCards.length > 0) {
+        function scrollToServiceCard(idx) {
+          if (!slideCards[idx] || !viewport) return;
+          const targetLeft = slideCards[idx].offsetLeft - (viewport.clientWidth - slideCards[idx].offsetWidth) / 2;
+          viewport.scrollTo({ left: Math.max(0, targetLeft), behavior: 'smooth' });
+          updateServiceActiveState(idx);
+        }
+
+        let scrollTimeout;
         viewport.addEventListener('scroll', () => {
-          const scrollLeft = viewport.scrollLeft;
-          const cardWidth = slideCards[0].offsetWidth + 18;
-          const activeIdx = Math.min(Math.round(scrollLeft / cardWidth), slideCards.length - 1);
-          updateServiceActiveState(activeIdx);
+          clearTimeout(scrollTimeout);
+          scrollTimeout = setTimeout(() => {
+            const viewportCenter = viewport.scrollLeft + (viewport.clientWidth / 2);
+            let closestIdx = 0;
+            let minDiff = Infinity;
+            slideCards.forEach((card, idx) => {
+              const cardCenter = card.offsetLeft + (card.offsetWidth / 2);
+              const diff = Math.abs(viewportCenter - cardCenter);
+              if (diff < minDiff) {
+                minDiff = diff;
+                closestIdx = idx;
+              }
+            });
+            updateServiceActiveState(closestIdx);
+          }, 50);
         }, { passive: true });
 
         if (prevBtn) {
           prevBtn.addEventListener('click', () => {
-            const cardWidth = slideCards[0].offsetWidth + 18;
-            viewport.scrollBy({ left: -cardWidth, behavior: 'smooth' });
+            const prevIdx = Math.max(0, currentActiveIndex - 1);
+            scrollToServiceCard(prevIdx);
           });
         }
         if (nextBtn) {
           nextBtn.addEventListener('click', () => {
-            const cardWidth = slideCards[0].offsetWidth + 18;
-            viewport.scrollBy({ left: cardWidth, behavior: 'smooth' });
+            const nextIdx = Math.min(slideCards.length - 1, currentActiveIndex + 1);
+            scrollToServiceCard(nextIdx);
           });
         }
 
         pillBtns.forEach(pill => {
           pill.addEventListener('click', () => {
-            pillBtns.forEach(p => p.classList.remove('active'));
-            pill.classList.add('active');
             const targetIdx = parseInt(pill.getAttribute('data-target-index'));
-            const cardWidth = slideCards[0].offsetWidth + 18;
-            viewport.scrollTo({ left: targetIdx * cardWidth, behavior: 'smooth' });
+            if (!isNaN(targetIdx)) {
+              scrollToServiceCard(targetIdx);
+            }
           });
         });
       }
@@ -585,6 +618,26 @@ document.addEventListener('DOMContentLoaded', () => {
     }
   });
 
+  // Mobile Collapsible Table of Contents for Legal Pages
+  const tocSidebar = document.querySelector('.legal-toc-sidebar');
+  const tocHeader = document.querySelector('.legal-toc-header');
+  if (tocSidebar && tocHeader) {
+    tocHeader.addEventListener('click', () => {
+      if (window.innerWidth <= 1024) {
+        tocSidebar.classList.toggle('open');
+      }
+    });
+
+    const tocLinkElements = tocSidebar.querySelectorAll('.legal-toc-link');
+    tocLinkElements.forEach(link => {
+      link.addEventListener('click', () => {
+        if (window.innerWidth <= 1024) {
+          tocSidebar.classList.remove('open');
+        }
+      });
+    });
+  }
+
   // 6. Hero Visual Showcase: Floating Matrix Bubbles & 3D Interactive Parallax
   const heroShowcase = document.getElementById('heroVisualShowcase');
   const heroAgentWrap = document.getElementById('heroAgentWrap');
@@ -592,42 +645,47 @@ document.addEventListener('DOMContentLoaded', () => {
 
   if (heroShowcase && heroBubbles.length > 0) {
     if (typeof gsap !== 'undefined') {
-      // 1. Organic floating animation for each bubble
-      heroBubbles.forEach((bubble, index) => {
-        const floatY = 10 + (index % 3) * 4;
-        const floatX = 6 + (index % 2) * 5;
-        const duration = 3.2 + index * 0.45;
-        const delay = index * 0.25;
+      // 1. Organic floating animation for each bubble (Desktop / Large screen only)
+      if (window.innerWidth > 768) {
+        heroBubbles.forEach((bubble, index) => {
+          const floatY = 10 + (index % 3) * 4;
+          const floatX = 6 + (index % 2) * 5;
+          const duration = 3.2 + index * 0.45;
+          const delay = index * 0.25;
 
-        gsap.to(bubble, {
-          y: `-=${floatY}`,
-          x: `+=${floatX}`,
-          rotation: (index % 2 === 0 ? 1.5 : -1.5),
-          duration: duration,
-          repeat: -1,
-          yoyo: true,
-          ease: "sine.inOut",
-          delay: delay
-        });
-
-        // Bubble Hover & Touch scale
-        bubble.addEventListener('mouseenter', () => {
           gsap.to(bubble, {
-            scale: 1.08,
-            boxShadow: "0 22px 48px rgba(2, 132, 199, 0.32)",
-            duration: 0.3,
-            ease: "back.out(1.7)"
+            y: `-=${floatY}`,
+            x: `+=${floatX}`,
+            rotation: (index % 2 === 0 ? 1.5 : -1.5),
+            duration: duration,
+            repeat: -1,
+            yoyo: true,
+            ease: "sine.inOut",
+            delay: delay
+          });
+
+          // Bubble Hover & Touch scale
+          bubble.addEventListener('mouseenter', () => {
+            gsap.to(bubble, {
+              scale: 1.08,
+              boxShadow: "0 22px 48px rgba(2, 132, 199, 0.32)",
+              duration: 0.3,
+              ease: "back.out(1.7)"
+            });
+          });
+
+          bubble.addEventListener('mouseleave', () => {
+            gsap.to(bubble, {
+              scale: 1,
+              boxShadow: "0 14px 34px rgba(11, 37, 69, 0.14)",
+              duration: 0.3,
+              ease: "power2.out"
+            });
           });
         });
+      }
 
-        bubble.addEventListener('mouseleave', () => {
-          gsap.to(bubble, {
-            scale: 1,
-            boxShadow: "0 14px 34px rgba(11, 37, 69, 0.14)",
-            duration: 0.3,
-            ease: "power2.out"
-          });
-        });
+      heroBubbles.forEach((bubble) => {
 
         // Interactive click/tap response
         bubble.addEventListener('click', () => {

@@ -145,7 +145,7 @@ $basePath = isset($basePath) ? $basePath : '';
         </div>
 
         <!-- Action Triggers -->
-        <div style="display:flex; align-items:center; gap:16px; flex-wrap:wrap;">
+        <div class="about-actions-row">
           <a href="#services" class="btn btn-primary">
             <span>Explore All 9 Service Lines</span>
             <svg class="btn-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24">
