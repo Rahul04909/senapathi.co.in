@@ -428,6 +428,18 @@
   height: 100%;
 }
 
+.card-mobile-tabs {
+  display: none;
+}
+
+.slide-header-block {
+  margin-bottom: 6px;
+}
+
+.slide-body-overview {
+  display: block;
+}
+
 .slide-badge-row {
   display: flex;
   align-items: center;
@@ -840,45 +852,14 @@
 }
 
 @media (max-width: 991px) {
-  .services-mobile-swipe-cue {
-    display: flex;
+  /* Hide desktop scroll cue line drop animation to eliminate mobile line artifact */
+  .services-scroll-cue {
+    display: none !important;
   }
 
-  .services-header-inner {
-    height: auto;
-    padding: 10px 16px;
-    flex-wrap: wrap;
-    gap: 10px;
-  }
-
-  .services-brand-counter {
-    order: 1;
-  }
-
-  .services-header-arrows {
-    order: 2;
-  }
-
-  .service-arrow-btn {
-    width: 34px;
-    height: 34px;
-  }
-
-  .services-filter-pills {
-    order: 3;
-    width: 100%;
-    justify-content: flex-start;
-    padding: 4px 0 6px 0;
-  }
-
-  .service-pill-btn {
-    padding: 5px 12px;
-    font-size: 0.75rem;
-    -webkit-tap-highlight-color: transparent;
-  }
-
-  .service-pill-btn:active {
-    transform: scale(0.94);
+  .services-hero-intro {
+    padding: 44px 0 24px;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.05);
   }
 
   .services-pin-wrapper {
@@ -886,42 +867,403 @@
     min-height: auto;
   }
 
+  .services-sticky-header {
+    position: sticky;
+    top: 66px;
+    z-index: 30;
+    background: rgba(4, 9, 20, 0.98);
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+  }
+
+  .services-header-inner {
+    height: auto;
+    padding: 8px 14px 6px;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-between;
+    gap: 8px;
+  }
+
+  .services-brand-counter {
+    order: 1;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+  }
+
+  .services-tag-label {
+    font-size: 0.58rem;
+    padding: 2px 6px;
+  }
+
+  .services-counter-display {
+    font-size: 0.875rem;
+  }
+
+  .counter-val {
+    font-size: 0.95rem;
+  }
+
+  .services-header-arrows {
+    order: 2;
+    display: flex;
+    align-items: center;
+    gap: 6px;
+  }
+
+  .service-arrow-btn {
+    width: 32px;
+    height: 32px;
+    -webkit-tap-highlight-color: transparent;
+  }
+
+  .services-filter-pills {
+    order: 3;
+    width: 100%;
+    justify-content: flex-start;
+    padding: 2px 0 4px;
+    gap: 5px;
+    -webkit-overflow-scrolling: touch;
+    overscroll-behavior-x: contain;
+  }
+
+  .service-pill-btn {
+    padding: 4px 10px;
+    font-size: 0.71875rem;
+    gap: 4px;
+    -webkit-tap-highlight-color: transparent;
+  }
+
+  .service-pill-btn:active {
+    transform: scale(0.94);
+  }
+
+  .services-mobile-swipe-cue {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 6px;
+    padding: 5px 12px;
+    font-size: 0.65625rem;
+    font-weight: 600;
+    color: #7DD3FC;
+    background: rgba(2, 132, 199, 0.08);
+    letter-spacing: 0.05em;
+  }
+
+  .services-mobile-swipe-cue svg {
+    width: 13px;
+    height: 13px;
+  }
+
   .services-track-viewport {
     overflow-x: auto;
     -webkit-overflow-scrolling: touch;
     scroll-snap-type: x mandatory;
     scroll-behavior: smooth;
-    padding: 16px 16px 32px;
+    padding: 12px 14px 28px;
+    scrollbar-width: none;
+  }
+
+  .services-track-viewport::-webkit-scrollbar {
+    display: none;
   }
 
   .services-horizontal-track {
     display: flex;
-    gap: 16px;
+    gap: 14px;
     padding: 0;
     width: max-content;
     transform: none !important;
   }
 
+  /* Compact Viewport-Fitted Card (Fits 100% On Screen, No Cut-Offs) */
   .service-slide-card {
-    flex: 0 0 88vw;
-    max-width: 88vw;
-    max-height: none;
-    grid-template-columns: 1fr;
-    gap: 20px;
-    padding: 22px 18px;
-    scroll-snap-align: center;
+    flex: 0 0 calc(100vw - 32px);
+    max-width: calc(100vw - 32px);
+    width: calc(100vw - 32px);
+    height: 530px;
+    min-height: 480px;
+    max-height: calc(100vh - 165px);
+    display: flex;
+    flex-direction: column;
+    padding: 16px 14px 14px;
     border-radius: 20px;
+    background: rgba(8, 18, 34, 0.96);
+    border: 1px solid rgba(56, 189, 248, 0.22);
+    box-shadow: 0 16px 40px rgba(0, 0, 0, 0.6), 0 0 25px rgba(2, 132, 199, 0.1);
+    scroll-snap-align: center;
+    position: relative;
+    overflow: hidden;
     -webkit-tap-highlight-color: transparent;
+    transition: transform 0.25s ease, border-color 0.25s ease;
+  }
+
+  .slide-watermark {
+    font-size: 3.5rem;
+    top: 6px;
+    right: 12px;
+    opacity: 0.35;
+    pointer-events: none;
+  }
+
+  /* Flatten left column so children become direct flex items of card */
+  .slide-content-left {
+    display: contents;
+  }
+
+  /* Order 1: Card Header (Badges + Title) */
+  .slide-header-block {
+    order: 1;
+    flex-shrink: 0;
+    margin-bottom: 6px;
+    position: relative;
+    z-index: 2;
+  }
+
+  .slide-badge-row {
+    gap: 6px;
+    margin-bottom: 5px;
+    flex-wrap: wrap;
+  }
+
+  .slide-category-pill {
+    font-size: 0.625rem;
+    padding: 2px 8px;
+    letter-spacing: 0.05em;
+  }
+
+  .slide-partner-pill {
+    font-size: 0.625rem;
+    padding: 2px 7px;
+  }
+
+  .slide-title {
+    font-size: 1.25rem;
+    line-height: 1.25;
+    margin-bottom: 0;
+    letter-spacing: -0.02em;
+    word-break: normal;
+    overflow-wrap: break-word;
+  }
+
+  /* Order 2: Sleek Glassmorphism Segmented Tab Switcher */
+  .card-mobile-tabs {
+    order: 2;
+    flex-shrink: 0;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 4px;
+    margin: 8px 0 10px;
+    background: rgba(255, 255, 255, 0.04);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    border-radius: var(--radius-full);
+    padding: 3px;
+    position: relative;
+    z-index: 2;
+  }
+
+  .card-tab-btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 6px;
+    padding: 6px 8px;
+    font-size: 0.71875rem;
+    font-weight: 600;
+    font-family: var(--font-heading);
+    color: #94A3B8;
+    background: transparent;
+    border: none;
+    border-radius: var(--radius-full);
+    cursor: pointer;
+    transition: all 0.2s cubic-bezier(0.16, 1, 0.3, 1);
+    -webkit-tap-highlight-color: transparent;
+    white-space: nowrap;
+  }
+
+  .card-tab-btn svg {
+    width: 13px;
+    height: 13px;
+    color: currentColor;
+    flex-shrink: 0;
+  }
+
+  .card-tab-btn:active {
+    transform: scale(0.96);
+  }
+
+  .card-tab-btn.active {
+    background: linear-gradient(135deg, rgba(2, 132, 199, 0.85) 0%, rgba(3, 105, 161, 0.85) 100%);
+    color: #FFFFFF;
+    font-weight: 700;
+    box-shadow: 0 2px 8px rgba(2, 132, 199, 0.4);
+  }
+
+  .card-tab-btn.active svg {
+    color: #BAE6FD;
+  }
+
+  /* Order 3: Tab 1 (Overview & Safeguards) */
+  .slide-body-overview {
+    order: 3;
+    flex: 1 1 auto;
+    min-height: 0;
+    overflow-y: auto;
+    -webkit-overflow-scrolling: touch;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    gap: 8px;
+    padding-right: 2px;
+    position: relative;
+    z-index: 2;
+    animation: fadeInTab 0.22s ease-out;
+  }
+
+  .slide-overview {
+    font-size: 0.8125rem;
+    line-height: 1.5;
+    color: #94A3B8;
+    margin-bottom: 0;
+    display: block;
+    -webkit-line-clamp: unset;
+  }
+
+  .slide-deliverable-strip {
+    display: flex;
+    align-items: flex-start;
+    gap: 10px;
+    background: rgba(2, 132, 199, 0.08);
+    border: 1px solid rgba(56, 189, 248, 0.22);
+    border-radius: var(--radius-md);
+    padding: 8px 10px;
+    margin-bottom: 0;
+    flex-shrink: 0;
+  }
+
+  .deliverable-icon-box {
+    width: 24px;
+    height: 24px;
+    border-radius: 6px;
+    flex-shrink: 0;
+  }
+
+  .deliverable-icon-box svg {
+    width: 12px;
+    height: 12px;
+  }
+
+  .slide-deliverable-strip strong {
+    font-size: 0.71875rem;
+    color: #BAE6FD;
+    margin-bottom: 2px;
+  }
+
+  .slide-deliverable-strip p {
+    font-size: 0.6875rem;
+    line-height: 1.3;
+    color: #94A3B8;
+  }
+
+  /* Order 3: Tab 2 (Architecture Modules) */
+  .slide-architecture-right {
+    order: 3;
+    flex: 1 1 auto;
+    min-height: 0;
+    display: none;
+    overflow-y: auto;
+    -webkit-overflow-scrolling: touch;
+    position: relative;
+    z-index: 2;
+    animation: fadeInTab 0.22s ease-out;
+  }
+
+  @keyframes fadeInTab {
+    from { opacity: 0; transform: translateY(4px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+
+  .service-slide-card.show-modules .slide-body-overview {
+    display: none !important;
+  }
+
+  .service-slide-card.show-modules .slide-architecture-right {
+    display: flex !important;
+    flex-direction: column;
+  }
+
+  .architecture-panel {
+    background: rgba(6, 15, 28, 0.7);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 14px;
+    padding: 10px;
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+    flex: 1;
+    min-height: 0;
+  }
+
+  .panel-top-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 4px 6px;
+    padding-bottom: 5px;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+  }
+
+  .panel-title-block {
+    flex: 1 1 auto;
+  }
+
+  .panel-code-badge {
+    font-size: 0.58rem;
+    letter-spacing: 0.06em;
+  }
+
+  .panel-title-block h4 {
+    font-size: 0.78125rem;
+    margin: 0;
+  }
+
+  .panel-modules-pill {
+    font-size: 0.625rem;
+    padding: 2px 7px;
+    flex-shrink: 0;
+    white-space: nowrap;
   }
 
   .blueprint-modules-grid {
+    display: grid;
     grid-template-columns: 1fr;
-    max-height: none;
-    gap: 8px;
+    gap: 5px;
+    max-height: 195px;
+    overflow-y: auto;
+    -webkit-overflow-scrolling: touch;
+    padding-right: 2px;
+  }
+
+  .blueprint-modules-grid::-webkit-scrollbar {
+    width: 3px;
+  }
+
+  .blueprint-modules-grid::-webkit-scrollbar-thumb {
+    background: rgba(56, 189, 248, 0.3);
+    border-radius: 3px;
   }
 
   .blueprint-module-card {
-    padding: 8px 12px;
+    padding: 5px 8px;
+    gap: 6px;
+    background: rgba(255, 255, 255, 0.03);
+    border: 1px solid rgba(255, 255, 255, 0.06);
+    border-radius: 6px;
   }
 
   .blueprint-module-card:active {
@@ -933,32 +1275,84 @@
     grid-column: span 1;
   }
 
-  .slide-watermark {
-    font-size: 4rem;
-    top: 6px;
-    right: 14px;
+  .module-number {
+    font-size: 0.625rem;
+    padding: 1px 4px;
   }
 
+  .module-content h5 {
+    font-size: 0.71875rem;
+    margin-bottom: 1px;
+    color: #F1F5F9;
+  }
+
+  .module-content p {
+    font-size: 0.65625rem;
+    line-height: 1.25;
+    color: #94A3B8;
+  }
+
+  .panel-assurance-strip {
+    padding-top: 5px;
+    gap: 6px 10px;
+  }
+
+  .assurance-tag {
+    font-size: 0.625rem;
+  }
+
+  /* Order 4: Action Buttons (Permanently Anchored at Card Bottom) */
   .slide-actions-row {
+    order: 4;
+    flex-shrink: 0;
+    margin-top: auto;
+    padding-top: 8px;
+    border-top: 1px solid rgba(255, 255, 255, 0.08);
+    display: flex;
     flex-direction: column;
-    align-items: stretch;
-    gap: 10px;
+    gap: 7px;
+    position: relative;
+    z-index: 2;
   }
 
   .slide-actions-row .btn {
     width: 100%;
+    min-height: 42px;
+    font-size: 0.78125rem;
+    font-weight: 700;
+    border-radius: var(--radius-full);
+    display: flex;
+    align-items: center;
     justify-content: center;
-    min-height: 48px;
+    padding: 8px 14px;
+    -webkit-tap-highlight-color: transparent;
+  }
+
+  .slide-actions-row .btn:active {
+    transform: scale(0.98);
+  }
+
+  .slide-actions-row .btn-primary {
+    background: linear-gradient(135deg, #0284C7 0%, #0369A1 100%);
+    border: 1px solid #38BDF8;
+    box-shadow: 0 4px 12px rgba(2, 132, 199, 0.35);
+    color: #FFFFFF;
+  }
+
+  .slide-rfp-btn {
+    background: rgba(255, 255, 255, 0.05);
+    border: 1px solid rgba(255, 255, 255, 0.12);
+    color: #CBD5E1;
   }
 
   .services-track-footer {
     height: auto;
-    padding: 12px 0;
+    padding: 10px 0;
   }
 
   .services-footer-inner {
     flex-wrap: wrap;
-    gap: 10px;
+    gap: 8px;
     justify-content: center;
   }
 
@@ -967,33 +1361,29 @@
   }
 }
 
-@media (max-width: 640px) {
-  .services-hero-intro {
-    padding: 50px 0 36px;
-  }
-
+@media (max-width: 480px) {
   .service-slide-card {
-    flex: 0 0 92vw;
-    max-width: 92vw;
-    padding: 18px 14px;
+    height: 515px;
+    min-height: 470px;
+    padding: 14px 12px 12px;
   }
 
   .slide-title {
-    font-size: 1.35rem;
-    line-height: 1.25;
+    font-size: 1.15rem;
   }
 
-  .slide-overview {
-    font-size: 0.84375rem;
-    line-height: 1.55;
+  .blueprint-modules-grid {
+    max-height: 175px;
   }
 
-  .slide-deliverable-strip {
-    padding: 10px 12px;
-    gap: 10px;
+  .card-tab-btn {
+    font-size: 0.6875rem;
+    padding: 5px 6px;
   }
 
-  .architecture-panel {
-    padding: 14px 14px;
+  .slide-actions-row .btn {
+    min-height: 38px;
+    font-size: 0.75rem;
+    padding: 6px 12px;
   }
 }

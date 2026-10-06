@@ -213,7 +213,21 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 
     if (window.scrollY > 450) {
-      backToTop.classList.add('visible');
+      // Hide floating back-to-top while browsing the mobile services horizontal track
+      let insideServices = false;
+      const servicesSection = document.getElementById('services');
+      if (window.innerWidth <= 991 && servicesSection) {
+        const sRect = servicesSection.getBoundingClientRect();
+        if (sRect.top <= 120 && sRect.bottom >= 150) {
+          insideServices = true;
+        }
+      }
+
+      if (insideServices) {
+        backToTop.classList.remove('visible');
+      } else {
+        backToTop.classList.add('visible');
+      }
     } else {
       backToTop.classList.remove('visible');
     }
@@ -443,6 +457,25 @@ document.addEventListener('DOMContentLoaded', () => {
       }
     });
   }
+
+  // Mobile Card Segmented Tabs Controller (Scope & Deliverables vs Architecture Modules)
+  document.querySelectorAll('.service-slide-card').forEach(card => {
+    const tabBtns = card.querySelectorAll('.card-tab-btn');
+    tabBtns.forEach(btn => {
+      btn.addEventListener('click', (e) => {
+        e.preventDefault();
+        e.stopPropagation();
+        const tab = btn.getAttribute('data-tab');
+        tabBtns.forEach(b => b.classList.remove('active'));
+        btn.classList.add('active');
+        if (tab === 'modules') {
+          card.classList.add('show-modules');
+        } else {
+          card.classList.remove('show-modules');
+        }
+      });
+    });
+  });
 
   // 4. In-Depth Service Detail Modal System
   const modalOverlay = document.getElementById('serviceModalOverlay');

@@ -130,7 +130,7 @@ $basePath = isset($basePath) ? $basePath : '';
           <div class="slide-watermark">01</div>
           
           <div class="slide-content-left">
-            <div>
+            <div class="slide-header-block">
               <div class="slide-badge-row">
                 <span class="slide-category-pill">Infrastructure &amp; Real Estate</span>
                 <span class="slide-partner-pill">
@@ -142,7 +142,21 @@ $basePath = isset($basePath) ? $basePath : '';
               </div>
 
               <h3 class="slide-title">Real Estate Transaction <span class="shining-text">Advisory</span></h3>
-              
+            </div>
+
+            <!-- Mobile Segmented Tabs Switcher (Visible only <= 991px) -->
+            <div class="card-mobile-tabs" role="tablist">
+              <button type="button" class="card-tab-btn active" data-tab="overview">
+                <svg fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"></path></svg>
+                <span>Scope &amp; Deliverables</span>
+              </button>
+              <button type="button" class="card-tab-btn" data-tab="modules">
+                <svg fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 11H5m14 0a2 2 0 012 2v6a2 2 0 01-2 2H5a2 2 0 01-2-2v-6a2 2 0 012-2m14 0V9a2 2 0 00-2-2M5 11V9a2 2 0 012-2m0 0V5a2 2 0 012-2h6a2 2 0 012 2v2M7 7h10"></path></svg>
+                <span>Modules (05)</span>
+              </button>
+            </div>
+
+            <div class="slide-body-overview">
               <p class="slide-overview">
                 We support government bodies, PSUs, institutional landowners, developers, and public-private project entities in real estate transactions. Our work covers market review, title verification, approval coordination, and transaction structuring for transparent decision-making.
               </p>
@@ -244,13 +258,27 @@ $basePath = isset($basePath) ? $basePath : '';
           <div class="slide-watermark">02</div>
 
           <div class="slide-content-left">
-            <div>
+            <div class="slide-header-block">
               <div class="slide-badge-row">
                 <span class="slide-category-pill">Infrastructure &amp; Real Estate</span>
               </div>
 
               <h3 class="slide-title">Infrastructure <span class="shining-text">Consulting</span></h3>
+            </div>
 
+            <!-- Mobile Segmented Tabs Switcher (Visible only <= 991px) -->
+            <div class="card-mobile-tabs" role="tablist">
+              <button type="button" class="card-tab-btn active" data-tab="overview">
+                <svg fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"></path></svg>
+                <span>Scope &amp; Deliverables</span>
+              </button>
+              <button type="button" class="card-tab-btn" data-tab="modules">
+                <svg fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 11H5m14 0a2 2 0 012 2v6a2 2 0 01-2 2H5a2 2 0 01-2-2v-6a2 2 0 012-2m14 0V9a2 2 0 00-2-2M5 11V9a2 2 0 012-2m0 0V5a2 2 0 012-2h6a2 2 0 012 2v2M7 7h10"></path></svg>
+                <span>Modules (06)</span>
+              </button>
+            </div>
+
+            <div class="slide-body-overview">
               <p class="slide-overview">
                 We provide planning, technical assistance, procurement, project management, and monitoring support for public infrastructure programmes and PPP projects, focusing on value for money, safeguards, and climate resilience.
               </p>
@@ -358,13 +386,27 @@ $basePath = isset($basePath) ? $basePath : '';
           <div class="slide-watermark">03</div>
 
           <div class="slide-content-left">
-            <div>
+            <div class="slide-header-block">
               <div class="slide-badge-row">
                 <span class="slide-category-pill">People &amp; Institutional L&amp;D</span>
               </div>
 
               <h3 class="slide-title">Human Resource <span class="shining-text">Advisory</span></h3>
+            </div>
 
+            <!-- Mobile Segmented Tabs Switcher (Visible only <= 991px) -->
+            <div class="card-mobile-tabs" role="tablist">
+              <button type="button" class="card-tab-btn active" data-tab="overview">
+                <svg fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"></path></svg>
+                <span>Scope &amp; Deliverables</span>
+              </button>
+              <button type="button" class="card-tab-btn" data-tab="modules">
+                <svg fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 11H5m14 0a2 2 0 012 2v6a2 2 0 01-2 2H5a2 2 0 01-2-2v-6a2 2 0 012-2m14 0V9a2 2 0 00-2-2M5 11V9a2 2 0 012-2m0 0V5a2 2 0 012-2h6a2 2 0 012 2v2M7 7h10"></path></svg>
+                <span>Modules (05)</span>
+              </button>
+            </div>
+
+            <div class="slide-body-overview">
               <p class="slide-overview">
                 Supporting government institutions, PSUs, and programme units in establishing suitable, compliant, and accountable workforce systems across recruitment, employee administration, and digital HRIS.
               </p>
@@ -464,13 +506,27 @@ $basePath = isset($basePath) ? $basePath : '';
           <div class="slide-watermark">04</div>
 
           <div class="slide-content-left">
-            <div>
+            <div class="slide-header-block">
               <div class="slide-badge-row">
                 <span class="slide-category-pill">People &amp; Institutional L&amp;D</span>
               </div>
 
               <h3 class="slide-title">Learning &amp; <span class="shining-text">Development</span></h3>
+            </div>
 
+            <!-- Mobile Segmented Tabs Switcher (Visible only <= 991px) -->
+            <div class="card-mobile-tabs" role="tablist">
+              <button type="button" class="card-tab-btn active" data-tab="overview">
+                <svg fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"></path></svg>
+                <span>Scope &amp; Deliverables</span>
+              </button>
+              <button type="button" class="card-tab-btn" data-tab="modules">
+                <svg fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 11H5m14 0a2 2 0 012 2v6a2 2 0 01-2 2H5a2 2 0 01-2-2v-6a2 2 0 012-2m14 0V9a2 2 0 00-2-2M5 11V9a2 2 0 012-2m0 0V5a2 2 0 012-2h6a2 2 0 012 2v2M7 7h10"></path></svg>
+                <span>Modules (05)</span>
+              </button>
+            </div>
+
+            <div class="slide-body-overview">
               <p class="slide-overview">
                 Structured capacity-building programmes for government staff, PSU officers, and partners based on role readiness, verified skill gaps, approved learning outcomes, and digital LMS adoption.
               </p>
@@ -578,13 +634,27 @@ $basePath = isset($basePath) ? $basePath : '';
           <div class="slide-watermark">05</div>
 
           <div class="slide-content-left">
-            <div>
+            <div class="slide-header-block">
               <div class="slide-badge-row">
                 <span class="slide-category-pill">Impact, CSR &amp; Strategy</span>
               </div>
 
               <h3 class="slide-title">Impact <span class="shining-text">Consulting</span></h3>
+            </div>
 
+            <!-- Mobile Segmented Tabs Switcher (Visible only <= 991px) -->
+            <div class="card-mobile-tabs" role="tablist">
+              <button type="button" class="card-tab-btn active" data-tab="overview">
+                <svg fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"></path></svg>
+                <span>Scope &amp; Deliverables</span>
+              </button>
+              <button type="button" class="card-tab-btn" data-tab="modules">
+                <svg fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 11H5m14 0a2 2 0 012 2v6a2 2 0 01-2 2H5a2 2 0 01-2-2v-6a2 2 0 012-2m14 0V9a2 2 0 00-2-2M5 11V9a2 2 0 012-2m0 0V5a2 2 0 012-2h6a2 2 0 012 2v2M7 7h10"></path></svg>
+                <span>Modules (07)</span>
+              </button>
+            </div>
+
+            <div class="slide-body-overview">
               <p class="slide-overview">
                 We support government agencies, PSUs, and development partners in the design, monitoring, evaluation, and improvement of social and environmental programmes using field data, stakeholder consultations, CSR execution, and SROI modeling.
               </p>
@@ -700,13 +770,27 @@ $basePath = isset($basePath) ? $basePath : '';
           <div class="slide-watermark">06</div>
 
           <div class="slide-content-left">
-            <div>
+            <div class="slide-header-block">
               <div class="slide-badge-row">
                 <span class="slide-category-pill">Impact, CSR &amp; Strategy</span>
               </div>
 
               <h3 class="slide-title">Strategic Growth &amp; <span class="shining-text">Market Advisory</span></h3>
+            </div>
 
+            <!-- Mobile Segmented Tabs Switcher (Visible only <= 991px) -->
+            <div class="card-mobile-tabs" role="tablist">
+              <button type="button" class="card-tab-btn active" data-tab="overview">
+                <svg fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"></path></svg>
+                <span>Scope &amp; Deliverables</span>
+              </button>
+              <button type="button" class="card-tab-btn" data-tab="modules">
+                <svg fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 11H5m14 0a2 2 0 012 2v6a2 2 0 01-2 2H5a2 2 0 01-2-2v-6a2 2 0 012-2m14 0V9a2 2 0 00-2-2M5 11V9a2 2 0 012-2m0 0V5a2 2 0 012-2h6a2 2 0 012 2v2M7 7h10"></path></svg>
+                <span>Modules (05)</span>
+              </button>
+            </div>
+
+            <div class="slide-body-overview">
               <p class="slide-overview">
                 We support institutions and private entities in qualifying and securing opportunities arising from government programmes, public sector procurement plans, sector reforms, and tenders based on proper procedure, ethical engagement, and realistic delivery planning.
               </p>
@@ -806,7 +890,7 @@ $basePath = isset($basePath) ? $basePath : '';
           <div class="slide-watermark">07</div>
 
           <div class="slide-content-left">
-            <div>
+            <div class="slide-header-block">
               <div class="slide-badge-row">
                 <span class="slide-category-pill">Finance &amp; Statutory Audit</span>
                 <span class="slide-partner-pill cag">
@@ -818,7 +902,21 @@ $basePath = isset($basePath) ? $basePath : '';
               </div>
 
               <h3 class="slide-title">Financial Services &amp; <span class="shining-text">Assurance</span></h3>
+            </div>
 
+            <!-- Mobile Segmented Tabs Switcher (Visible only <= 991px) -->
+            <div class="card-mobile-tabs" role="tablist">
+              <button type="button" class="card-tab-btn active" data-tab="overview">
+                <svg fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"></path></svg>
+                <span>Scope &amp; Deliverables</span>
+              </button>
+              <button type="button" class="card-tab-btn" data-tab="modules">
+                <svg fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 11H5m14 0a2 2 0 012 2v6a2 2 0 01-2 2H5a2 2 0 01-2-2v-6a2 2 0 012-2m14 0V9a2 2 0 00-2-2M5 11V9a2 2 0 012-2m0 0V5a2 2 0 012-2h6a2 2 0 012 2v2M7 7h10"></path></svg>
+                <span>Modules (05)</span>
+              </button>
+            </div>
+
+            <div class="slide-body-overview">
               <p class="slide-overview">
                 Through our partner Chartered Accountancy firm empanelled with the Comptroller &amp; Auditor General (CAG) of India, we provide accounting, audit, tax, assurance, transaction support, and financial governance to institutions, PSUs, and corporate clients.
               </p>
@@ -918,13 +1016,27 @@ $basePath = isset($basePath) ? $basePath : '';
           <div class="slide-watermark">08</div>
 
           <div class="slide-content-left">
-            <div>
+            <div class="slide-header-block">
               <div class="slide-badge-row">
                 <span class="slide-category-pill">Digital &amp; Operations</span>
               </div>
 
               <h3 class="slide-title">Business Operations <span class="shining-text">Optimization</span></h3>
+            </div>
 
+            <!-- Mobile Segmented Tabs Switcher (Visible only <= 991px) -->
+            <div class="card-mobile-tabs" role="tablist">
+              <button type="button" class="card-tab-btn active" data-tab="overview">
+                <svg fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"></path></svg>
+                <span>Scope &amp; Deliverables</span>
+              </button>
+              <button type="button" class="card-tab-btn" data-tab="modules">
+                <svg fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 11H5m14 0a2 2 0 012 2v6a2 2 0 01-2 2H5a2 2 0 01-2-2v-6a2 2 0 012-2m14 0V9a2 2 0 00-2-2M5 11V9a2 2 0 012-2m0 0V5a2 2 0 012-2h6a2 2 0 012 2v2M7 7h10"></path></svg>
+                <span>Modules (05)</span>
+              </button>
+            </div>
+
+            <div class="slide-body-overview">
               <p class="slide-overview">
                 We assist public institutions, PSUs, and growing businesses in improving operational performance, reducing bottlenecks, optimizing resource allocation, and implementing robust process controls and workflow digitization.
               </p>
@@ -1024,13 +1136,27 @@ $basePath = isset($basePath) ? $basePath : '';
           <div class="slide-watermark">09</div>
 
           <div class="slide-content-left">
-            <div>
+            <div class="slide-header-block">
               <div class="slide-badge-row">
                 <span class="slide-category-pill">Digital &amp; Operations</span>
               </div>
 
               <h3 class="slide-title">Digital Transformation &amp; <span class="shining-text">Technology</span></h3>
+            </div>
 
+            <!-- Mobile Segmented Tabs Switcher (Visible only <= 991px) -->
+            <div class="card-mobile-tabs" role="tablist">
+              <button type="button" class="card-tab-btn active" data-tab="overview">
+                <svg fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"></path></svg>
+                <span>Scope &amp; Deliverables</span>
+              </button>
+              <button type="button" class="card-tab-btn" data-tab="modules">
+                <svg fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 11H5m14 0a2 2 0 012 2v6a2 2 0 01-2 2H5a2 2 0 01-2-2v-6a2 2 0 012-2m14 0V9a2 2 0 00-2-2M5 11V9a2 2 0 012-2m0 0V5a2 2 0 012-2h6a2 2 0 012 2v2M7 7h10"></path></svg>
+                <span>Modules (04)</span>
+              </button>
+            </div>
+
+            <div class="slide-body-overview">
               <p class="slide-overview">
                 We assist public sector bodies, institutions, and businesses in planning, procuring, implementing, and governing digital systems. Our focus is secure, scalable, and user-adopted technology solutions aligned with policy rules and organizational goals.
               </p>
