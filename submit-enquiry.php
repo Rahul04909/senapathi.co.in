@@ -5,6 +5,7 @@
  */
 
 require_once __DIR__ . '/includes/db-config.php';
+require_once __DIR__ . '/includes/mailer.php';
 
 $isAjax = (!empty($_SERVER['HTTP_X_REQUESTED_WITH']) && strtolower($_SERVER['HTTP_X_REQUESTED_WITH']) === 'xmlhttprequest') 
        || (isset($_SERVER['CONTENT_TYPE']) && strpos($_SERVER['CONTENT_TYPE'], 'application/json') !== false)
@@ -80,10 +81,23 @@ try {
 
     $stmt->execute([$name, $entityName, $email, $phone, $serviceLine, $message]);
     $insertedId = $pdo->lastInsertId();
+    $refId = 'RFP-' . date('Y') . '-' . str_pad($insertedId, 3, '0', STR_PAD_LEFT);
+
+    // Dispatch SMTP Email Notification to info@senapathi.co.in
+    $mailResult = send_enquiry_notification([
+        'ref'          => $refId,
+        'name'         => $name,
+        'entity_name'  => $entityName,
+        'email'        => $email,
+        'phone'        => $phone,
+        'service_line' => $serviceLine,
+        'message'      => $message,
+    ]);
 
     sendResponse('success', 'Your advisory inquiry has been registered successfully. Our senior sectoral lead will contact you within 1 business day.', [
-        'id' => $insertedId,
-        'ref' => 'RFP-' . date('Y') . '-' . str_pad($insertedId, 3, '0', STR_PAD_LEFT)
+        'id'  => $insertedId,
+        'ref' => $refId,
+        'email_sent' => $mailResult['success'] ?? false
     ]);
 } catch (Throwable $e) {
     sendResponse('error', 'Could not save inquiry: ' . $e->getMessage());

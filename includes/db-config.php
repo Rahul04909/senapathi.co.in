@@ -4,10 +4,12 @@
  * Corporate & Government Advisory Portal
  */
 
-if (!defined('DB_HOST')) define('DB_HOST', 'localhost');
-if (!defined('DB_USER')) define('DB_USER', 'jghfrodu_senapathi');
-if (!defined('DB_PASS')) define('DB_PASS', 'Rd14072003@./');
-if (!defined('DB_NAME')) define('DB_NAME', 'jghfrodu_senapathi');
+require_once __DIR__ . '/env-loader.php';
+
+if (!defined('DB_HOST')) define('DB_HOST', env('DB_HOST', 'localhost'));
+if (!defined('DB_USER')) define('DB_USER', env('DB_USER', 'jghfrodu_senapathi'));
+if (!defined('DB_PASS')) define('DB_PASS', env('DB_PASS', 'Rd14072003@./'));
+if (!defined('DB_NAME')) define('DB_NAME', env('DB_NAME', 'jghfrodu_senapathi'));
 
 $GLOBALS['db_connection_error'] = '';
 
