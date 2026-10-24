@@ -84,32 +84,41 @@
           <p>Complete the brief form below and our sectoral leads will review your terms of reference.</p>
         </div>
 
-        <form class="contact-form" id="rfpForm">
+        <?php if (isset($_GET['enquiry']) && $_GET['enquiry'] === 'success'): ?>
+          <div class="form-toast show" style="display:flex; margin-bottom:16px;">
+            <svg style="width: 20px; height: 20px; flex-shrink: 0;" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+            </svg>
+            <span>Thank you! Your advisory inquiry has been received. Our practice lead will get in touch within 1 business day.</span>
+          </div>
+        <?php endif; ?>
+
+        <form class="contact-form" id="rfpForm" action="submit-enquiry.php" method="POST">
           <div class="form-row">
             <div class="form-group">
               <label for="rfpName" class="form-label">Full Name *</label>
-              <input type="text" id="rfpName" class="form-control" placeholder="e.g. Rajesh Sharma" required>
+              <input type="text" id="rfpName" name="name" class="form-control" placeholder="e.g. Rajesh Sharma" required>
             </div>
             <div class="form-group">
               <label for="rfpOrg" class="form-label">Entity / Department Name *</label>
-              <input type="text" id="rfpOrg" class="form-control" placeholder="e.g. State Urban Dev Agency / PSU" required>
+              <input type="text" id="rfpOrg" name="entity_name" class="form-control" placeholder="e.g. State Urban Dev Agency / PSU" required>
             </div>
           </div>
 
           <div class="form-row">
             <div class="form-group">
               <label for="rfpEmail" class="form-label">Official Work Email *</label>
-              <input type="email" id="rfpEmail" class="form-control" placeholder="name@gov.in or corporate" required>
+              <input type="email" id="rfpEmail" name="email" class="form-control" placeholder="name@gov.in or corporate" required>
             </div>
             <div class="form-group">
               <label for="rfpPhone" class="form-label">Contact Number *</label>
-              <input type="tel" id="rfpPhone" class="form-control" placeholder="+91 98765 43210" required>
+              <input type="tel" id="rfpPhone" name="phone" class="form-control" placeholder="+91 98765 43210" required>
             </div>
           </div>
 
           <div class="form-group">
             <label for="rfpService" class="form-label">Primary Service Line of Interest *</label>
-            <select id="rfpService" class="form-control" required>
+            <select id="rfpService" name="service_line" class="form-control" required>
               <option value="" disabled selected>Select an advisory vertical</option>
               <option value="Real Estate Transaction Advisory">1. Real Estate Transaction Advisory</option>
               <option value="Infrastructure Consulting">2. Infrastructure Consulting &amp; PMC</option>
@@ -125,11 +134,11 @@
 
           <div class="form-group">
             <label for="rfpMessage" class="form-label">Assignment Context / Scope Overview</label>
-            <textarea id="rfpMessage" class="form-control" placeholder="Please outline the key objectives, timeline, or statutory requirements of your assignment..."></textarea>
+            <textarea id="rfpMessage" name="message" class="form-control" placeholder="Please outline the key objectives, timeline, or statutory requirements of your assignment..."></textarea>
           </div>
 
-          <button type="submit" class="btn btn-primary btn-submit-rfp">
-            <span>Submit Advisory Request / RFP</span>
+          <button type="submit" class="btn btn-primary btn-submit-rfp" id="rfpSubmitBtn">
+            <span id="rfpBtnText">Submit Advisory Request / RFP</span>
             <svg class="btn-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24">
               <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"></path>
             </svg>
@@ -140,9 +149,61 @@
             <svg style="width: 20px; height: 20px; flex-shrink: 0;" fill="none" stroke="currentColor" viewBox="0 0 24 24">
               <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
             </svg>
-            <span>Thank you! Your advisory inquiry has been received. Our practice lead will get in touch within 1 business day.</span>
+            <span id="formToastText">Thank you! Your advisory inquiry has been received. Our practice lead will get in touch within 1 business day.</span>
           </div>
         </form>
+
+        <script>
+          document.addEventListener('DOMContentLoaded', function() {
+            const rfpForm = document.getElementById('rfpForm');
+            if (!rfpForm) return;
+
+            rfpForm.addEventListener('submit', function(e) {
+              e.preventDefault();
+              const btn = document.getElementById('rfpSubmitBtn');
+              const btnText = document.getElementById('rfpBtnText');
+              const toast = document.getElementById('formToast');
+              const toastText = document.getElementById('formToastText');
+
+              btn.disabled = true;
+              btnText.textContent = 'Submitting Advisory Request...';
+
+              const formData = new FormData(rfpForm);
+              formData.append('ajax', '1');
+
+              fetch('submit-enquiry.php', {
+                method: 'POST',
+                headers: {
+                  'X-Requested-With': 'XMLHttpRequest'
+                },
+                body: formData
+              })
+              .then(res => res.json())
+              .then(data => {
+                btn.disabled = false;
+                btnText.textContent = 'Submit Advisory Request / RFP';
+
+                if (data.status === 'success') {
+                  toastText.textContent = data.message || 'Thank you! Your advisory inquiry has been received. Our practice lead will get in touch within 1 business day.';
+                  toast.style.display = 'flex';
+                  toast.classList.add('show');
+                  rfpForm.reset();
+                  setTimeout(() => {
+                    toast.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+                  }, 100);
+                } else {
+                  alert(data.message || 'Error submitting request. Please try again or email us directly.');
+                }
+              })
+              .catch(err => {
+                btn.disabled = false;
+                btnText.textContent = 'Submit Advisory Request / RFP';
+                // Fallback to standard form submission if fetch failed
+                rfpForm.submit();
+              });
+            });
+          });
+        </script>
       </div>
 
     </div>
