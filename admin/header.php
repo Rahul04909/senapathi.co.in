@@ -233,38 +233,6 @@ $currentPage = basename($_SERVER['PHP_SELF']);
             </a>
           </li>
 
-          <li class="nav-header">MANAGEMENT &amp; RECORDS</li>
-          
-          <li class="nav-item">
-            <a href="students/manage-students.php" class="nav-link <?= ($currentPage === 'manage-students.php') ? 'active' : '' ?>">
-              <i class="nav-icon fas fa-user-graduate"></i>
-              <p>Students Directory</p>
-            </a>
-          </li>
-
-          <li class="nav-item">
-            <a href="students/fees-list.php" class="nav-link <?= ($currentPage === 'fees-list.php') ? 'active' : '' ?>">
-              <i class="nav-icon fas fa-money-bill-wave"></i>
-              <p>Fees Monitoring</p>
-            </a>
-          </li>
-
-          <li class="nav-header">COURSES &amp; INQUIRIES</li>
-
-          <li class="nav-item">
-            <a href="courses/manage-courses.php" class="nav-link <?= ($currentPage === 'manage-courses.php') ? 'active' : '' ?>">
-              <i class="nav-icon fas fa-graduation-cap"></i>
-              <p>Manage Courses</p>
-            </a>
-          </li>
-
-          <li class="nav-item">
-            <a href="courses/course-enquiries.php" class="nav-link <?= ($currentPage === 'course-enquiries.php') ? 'active' : '' ?>">
-              <i class="nav-icon fas fa-envelope-open-text"></i>
-              <p>Course Enquiries</p>
-            </a>
-          </li>
-
           <li class="nav-header">SYSTEM &amp; ACCOUNT</li>
 
           <li class="nav-item">
