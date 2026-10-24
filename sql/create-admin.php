@@ -12,7 +12,8 @@ $details = [];
 
 if (!$pdo) {
     $status = 'error';
-    $message = "Database connection failed! Ensure MySQL is running in XAMPP.";
+    $err = !empty($GLOBALS['db_connection_error']) ? $GLOBALS['db_connection_error'] : 'Unknown database connection error.';
+    $message = "Database connection failed: " . $err;
 } else {
     try {
         // 1. Create Admins Table
