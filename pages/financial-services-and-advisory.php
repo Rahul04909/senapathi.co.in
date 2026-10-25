@@ -5,7 +5,7 @@
  */
 $basePath = '../';
 $pageTitle = "Financial Services & Strategic Advisory | Senapathi Alliance";
-$pageDescription = "Statutory audit assurance, corporate taxation, forensic accounting, M&A deal structuring, and financial governance delivered through our Partner Chartered Accountancy firm.";
+$pageDescription = "Statutory audit assurance, caorporate taxation, forensic accounting, M&A deal structuring, and financial governance delivered through our Partner Chartered Accountancy firm.";
 $canonicalUrl = "https://senapathi.co.in/pages/financial-services-and-advisory.php";
 $pageKeywords = "Financial Services Advisory India, statutory audit services, forensic accounting India, corporate taxation advisory, M&A valuation advisory, internal risk audit, ICAI partner CA firm";
 $activeNav = "services";
