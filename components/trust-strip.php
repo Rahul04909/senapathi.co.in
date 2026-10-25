@@ -27,8 +27,8 @@
           </svg>
         </div>
         <div class="trust-card-body">
-          <h4>CAG Empanelled Partner</h4>
-          <p>CA audit &amp; statutory assurance</p>
+          <h4>Statutory Audit &amp; Finance</h4>
+          <p>Partner CA audit &amp; statutory assurance</p>
         </div>
       </div>
 

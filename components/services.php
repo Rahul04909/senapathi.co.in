@@ -136,8 +136,8 @@ $basePath = isset($basePath) ? $basePath : '';
               <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"></path>
             </svg>
           </button>
-          <a href="#contact" class="btn btn-secondary card-briefing-btn">
-            <span>Request Scope Briefing</span>
+          <a href="pages/real-estate-transaction-advisory.php" class="btn btn-secondary card-briefing-btn">
+            <span>Dedicated Page</span>
           </a>
         </div>
       </article>
@@ -217,8 +217,8 @@ $basePath = isset($basePath) ? $basePath : '';
               <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"></path>
             </svg>
           </button>
-          <a href="#contact" class="btn btn-secondary card-briefing-btn">
-            <span>Request Scope Briefing</span>
+          <a href="pages/infrastructure-consulting.php" class="btn btn-secondary card-briefing-btn">
+            <span>Dedicated Page</span>
           </a>
         </div>
       </article>
@@ -294,8 +294,8 @@ $basePath = isset($basePath) ? $basePath : '';
               <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"></path>
             </svg>
           </button>
-          <a href="#contact" class="btn btn-secondary card-briefing-btn">
-            <span>Request Scope Briefing</span>
+          <a href="pages/human-resource-advisory.php" class="btn btn-secondary card-briefing-btn">
+            <span>Dedicated Page</span>
           </a>
         </div>
       </article>
@@ -371,8 +371,8 @@ $basePath = isset($basePath) ? $basePath : '';
               <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"></path>
             </svg>
           </button>
-          <a href="#contact" class="btn btn-secondary card-briefing-btn">
-            <span>Request Scope Briefing</span>
+          <a href="pages/learning-and-development.php" class="btn btn-secondary card-briefing-btn">
+            <span>Dedicated Page</span>
           </a>
         </div>
       </article>
@@ -456,8 +456,8 @@ $basePath = isset($basePath) ? $basePath : '';
               <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"></path>
             </svg>
           </button>
-          <a href="#contact" class="btn btn-secondary card-briefing-btn">
-            <span>Request Scope Briefing</span>
+          <a href="pages/impact-consulting.php" class="btn btn-secondary card-briefing-btn">
+            <span>Dedicated Page</span>
           </a>
         </div>
       </article>
@@ -539,8 +539,8 @@ $basePath = isset($basePath) ? $basePath : '';
               <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"></path>
             </svg>
           </button>
-          <a href="#contact" class="btn btn-secondary card-briefing-btn">
-            <span>Request Scope Briefing</span>
+          <a href="pages/business-development-and-strategic-growth.php" class="btn btn-secondary card-briefing-btn">
+            <span>Dedicated Page</span>
           </a>
         </div>
       </article>
@@ -556,7 +556,7 @@ $basePath = isset($basePath) ? $basePath : '';
               <svg fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"></path>
               </svg>
-              CAG Empanelled Partner CA Firm
+              Partner CA &amp; Statutory Audit Firm
             </span>
           </div>
           <span class="service-num-badge">07</span>
@@ -565,7 +565,7 @@ $basePath = isset($basePath) ? $basePath : '';
         <h3 class="service-card-title">Financial Services &amp; <span class="shining-text">Assurance</span></h3>
 
         <p class="service-card-desc">
-          Through our partner Chartered Accountancy firm empanelled with the Comptroller &amp; Auditor General (CAG) of India, we provide accounting, audit, tax, assurance, transaction support, and financial governance to institutions and PSUs.
+          Through our partner Chartered Accountancy firm registered with the ICAI, we provide accounting, audit, tax, assurance, transaction support, and financial governance to institutions and corporate enterprises.
         </p>
 
         <div class="service-safeguard-strip">
@@ -597,7 +597,7 @@ $basePath = isset($basePath) ? $basePath : '';
               </div>
               <div class="module-mini-item">
                 <span class="mod-num">7.2</span>
-                <div class="mod-info"><strong>Statutory Audit &amp; Reporting</strong><span>Companies Act &amp; CAG guidelines.</span></div>
+                <div class="mod-info"><strong>Statutory Audit &amp; Reporting</strong><span>Companies Act &amp; ICAI assurance guidelines.</span></div>
               </div>
               <div class="module-mini-item">
                 <span class="mod-num">7.3</span>
@@ -622,8 +622,8 @@ $basePath = isset($basePath) ? $basePath : '';
               <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"></path>
             </svg>
           </button>
-          <a href="#contact" class="btn btn-secondary card-briefing-btn">
-            <span>Request Scope Briefing</span>
+          <a href="pages/financial-services-and-advisory.php" class="btn btn-secondary card-briefing-btn">
+            <span>Dedicated Page</span>
           </a>
         </div>
       </article>
@@ -699,8 +699,8 @@ $basePath = isset($basePath) ? $basePath : '';
               <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"></path>
             </svg>
           </button>
-          <a href="#contact" class="btn btn-secondary card-briefing-btn">
-            <span>Request Scope Briefing</span>
+          <a href="pages/business-operations-optimization.php" class="btn btn-secondary card-briefing-btn">
+            <span>Dedicated Page</span>
           </a>
         </div>
       </article>
@@ -778,8 +778,8 @@ $basePath = isset($basePath) ? $basePath : '';
               <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"></path>
             </svg>
           </button>
-          <a href="#contact" class="btn btn-secondary card-briefing-btn">
-            <span>Request Scope Briefing</span>
+          <a href="pages/digital-transformation-and-technology.php" class="btn btn-secondary card-briefing-btn">
+            <span>Dedicated Page</span>
           </a>
         </div>
       </article>

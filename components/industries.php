@@ -130,10 +130,10 @@
         </div>
         <h3 class="industry-title">Financial Services &amp; Regulated Entities</h3>
         <p class="industry-desc">
-          Serving financial institutions, corporate enterprises, and regulated businesses with CAG-empanelled partner CA audit readiness, internal risk reviews, forensic audits, M&amp;A structuring, enterprise tech, and workflow optimization.
+          Serving financial institutions, corporate enterprises, and regulated businesses with partner CA statutory audit readiness, internal risk reviews, forensic audits, M&amp;A structuring, enterprise tech, and workflow optimization.
         </p>
         <div class="industry-tags">
-          <span class="industry-tag">CAG Empanelled Partner</span>
+          <span class="industry-tag">Partner CA Assurance</span>
           <span class="industry-tag">Statutory Audit</span>
           <span class="industry-tag">Forensic Accounting</span>
           <span class="industry-tag">M&amp;A Advisory</span>

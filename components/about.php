@@ -52,7 +52,7 @@ $basePath = isset($basePath) ? $basePath : '';
               </svg>
             </div>
             <div class="meta-info">
-              <h6>CAG Empanelled Partner CA Firm</h6>
+              <h6>Statutory Audit &amp; Finance Partner CA Firm</h6>
               <p>Statutory audits, forensic accounting &amp; public expenditure governance.</p>
             </div>
           </div>
@@ -102,7 +102,7 @@ $basePath = isset($basePath) ? $basePath : '';
             </div>
             <div class="about-feature-text">
               <h5>Rigorous Compliance</h5>
-              <p>Aligned with public procurement laws, CAG audit standards &amp; statutory policies.</p>
+              <p>Aligned with public procurement laws, statutory audit standards &amp; institutional policies.</p>
             </div>
           </div>
 

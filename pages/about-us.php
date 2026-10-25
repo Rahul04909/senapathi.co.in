@@ -7,7 +7,7 @@ $basePath = '../';
 $pageTitle = "About Us | Senapathi Alliance - Multidisciplinary Corporate & Government Advisory";
 $pageDescription = "Learn about Senapathi Alliance (Senapathi India) — premier management, technical, financial, and institutional consulting supporting government departments, PSUs, multilateral institutions, and private enterprises.";
 $canonicalUrl = "https://senapathi.co.in/pages/about-us.php";
-$pageKeywords = "About Senapathi Alliance, Senapathi India, corporate governance, government advisory, PSU consulting firm, multidisciplinary advisory, CAG partner firm, infrastructure consulting, public procurement advisory";
+$pageKeywords = "About Senapathi Alliance, Senapathi India, corporate governance, government advisory, PSU consulting firm, multidisciplinary advisory, partner CA audit firm, infrastructure consulting, public procurement advisory";
 $activeNav = "about";
 
 $customSchemaJson = '
@@ -94,7 +94,7 @@ require_once __DIR__ . '/../includes/header.php';
       <div class="page-meta-strip">
         <div class="page-meta-item">
           <svg fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"></path></svg>
-          <span>Statutory Audit: <strong>CAG Empanelled Partner CA Firm</strong></span>
+          <span>Statutory Audit: <strong>Partner CA &amp; Statutory Audit Firm</strong></span>
         </div>
         <div class="page-meta-item">
           <svg fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 6l3 1m0 0l-3 9a5.002 5.002 0 006.001 0M6 7l3 9M6 7l6-2m6 2l3-1m-3 1l-3 9a5.002 5.002 0 006.001 0M18 7l3 9m-3-9l-6-2m0-2v2m0 16V5m0 16H9m3 0h3"></path></svg>
@@ -169,7 +169,7 @@ require_once __DIR__ . '/../includes/header.php';
               <div class="lifecycle-tags">
                 <span class="lifecycle-tag">Public Policy</span>
                 <span class="lifecycle-tag">Procurement Rigor</span>
-                <span class="lifecycle-tag">CAG Audits</span>
+                <span class="lifecycle-tag">Statutory Audits</span>
                 <span class="lifecycle-tag">WASH &amp; EPC</span>
                 <span class="lifecycle-tag">HRIS &amp; L&amp;D</span>
                 <span class="lifecycle-tag">Platform Tech</span>
@@ -322,7 +322,7 @@ require_once __DIR__ . '/../includes/header.php';
           </div>
           <h3 class="lifecycle-step-title">Audit, Handover &amp; Longevity</h3>
           <p class="lifecycle-step-desc">
-            Statutory CAG audit readiness, ESG risk reporting, institutional handover, and documentation archival for audit defense and continuous operation.
+            Statutory audit readiness, ESG risk reporting, institutional handover, and documentation archival for audit defense and continuous operation.
           </p>
         </div>
 
@@ -415,22 +415,22 @@ require_once __DIR__ . '/../includes/header.php';
 
       <div class="governance-grid">
         
-        <!-- CAG Card -->
+        <!-- Statutory CA Card -->
         <div class="governance-card amber">
           <div class="governance-card-header">
             <div class="governance-icon">
               <svg fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"></path></svg>
             </div>
             <div>
-              <span style="font-size:0.75rem; text-transform:uppercase; letter-spacing:0.06em; font-weight:700; color: #D97706;">Empanelled Assurance</span>
-              <h4>CAG Empanelled Partner CA Firm</h4>
+              <span style="font-size:0.75rem; text-transform:uppercase; letter-spacing:0.06em; font-weight:700; color: #D97706;">Statutory Assurance</span>
+              <h4>Partner Chartered Accountancy Firm</h4>
             </div>
           </div>
           <p>
-            Where statutory audit, public sector financial examinations, forensic reviews, or regulated accounting services are required, they are delivered through our Partner Chartered Accountancy firm empanelled with the <strong>Comptroller and Auditor General of India (CAG)</strong>.
+            Where statutory audit, institutional financial examinations, forensic reviews, or regulated accounting services are required, they are delivered through our Partner Chartered Accountancy firm registered with the <strong>Institute of Chartered Accountants of India (ICAI)</strong>.
           </p>
           <p>
-            This ensures that financial diligence, risk matrices, and fund accounting meet the highest standards of Indian public expenditure scrutiny and parliamentary reporting requirements.
+            This ensures that financial diligence, risk matrices, and fund accounting meet the highest standards of Indian public expenditure scrutiny and statutory reporting requirements.
           </p>
         </div>
 

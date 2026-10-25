@@ -7,7 +7,7 @@ $basePath = '../';
 $pageTitle = "Terms & Conditions | Senapathi Alliance - Corporate & Government Advisory";
 $pageDescription = "Official terms and conditions governing multidisciplinary management, technical consulting, and advisory services provided by Senapathi Alliance (Senapathi India).";
 $canonicalUrl = "https://senapathi.co.in/pages/terms-&-conditions.php";
-$pageKeywords = "Senapathi Alliance Terms and Conditions, advisory contract terms, public procurement terms, CAG audit advisory terms, institutional consulting agreement";
+$pageKeywords = "Senapathi Alliance Terms and Conditions, advisory contract terms, public procurement terms, statutory audit advisory terms, institutional consulting agreement";
 $activeNav = "terms";
 
 $customSchemaJson = '
@@ -158,7 +158,7 @@ require_once __DIR__ . '/../includes/header.php';
             <div class="legal-alert-banner-text">
               <h4>Statutory Empanelment &amp; Regulated Practice Notice</h4>
               <p>
-                Senapathi Alliance operates as a multidisciplinary technical and management advisory entity. Where regulated legal, statutory audit, taxation, or assurance services are required under Indian law, such services are performed by or through appropriately certified and CAG-empanelled partner firms in full compliance with ICAI and Bar Council of India mandates.
+                Senapathi Alliance operates as a multidisciplinary technical and management advisory entity. Where regulated legal, statutory audit, taxation, or assurance services are required under Indian law, such services are performed by or through appropriately certified partner Chartered Accountancy firms in full compliance with ICAI and Bar Council of India mandates.
               </p>
             </div>
           </div>
@@ -212,7 +212,7 @@ require_once __DIR__ . '/../includes/header.php';
               In strict adherence to statutory, professional, and regulatory frameworks:
             </p>
             <div class="legal-callout-card amber">
-              <strong>3.1 Financial, Tax &amp; Statutory Audit Assurance:</strong> All formal statutory audit reports, forensic reviews, regulatory financial certifications, and tax compliance opinions are executed through our Partner Chartered Accountancy firm empanelled with the <strong>Comptroller and Auditor General of India (CAG)</strong> and registered with the Institute of Chartered Accountants of India (ICAI).
+              <strong>3.1 Financial, Tax &amp; Statutory Audit Assurance:</strong> All formal statutory audit reports, forensic reviews, regulatory financial certifications, and tax compliance opinions are executed through our Partner Chartered Accountancy firm registered with the <strong>Institute of Chartered Accountants of India (ICAI)</strong> in accordance with statutory standards.
             </div>
             <div class="legal-callout-card">
               <strong>3.2 Legal, Title &amp; Regulatory Practice:</strong> Formal legal title opinions, courtroom representations, and registered regulatory filings are rendered through duly enrolled advocate partners and qualified law firms compliant with the Bar Council of India regulations.

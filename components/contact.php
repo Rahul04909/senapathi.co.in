@@ -22,7 +22,7 @@
         </h2>
 
         <p class="contact-intro">
-          Whether you require transaction due diligence, infrastructure technical assistance, CAG-standard audit preparation, or institutional workforce development, our senior partners are prepared to assist.
+          Whether you require transaction due diligence, infrastructure technical assistance, statutory audit preparation, or institutional workforce development, our senior partners are prepared to assist.
         </p>
 
         <div class="contact-cards-stack">
@@ -126,7 +126,7 @@
               <option value="Learning and Development (L&D)">4. Learning &amp; Development (L&amp;D)</option>
               <option value="Impact Consulting">5. Impact Consulting &amp; SROI</option>
               <option value="Business Development and Strategic Growth">6. Business Development &amp; Strategic Growth</option>
-              <option value="Financial Services and Advisory">7. Financial Services &amp; Advisory (CAG Empanelled Partner)</option>
+              <option value="Financial Services and Advisory">7. Financial Services &amp; Strategic Advisory (Partner CA Firm)</option>
               <option value="Business Operations Optimization">8. Business Operations Optimization</option>
               <option value="Digital Transformation and Technology Advisory">9. Digital Transformation &amp; Technology Advisory</option>
             </select>

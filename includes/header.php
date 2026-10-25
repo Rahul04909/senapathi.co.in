@@ -7,7 +7,7 @@ $basePath = isset($basePath) ? $basePath : '';
 $pageTitle = isset($pageTitle) ? $pageTitle : "Senapathi Alliance | Corporate & Government Advisory | Management & Technical Consulting";
 $pageDescription = isset($pageDescription) ? $pageDescription : "Senapathi Alliance provides multidisciplinary management, technical, financial, and institutional advisory to government departments, PSUs, multilateral institutions, and public-private projects across India.";
 $canonicalUrl = isset($canonicalUrl) ? $canonicalUrl : "https://senapathi.co.in/";
-$pageKeywords = isset($pageKeywords) ? $pageKeywords : "Senapathi Alliance, Senapathi India, Government Advisory, PSU Consulting, Real Estate Transaction Advisory, Infrastructure Consulting, CAG Empanelled CA Partner, HR Advisory, Impact Consulting, SROI, Digital Transformation, Public Procurement, PPP Advisory";
+$pageKeywords = isset($pageKeywords) ? $pageKeywords : "Senapathi Alliance, Senapathi India, Government Advisory, PSU Consulting, Real Estate Transaction Advisory, Infrastructure Consulting, Statutory Audit Partner, HR Advisory, Impact Consulting, SROI, Digital Transformation, Public Procurement, PPP Advisory";
 $activeNav = isset($activeNav) ? $activeNav : '';
 ?>
 <!DOCTYPE html>
@@ -131,7 +131,7 @@ $activeNav = isset($activeNav) ? $activeNav : '';
           <svg fill="none" stroke="currentColor" viewBox="0 0 24 24">
             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"></path>
           </svg>
-          Partner CA Firm Empanelled with CAG of India
+          Partner Chartered Accountancy &amp; Audit Advisory Firm
         </span>
       </div>
     </div>
@@ -149,7 +149,25 @@ $activeNav = isset($activeNav) ? $activeNav : '';
         <!-- Desktop Navigation -->
         <nav class="main-nav" aria-label="Primary Navigation">
           <a href="<?php echo $basePath; ?>pages/about-us.php" class="nav-link <?php echo ($activeNav === 'about') ? 'active' : ''; ?>">About Us</a>
-          <a href="<?php echo $basePath; ?>index.php#services" class="nav-link <?php echo ($activeNav === 'services') ? 'active' : ''; ?>">Core Service Lines</a>
+          
+          <div class="nav-item-dropdown">
+            <a href="<?php echo $basePath; ?>index.php#services" class="nav-link <?php echo ($activeNav === 'services') ? 'active' : ''; ?>" style="display:inline-flex; align-items:center; gap:5px;">
+              <span>Core Service Lines</span>
+              <svg style="width:12px;height:12px;" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M19 9l-7 7-7-7"></path></svg>
+            </a>
+            <div class="nav-dropdown-menu">
+              <a href="<?php echo $basePath; ?>pages/real-estate-transaction-advisory.php" class="nav-dropdown-item"><span class="item-num">01</span><span>Real Estate Advisory</span></a>
+              <a href="<?php echo $basePath; ?>pages/infrastructure-consulting.php" class="nav-dropdown-item"><span class="item-num">02</span><span>Infrastructure &amp; PMC</span></a>
+              <a href="<?php echo $basePath; ?>pages/human-resource-advisory.php" class="nav-dropdown-item"><span class="item-num">03</span><span>Human Resource Advisory</span></a>
+              <a href="<?php echo $basePath; ?>pages/learning-and-development.php" class="nav-dropdown-item"><span class="item-num">04</span><span>Learning &amp; Development</span></a>
+              <a href="<?php echo $basePath; ?>pages/impact-consulting.php" class="nav-dropdown-item"><span class="item-num">05</span><span>Impact Consulting &amp; SROI</span></a>
+              <a href="<?php echo $basePath; ?>pages/business-development-and-strategic-growth.php" class="nav-dropdown-item"><span class="item-num">06</span><span>Business Development</span></a>
+              <a href="<?php echo $basePath; ?>pages/financial-services-and-advisory.php" class="nav-dropdown-item"><span class="item-num">07</span><span>Financial Services &amp; Advisory</span></a>
+              <a href="<?php echo $basePath; ?>pages/business-operations-optimization.php" class="nav-dropdown-item"><span class="item-num">08</span><span>Business Operations Opt.</span></a>
+              <a href="<?php echo $basePath; ?>pages/digital-transformation-and-technology.php" class="nav-dropdown-item"><span class="item-num">09</span><span>Digital Transformation</span></a>
+            </div>
+          </div>
+
           <a href="<?php echo $basePath; ?>index.php#approach" class="nav-link <?php echo ($activeNav === 'approach') ? 'active' : ''; ?>">Our Approach</a>
           <a href="<?php echo $basePath; ?>index.php#industries" class="nav-link <?php echo ($activeNav === 'industries') ? 'active' : ''; ?>">Industries We Serve</a>
           <a href="<?php echo $basePath; ?>index.php#contact" class="nav-link <?php echo ($activeNav === 'contact') ? 'active' : ''; ?>">Contact</a>
@@ -195,7 +213,7 @@ $activeNav = isset($activeNav) ? $activeNav : '';
       <svg fill="none" stroke="currentColor" viewBox="0 0 24 24">
         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"></path>
       </svg>
-      <span>Partner CA Firm Empanelled with CAG of India</span>
+      <span>Partner Chartered Accountancy &amp; Audit Advisory Firm</span>
     </div>
 
     <nav class="drawer-nav">

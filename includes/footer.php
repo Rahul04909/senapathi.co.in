@@ -25,7 +25,7 @@ $basePath = isset($basePath) ? $basePath : '';
                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"></path>
               </svg>
               <p>
-                <strong>Statutory Compliance &amp; Assurance:</strong> Regulated financial services are delivered through a Partner Chartered Accountancy firm empanelled with the Comptroller and Auditor General of India (CAG). Regulated legal services are provided through a partner law firm.
+                <strong>Statutory Compliance &amp; Assurance:</strong> Regulated financial services are delivered through a Partner Chartered Accountancy firm in compliance with statutory audit and ICAI standards. Regulated legal services are provided through a partner law firm.
               </p>
             </div>
           </div>
@@ -48,15 +48,15 @@ $basePath = isset($basePath) ? $basePath : '';
           <div class="footer-col">
             <h4 class="footer-col-title">Core Service Lines</h4>
             <ul class="footer-links-list">
-              <li class="footer-link-item"><a href="<?php echo $basePath; ?>index.php#services" data-service-target="0">Real Estate Advisory</a></li>
-              <li class="footer-link-item"><a href="<?php echo $basePath; ?>index.php#services" data-service-target="1">Infrastructure Consulting</a></li>
-              <li class="footer-link-item"><a href="<?php echo $basePath; ?>index.php#services" data-service-target="2">Human Resource Advisory</a></li>
-              <li class="footer-link-item"><a href="<?php echo $basePath; ?>index.php#services" data-service-target="3">Learning &amp; Development</a></li>
-              <li class="footer-link-item"><a href="<?php echo $basePath; ?>index.php#services" data-service-target="4">Impact Consulting &amp; CSR</a></li>
-              <li class="footer-link-item"><a href="<?php echo $basePath; ?>index.php#services" data-service-target="5">Business Development</a></li>
-              <li class="footer-link-item"><a href="<?php echo $basePath; ?>index.php#services" data-service-target="6">Financial Services &amp; Advisory</a></li>
-              <li class="footer-link-item"><a href="<?php echo $basePath; ?>index.php#services" data-service-target="7">Business Operations Opt.</a></li>
-              <li class="footer-link-item"><a href="<?php echo $basePath; ?>index.php#services" data-service-target="8">Digital Transformation</a></li>
+              <li class="footer-link-item"><a href="<?php echo $basePath; ?>pages/real-estate-transaction-advisory.php">Real Estate Advisory</a></li>
+              <li class="footer-link-item"><a href="<?php echo $basePath; ?>pages/infrastructure-consulting.php">Infrastructure Consulting</a></li>
+              <li class="footer-link-item"><a href="<?php echo $basePath; ?>pages/human-resource-advisory.php">Human Resource Advisory</a></li>
+              <li class="footer-link-item"><a href="<?php echo $basePath; ?>pages/learning-and-development.php">Learning &amp; Development</a></li>
+              <li class="footer-link-item"><a href="<?php echo $basePath; ?>pages/impact-consulting.php">Impact Consulting &amp; CSR</a></li>
+              <li class="footer-link-item"><a href="<?php echo $basePath; ?>pages/business-development-and-strategic-growth.php">Business Development</a></li>
+              <li class="footer-link-item"><a href="<?php echo $basePath; ?>pages/financial-services-and-advisory.php">Financial Services &amp; Advisory</a></li>
+              <li class="footer-link-item"><a href="<?php echo $basePath; ?>pages/business-operations-optimization.php">Business Operations Opt.</a></li>
+              <li class="footer-link-item"><a href="<?php echo $basePath; ?>pages/digital-transformation-and-technology.php">Digital Transformation</a></li>
             </ul>
           </div>
 
@@ -108,7 +108,7 @@ $basePath = isset($basePath) ? $basePath : '';
           <a href="<?php echo $basePath; ?>pages/terms-&-conditions.php" style="color: #94A3B8; font-size: 0.8125rem; text-decoration: underline; transition: color 0.2s;">Terms &amp; Conditions</a>
           <a href="<?php echo $basePath; ?>pages/privacy-policy.php" style="color: #94A3B8; font-size: 0.8125rem; text-decoration: underline; transition: color 0.2s;">Privacy Policy</a>
           <span style="color: #475569;">|</span>
-          <span style="font-size: 0.75rem; color: #64748B;">Regulated services delivered via partner firms in accordance with CAG and statutory standards.</span>
+          <span style="font-size: 0.75rem; color: #64748B;">Regulated services delivered via partner firms in accordance with statutory and institutional standards.</span>
         </div>
       </div>
     </div>

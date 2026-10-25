@@ -120,7 +120,7 @@
             </div>
           </div>
 
-          <!-- Bubble 4: CAG Empanelled Partner CA Firm (Bottom Left) -->
+          <!-- Bubble 4: Financial & Statutory Advisory (Bottom Left) -->
           <div class="hero-bubble bubble-bottom-left cag-special" data-speed="2.2" data-depth="38">
             <div class="bubble-icon-wrap amber">
               <svg fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -128,8 +128,8 @@
               </svg>
             </div>
             <div class="bubble-content">
-              <div class="bubble-title">CAG Empanelled Partner</div>
-              <div class="bubble-desc">Statutory Audit &amp; Assurance CA Firm</div>
+              <div class="bubble-title">Financial &amp; Statutory Advisory</div>
+              <div class="bubble-desc">Corporate Audit Liaison &amp; Governance</div>
             </div>
           </div>
 

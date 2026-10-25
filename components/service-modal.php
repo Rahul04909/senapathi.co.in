@@ -81,6 +81,12 @@
 
     <!-- Modal Footer Actions -->
     <div class="modal-footer-actions">
+      <a href="#" id="modalDedicatedPageLink" class="btn btn-secondary" style="display:inline-flex; align-items:center; gap:6px;">
+        <span>View Dedicated Page</span>
+        <svg fill="none" stroke="currentColor" viewBox="0 0 24 24" style="width:14px;height:14px;">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"></path>
+        </svg>
+      </a>
       <button class="btn btn-secondary" onclick="document.getElementById('modalCloseBtn').click();">
         Close Window
       </button>

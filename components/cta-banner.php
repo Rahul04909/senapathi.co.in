@@ -19,7 +19,7 @@
         Transform Policy &amp; Public Infrastructure with Certainty
       </h2>
       <p class="cta-banner-desc">
-        Connect with our advisory principals for project readiness reviews, procurement structuring, statutory CAG audit preparation, SROI impact assessments, or enterprise digital platforms.
+        Connect with our advisory principals for project readiness reviews, procurement structuring, statutory audit preparation, SROI impact assessments, or enterprise digital platforms.
       </p>
     </div>
 

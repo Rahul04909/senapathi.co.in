@@ -227,7 +227,7 @@ require_once __DIR__ . '/../includes/header.php';
             </p>
             <div class="legal-list">
               <div class="legal-list-item"><strong>Advisory Assignment Execution:</strong> Performing feasibility studies, transaction due diligence, procurement assistance, PMC oversight, and digital platform delivery.</div>
-              <div class="legal-list-item"><strong>Statutory Verification &amp; Audit:</strong> Facilitating statutory review, forensic accounting, and CAG-aligned risk auditing.</div>
+              <div class="legal-list-item"><strong>Statutory Verification &amp; Audit:</strong> Facilitating statutory review, forensic accounting, and statutory risk auditing.</div>
               <div class="legal-list-item"><strong>Consultation &amp; Tender Response:</strong> Preparing compliant bids, responding to Requests for Proposal (RFPs), and scheduling executive consultations.</div>
               <div class="legal-list-item"><strong>Regulatory &amp; Legal Compliance:</strong> Complying with applicable tax, corporate, anti-money laundering (AML), and court directives.</div>
             </div>
@@ -257,7 +257,7 @@ require_once __DIR__ . '/../includes/header.php';
               We do not sell, rent, or trade Client information. Information is shared only under strict institutional protocols:
             </p>
             <div class="legal-list">
-              <div class="legal-list-item"><strong>CAG-Empanelled Partner CA Firm:</strong> Financial records, books of account, and tax schedules are shared exclusively with our empanelled Chartered Accountancy partner firm for the performance of statutory and forensic audit assignments under ICAI standards.</div>
+              <div class="legal-list-item"><strong>Partner Chartered Accountancy Firm:</strong> Financial records, books of account, and tax schedules are shared exclusively with our partner Chartered Accountancy firm for the performance of statutory and forensic audit assignments under ICAI standards.</div>
               <div class="legal-list-item"><strong>Partner Law Firm Network:</strong> Real estate property papers, statutory clearance files, and legal due diligence dossiers are shared with enrolled advocate partners for formal title and planning reviews.</div>
               <div class="legal-list-item"><strong>Statutory Authorities:</strong> Where disclosure is mandated by Indian law, judicial summons, parliamentary inquiry, or regulatory order.</div>
             </div>

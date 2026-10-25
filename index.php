@@ -14,7 +14,7 @@
  * - components/cta-banner.php : Strategic Action Callout
  * - components/contact.php : RFP Submission & Consultation Request
  * - components/service-modal.php : Interactive In-Depth Scope & Methodology Modal
- * - includes/footer.php : Regulatory Notes, CAG Partner Statement, Sitemap & Scripts
+ * - includes/footer.php : Regulatory Notes, Statutory Partner Statement, Sitemap & Scripts
  */
 
 // 1. Header and SEO Meta Framework

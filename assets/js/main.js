@@ -110,8 +110,8 @@ document.addEventListener('DOMContentLoaded', () => {
       code: "Service Line 07",
       title: "Financial Services & Advisory",
       category: "finance-legal",
-      partnerBadge: "Delivered through a Partner CA Firm empanelled with the CAG of India",
-      overview: "We provide financial, tax, audit, risk, transaction, accounting, and reporting support to public institutions, PSUs, project entities, and regulated organizations. Our services focus on statutory compliance, proper financial records, internal controls, transparent reporting, and responsible use of funds. These financial services are delivered through a Partner Chartered Accountancy firm empanelled with the Comptroller and Auditor General of India (CAG).",
+      partnerBadge: "Delivered through a Partner Chartered Accountancy & Statutory Audit Firm",
+      overview: "We provide financial, tax, audit, risk, transaction, accounting, and reporting support to public institutions, PSUs, project entities, and regulated organizations. Our services focus on statutory compliance, proper financial records, internal controls, transparent reporting, and responsible use of funds. These financial services are delivered through a Partner Chartered Accountancy firm registered with the Institute of Chartered Accountants of India (ICAI).",
       offerings: [
         { code: "7.1", name: "Corporate & International Taxation", desc: "We support tax compliance, transaction review, cross-border considerations, documentation, and risk assessment within the applicable legal framework." },
         { code: "7.2", name: "Statutory Audit & Financial Reporting", desc: "We examine financial statements, controls, records, and disclosures in accordance with applicable standards and statutory requirements." },
@@ -274,6 +274,19 @@ document.addEventListener('DOMContentLoaded', () => {
   const modalApproach = document.getElementById('modalApproach');
   const modalDeliverable = document.getElementById('modalDeliverable');
   const modalRfpBtn = document.getElementById('modalRfpBtn');
+  const modalDedicatedPageLink = document.getElementById('modalDedicatedPageLink');
+
+  const servicePageUrls = {
+    1: 'pages/real-estate-transaction-advisory.php',
+    2: 'pages/infrastructure-consulting.php',
+    3: 'pages/human-resource-advisory.php',
+    4: 'pages/learning-and-development.php',
+    5: 'pages/impact-consulting.php',
+    6: 'pages/business-development-and-strategic-growth.php',
+    7: 'pages/financial-services-and-advisory.php',
+    8: 'pages/business-operations-optimization.php',
+    9: 'pages/digital-transformation-and-technology.php'
+  };
 
   function openServiceModal(serviceId) {
     const data = serviceDetails[serviceId];
@@ -284,6 +297,10 @@ document.addEventListener('DOMContentLoaded', () => {
     modalOverview.textContent = data.overview;
     modalApproach.textContent = data.approach;
     modalDeliverable.textContent = data.deliverable;
+
+    if (modalDedicatedPageLink && servicePageUrls[serviceId]) {
+      modalDedicatedPageLink.href = servicePageUrls[serviceId];
+    }
 
     // Partner tag
     if (data.partnerBadge) {
@@ -518,7 +535,7 @@ document.addEventListener('DOMContentLoaded', () => {
             const servSec = document.getElementById('services');
             if (servSec) servSec.scrollIntoView({ behavior: 'smooth' });
           } else if (bubble.classList.contains('bubble-bottom-left')) {
-            // CAG Partner card click -> open Financial Services modal
+            // Statutory Partner card click -> open Financial Services modal
             const caBtn = document.querySelector('.btn-service-detail[data-service-id="7"]');
             if (caBtn) {
               caBtn.click();
