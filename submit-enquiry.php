@@ -1,104 +1,136 @@
 <?php
 /**
- * Senapathi Alliance - Contact / RFP Submission Endpoint
- * Receives public advisory inquiries and stores them in contact_enquiries
+ * Senapathi Alliance - RFP & Contact Form Submission Processor
+ * Dispatches inquiries via cPanel SMTP and logs them securely into the database
  */
 
+// 1. Initialize environment, database & mailer
+require_once __DIR__ . '/includes/env-loader.php';
 require_once __DIR__ . '/includes/db-config.php';
 require_once __DIR__ . '/includes/mailer.php';
 
-$isAjax = (!empty($_SERVER['HTTP_X_REQUESTED_WITH']) && strtolower($_SERVER['HTTP_X_REQUESTED_WITH']) === 'xmlhttprequest') 
-       || (isset($_SERVER['CONTENT_TYPE']) && strpos($_SERVER['CONTENT_TYPE'], 'application/json') !== false)
-       || (isset($_POST['ajax']) && $_POST['ajax'] == '1');
+// Detect AJAX request
+$isAjax = (!empty($_SERVER['HTTP_X_REQUESTED_WITH']) && strtolower($_SERVER['HTTP_X_REQUESTED_WITH']) === 'xmlhttprequest') || isset($_POST['ajax']);
 
-// Enable JSON response if AJAX
-function sendResponse($status, $message, $extra = []) {
-    global $isAjax;
-    if ($isAjax) {
-        header('Content-Type: application/json; charset=utf-8');
-        echo json_encode(array_merge(['status' => $status, 'message' => $message], $extra));
-        exit();
-    } else {
-        if ($status === 'success') {
-            header("Location: index.php?enquiry=success#contact");
-        } else {
-            header("Location: index.php?enquiry=error&msg=" . urlencode($message) . "#contact");
-        }
-        exit();
-    }
-}
-
+// Only accept POST requests
 if ($_SERVER['REQUEST_METHOD'] !== 'POST') {
-    sendResponse('error', 'Invalid request method.');
+    if ($isAjax) {
+        header('Content-Type: application/json');
+        echo json_encode(['status' => 'error', 'message' => 'Invalid request method.']);
+        exit;
+    }
+    header('Location: index.php#contact');
+    exit;
 }
 
-if (!$pdo) {
-    sendResponse('error', 'Database service currently offline. Please contact us via email at contact@senapathi.co.in.');
-}
-
-// Read inputs (supports both form-urlencoded/FormData and json payload)
-$contentType = $_SERVER["CONTENT_TYPE"] ?? '';
-if (strpos($contentType, 'application/json') !== false) {
-    $rawInput = file_get_contents('php://input');
-    $inputData = json_decode($rawInput, true) ?? [];
-} else {
-    $inputData = $_POST;
-}
-
-$name        = trim($inputData['name'] ?? $inputData['rfpName'] ?? '');
-$entityName  = trim($inputData['entity_name'] ?? $inputData['rfpOrg'] ?? '');
-$email       = trim($inputData['email'] ?? $inputData['rfpEmail'] ?? '');
-$phone       = trim($inputData['phone'] ?? $inputData['rfpPhone'] ?? '');
-$serviceLine = trim($inputData['service_line'] ?? $inputData['rfpService'] ?? '');
-$message     = trim($inputData['message'] ?? $inputData['rfpMessage'] ?? '');
+// 2. Extract and sanitize form inputs
+$name        = trim($_POST['name'] ?? '');
+$entityName  = trim($_POST['entity_name'] ?? '');
+$email       = trim($_POST['email'] ?? '');
+$phone       = trim($_POST['phone'] ?? '');
+$serviceLine = trim($_POST['service_line'] ?? 'General Advisory');
+$message     = trim($_POST['message'] ?? '');
+$ipAddress   = $_SERVER['REMOTE_ADDR'] ?? 'Unknown';
 
 // Validation
-if (empty($name) || empty($entityName) || empty($email) || empty($phone) || empty($serviceLine)) {
-    sendResponse('error', 'Please fill in all mandatory fields (Name, Entity, Email, Contact Phone, and Service Line).');
+if (empty($name) || empty($email) || empty($phone)) {
+    $errorMsg = 'Please complete all required fields (Full Name, Official Email, and Contact Number).';
+    if ($isAjax) {
+        header('Content-Type: application/json');
+        echo json_encode(['status' => 'error', 'message' => $errorMsg]);
+        exit;
+    }
+    header('Location: index.php?enquiry=error#contact');
+    exit;
 }
 
 if (!filter_var($email, FILTER_VALIDATE_EMAIL)) {
-    sendResponse('error', 'Please provide a valid official work email address.');
+    $errorMsg = 'Please provide a valid corporate or official email address.';
+    if ($isAjax) {
+        header('Content-Type: application/json');
+        echo json_encode(['status' => 'error', 'message' => $errorMsg]);
+        exit;
+    }
+    header('Location: index.php?enquiry=invalid_email#contact');
+    exit;
 }
 
+// 3. Database Logging (Never lose an enquiry even if mail server fails)
+$insertedId = 0;
 try {
-    // Ensure table exists just in case
-    $pdo->exec("CREATE TABLE IF NOT EXISTS `contact_enquiries` (
-        `id` INT AUTO_INCREMENT PRIMARY KEY,
-        `name` VARCHAR(150) NOT NULL,
-        `entity_name` VARCHAR(255) NOT NULL,
-        `email` VARCHAR(150) NOT NULL,
-        `phone` VARCHAR(50) NOT NULL,
-        `service_line` VARCHAR(255) NOT NULL,
-        `message` TEXT NULL,
-        `status` ENUM('Pending', 'In Review', 'Contacted', 'Closed') DEFAULT 'Pending',
-        `created_at` TIMESTAMP DEFAULT CURRENT_TIMESTAMP
-    ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;");
+    $db = get_db_connection();
+    if ($db) {
+        // Ensure enquiries table exists
+        $db->exec("
+            CREATE TABLE IF NOT EXISTS `enquiries` (
+                `id` INT AUTO_INCREMENT PRIMARY KEY,
+                `name` VARCHAR(255) NOT NULL,
+                `entity_name` VARCHAR(255) NULL,
+                `email` VARCHAR(255) NOT NULL,
+                `phone` VARCHAR(100) NULL,
+                `service_line` VARCHAR(255) NULL,
+                `message` TEXT NULL,
+                `ip_address` VARCHAR(50) NULL,
+                `created_at` TIMESTAMP DEFAULT CURRENT_TIMESTAMP
+            ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
-    $stmt = $pdo->prepare("INSERT INTO `contact_enquiries` 
-        (`name`, `entity_name`, `email`, `phone`, `service_line`, `message`, `status`) 
-        VALUES (?, ?, ?, ?, ?, ?, 'Pending')");
+            CREATE TABLE IF NOT EXISTS `contact_enquiries` (
+                `id` INT AUTO_INCREMENT PRIMARY KEY,
+                `name` VARCHAR(150) NOT NULL,
+                `entity_name` VARCHAR(255) NOT NULL,
+                `email` VARCHAR(150) NOT NULL,
+                `phone` VARCHAR(50) NOT NULL,
+                `service_line` VARCHAR(255) NOT NULL,
+                `message` TEXT NULL,
+                `status` ENUM('Pending', 'In Review', 'Contacted', 'Closed') DEFAULT 'Pending',
+                `created_at` TIMESTAMP DEFAULT CURRENT_TIMESTAMP
+            ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+        ");
 
-    $stmt->execute([$name, $entityName, $email, $phone, $serviceLine, $message]);
-    $insertedId = $pdo->lastInsertId();
-    $refId = 'RFP-' . date('Y') . '-' . str_pad($insertedId, 3, '0', STR_PAD_LEFT);
+        $stmt = $db->prepare("
+            INSERT INTO `enquiries` (`name`, `entity_name`, `email`, `phone`, `service_line`, `message`, `ip_address`)
+            VALUES (?, ?, ?, ?, ?, ?, ?)
+        ");
+        $stmt->execute([$name, $entityName, $email, $phone, $serviceLine, $message, $ipAddress]);
+        $insertedId = $db->lastInsertId();
 
-    // Dispatch SMTP Email Notification to info@senapathi.co.in
-    $mailResult = send_enquiry_notification([
-        'ref'          => $refId,
-        'name'         => $name,
-        'entity_name'  => $entityName,
-        'email'        => $email,
-        'phone'        => $phone,
-        'service_line' => $serviceLine,
-        'message'      => $message,
-    ]);
-
-    sendResponse('success', 'Your advisory inquiry has been registered successfully. Our senior sectoral lead will contact you within 1 business day.', [
-        'id'  => $insertedId,
-        'ref' => $refId,
-        'email_sent' => $mailResult['success'] ?? false
-    ]);
-} catch (Throwable $e) {
-    sendResponse('error', 'Could not save inquiry: ' . $e->getMessage());
+        $stmt2 = $db->prepare("
+            INSERT INTO `contact_enquiries` (`name`, `entity_name`, `email`, `phone`, `service_line`, `message`, `status`)
+            VALUES (?, ?, ?, ?, ?, ?, 'Pending')
+        ");
+        $stmt2->execute([$name, $entityName, $email, $phone, $serviceLine, $message]);
+    }
+} catch (Throwable $dbEx) {
+    error_log("Database inquiry log warning: " . $dbEx->getMessage());
 }
+
+$refId = 'RFP-' . date('Y') . '-' . str_pad((string)($insertedId ?: rand(100, 999)), 3, '0', STR_PAD_LEFT);
+
+// 4. Dispatch Email via Dual-Engine SMTP (PHPMailer + Pure-PHP Socket fallback)
+$mailResult = send_enquiry_notification([
+    'ref'          => $refId,
+    'name'         => $name,
+    'entity_name'  => $entityName,
+    'email'        => $email,
+    'phone'        => $phone,
+    'service_line' => $serviceLine,
+    'message'      => $message,
+]);
+
+// 5. Output Response
+$successMessage = 'Thank you! Your advisory inquiry has been received. Our practice lead will get in touch within 1 business day.';
+
+if ($isAjax) {
+    header('Content-Type: application/json');
+    echo json_encode([
+        'status'     => 'success',
+        'message'    => $successMessage,
+        'ref'        => $refId,
+        'email_sent' => $mailResult['success'] ?? false,
+        'debug'      => $mailResult['message'] ?? ''
+    ]);
+    exit;
+}
+
+header('Location: index.php?enquiry=success#contact');
+exit;
