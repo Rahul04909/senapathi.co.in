@@ -3,6 +3,12 @@
  * Senapathi Alliance - Contact & RFP Submission Component
  */
 ?>
+<?php if (!empty($formMessage)): ?>
+  <div style="padding: 12px 18px; margin-bottom: 20px; border-radius: 6px; font-weight: 500; <?= $formStatus === 'success' ? 'background: #dcfce7; color: #166534; border: 1px solid #86efac;' : 'background: #fee2e2; color: #991b1b; border: 1px solid #fca5a5;' ?>">
+    <?= htmlspecialchars($formMessage) ?>
+  </div>
+<?php endif; ?>
+
 <section class="section-padding contact-section" id="contact">
   <div class="container">
     
