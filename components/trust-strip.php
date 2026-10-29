@@ -27,8 +27,8 @@
           </svg>
         </div>
         <div class="trust-card-body">
-          <h4>Statutory Audit &amp; Finance</h4>
-          <p>Partner CA audit &amp; statutory assurance</p>
+          <h4>Business &amp; Operations Support</h4>
+          <p>Strategy, Finance &amp; Operational Excellence</p>
         </div>
       </div>
 
