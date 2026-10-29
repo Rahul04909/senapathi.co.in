@@ -385,18 +385,31 @@
   line-height: 1.3;
 }
 
+<<<<<<< HEAD
 /* Special styling for Statutory Advisory Card Bubble */
 .hero-bubble.audit-special {
+=======
+/* Special styling for CAG Card Bubble */
+.hero-bubble.cag-special {
+>>>>>>> f18d83945b4b5ab1d7285f7ea68a461228f2a3ab
   background: linear-gradient(135deg, #071527 0%, #0F3B6C 100%);
   border: 1px solid rgba(255, 255, 255, 0.15);
   box-shadow: 0 16px 36px rgba(11, 37, 69, 0.28);
 }
 
+<<<<<<< HEAD
 .hero-bubble.audit-special .bubble-title {
   color: #FFFFFF;
 }
 
 .hero-bubble.audit-special .bubble-desc {
+=======
+.hero-bubble.cag-special .bubble-title {
+  color: #FFFFFF;
+}
+
+.hero-bubble.cag-special .bubble-desc {
+>>>>>>> f18d83945b4b5ab1d7285f7ea68a461228f2a3ab
   color: #BAE6FD;
 }
 
@@ -588,7 +601,11 @@
     border-color: var(--color-primary-400) !important;
   }
 
+<<<<<<< HEAD
   .hero-bubble.audit-special {
+=======
+  .hero-bubble.cag-special {
+>>>>>>> f18d83945b4b5ab1d7285f7ea68a461228f2a3ab
     grid-column: span 2;
     background: linear-gradient(135deg, rgba(254, 243, 199, 0.5) 0%, rgba(255, 255, 255, 0.95) 100%);
     border-color: rgba(217, 119, 6, 0.35);

@@ -95,7 +95,11 @@
 }
 
 /* Compliance Accreditation Card */
+<<<<<<< HEAD
 .footer-compliance-box {
+=======
+.footer-cag-box {
+>>>>>>> f18d83945b4b5ab1d7285f7ea68a461228f2a3ab
   background: rgba(255, 255, 255, 0.05);
   border: 1px solid rgba(255, 255, 255, 0.1);
   border-radius: var(--radius-md);
@@ -105,7 +109,11 @@
   gap: 12px;
 }
 
+<<<<<<< HEAD
 .footer-compliance-box svg {
+=======
+.footer-cag-box svg {
+>>>>>>> f18d83945b4b5ab1d7285f7ea68a461228f2a3ab
   width: 20px;
   height: 20px;
   color: #F59E0B;
@@ -113,7 +121,11 @@
   margin-top: 2px;
 }
 
+<<<<<<< HEAD
 .footer-compliance-box p {
+=======
+.footer-cag-box p {
+>>>>>>> f18d83945b4b5ab1d7285f7ea68a461228f2a3ab
   font-size: 0.75rem;
   color: #CBD5E1;
   line-height: 1.45;
