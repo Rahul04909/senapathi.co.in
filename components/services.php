@@ -702,11 +702,7 @@ $basePath = isset($basePath) ? $basePath : '';
           </a>
         </div>
       </article>
-
-    </div>
-  </div>
-
- <!-- =================================================================
+<!-- =================================================================
            SERVICE 07: Financial Services & Advisory
            ================================================================= -->
       <article class="service-grid-card" data-category="finance-audit" data-service-id="7">
@@ -788,6 +784,10 @@ $basePath = isset($basePath) ? $basePath : '';
           </a>
         </div>
       </article>  
+    </div>
+  </div>
+
+ 
   <!-- =========================================================================
        3. Executive Bottom Credential Strip
        ========================================================================= -->
