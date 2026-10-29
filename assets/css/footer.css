@@ -94,31 +94,31 @@
   margin-bottom: 24px;
 }
 
-/* Compliance Accredita tion .fooaglianx-box {
-     background: rgba(255, 255, 255, 0.05);
-    border: 1px solid rgba(255, 255, 255, 0.1);
-    border-radius: var(--radius-md);
-    padding: 14px 18px;
-    display: flex;
-    align-items: flex-start;
-    gap: 12px;
-  }
+.footer-cag-box {
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: var(--radius-md);
+  padding: 14px 18px;
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
+}
 
-  .footer-compliance-box svg {
-    width: 20px;
-    height: 20px;
-    color: #F59E0B;
-    flex-shrink: 0;
-    margin-top: 2px;
-  }
+.footer-compliance-box svg {
+  width: 20px;
+  height: 20px;
+  color: #F59E0B;
+  flex-shrink: 0;
+  margin-top: 2px;
+}
 
-  .footer-compliance-box p {
-    font-size: 0.75rem;
-    color: #CBD5E1;
-    line-height: 1.45;
-  }
+.footer-compliance-box p {
+  font-size: 0.75rem;
+  color: #CBD5E1;
+  line-height: 1.45;
+}
 
-  /* Footer Column Headers */
+/* Footer Column Headers */
 .footer-col-title {
   font-family: var(--font-heading);
   font-size: 0.9375rem;
