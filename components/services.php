@@ -545,88 +545,7 @@ $basePath = isset($basePath) ? $basePath : '';
         </div>
       </article>
 
-      <!-- =================================================================
-           SERVICE 07: Financial Services & Advisory
-           ================================================================= -->
-      <article class="service-grid-card" data-category="finance-audit" data-service-id="7">
-        <div class="card-top-bar">
-          <div class="card-badges">
-            <span class="service-cat-pill">Finance &amp; Statutory Audit</span>
-            <span class="service-partner-pill audit-partner">
-              <svg fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"></path>
-              </svg>
-              Partner CA &amp; Statutory Audit Firm
-            </span>
-          </div>
-          <span class="service-num-badge">07</span>
-        </div>
-
-        <h3 class="service-card-title">Financial Services &amp; <span class="shining-text">Assurance</span></h3>
-
-        <p class="service-card-desc">
-          Through our partner Chartered Accountancy firm registered with the ICAI, we provide accounting, audit, tax, assurance, transaction support, and financial governance to institutions and corporate enterprises.
-        </p>
-
-        <div class="service-safeguard-strip">
-          <div class="safeguard-icon">
-            <svg fill="none" stroke="currentColor" viewBox="0 0 24 24">
-              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path>
-            </svg>
-          </div>
-          <div class="safeguard-text">
-            <strong>Institutional Safeguards:</strong> Audit-tested accounts, verified statutory filings, forensic risk mitigation &amp; defended books.
-          </div>
-        </div>
-
-        <div class="card-modules-section">
-          <button type="button" class="card-modules-toggle" aria-expanded="false">
-            <span class="toggle-label">
-              <span class="toggle-dot"></span>
-              Practice Architecture (05 Modules)
-            </span>
-            <svg class="toggle-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M19 9l-7 7-7-7"></path>
-            </svg>
-          </button>
-          <div class="card-modules-drawer">
-            <div class="card-modules-list">
-              <div class="module-mini-item">
-                <span class="mod-num">7.1</span>
-                <div class="mod-info"><strong>Corporate &amp; Tax</strong><span>GST returns &amp; transfer pricing.</span></div>
-              </div>
-              <div class="module-mini-item">
-                <span class="mod-num">7.2</span>
-                <div class="mod-info"><strong>Statutory Audit &amp; Reporting</strong><span>Companies Act &amp; ICAI assurance guidelines.</span></div>
-              </div>
-              <div class="module-mini-item">
-                <span class="mod-num">7.3</span>
-                <div class="mod-info"><strong>Internal &amp; Forensic Audit</strong><span>Transaction testing &amp; fraud controls.</span></div>
-              </div>
-              <div class="module-mini-item">
-                <span class="mod-num">7.4</span>
-                <div class="mod-info"><strong>Accounting &amp; Bookkeeping</strong><span>Financial statements &amp; reconciliations.</span></div>
-              </div>
-              <div class="module-mini-item">
-                <span class="mod-num">7.5</span>
-                <div class="mod-info"><strong>M&amp;A Valuation &amp; Restructuring</strong><span>Due diligence &amp; capital structuring advisory.</span></div>
-              </div>
-            </div>
-          </div>
-        </div>
-
-        <div class="service-card-actions">
-          <button class="btn btn-primary btn-service-detail" data-service-id="7">
-            <span>View Full Scope &amp; Methodology</span>
-            <svg fill="none" stroke="currentColor" viewBox="0 0 24 24">
-              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"></path>
-            </svg>
-          </button>
-          <a href="pages/financial-services-and-advisory.php" class="btn btn-secondary card-briefing-btn">
-            <span>Dedicated Page</span>
-          </a>
-        </div>
-      </article>
+     
 
       <!-- =================================================================
            SERVICE 08: Business Operations Optimization
@@ -719,7 +638,7 @@ $basePath = isset($basePath) ? $basePath : '';
               CERT-In &amp; Data Protection Standards
             </span>
           </div>
-          <span class="service-num-badge">09</span>
+          <span class="service-num-badge">07</span>
         </div>
 
         <h3 class="service-card-title">Digital Transformation &amp; <span class="shining-text">Technology</span></h3>
@@ -787,6 +706,88 @@ $basePath = isset($basePath) ? $basePath : '';
     </div>
   </div>
 
+ <!-- =================================================================
+           SERVICE 07: Financial Services & Advisory
+           ================================================================= -->
+      <article class="service-grid-card" data-category="finance-audit" data-service-id="7">
+        <div class="card-top-bar">
+          <div class="card-badges">
+            <span class="service-cat-pill">Finance &amp; Statutory Audit</span>
+            <span class="service-partner-pill audit-partner">
+              <svg fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"></path>
+              </svg>
+              Partner CA &amp; Statutory Audit Firm
+            </span>
+          </div>
+          <span class="service-num-badge">09</span>
+        </div>
+
+        <h3 class="service-card-title">Financial Services &amp; <span class="shining-text">Assurance</span></h3>
+
+        <p class="service-card-desc">
+          Through our partner Chartered Accountancy firm registered with the ICAI, we provide accounting, audit, tax, assurance, transaction support, and financial governance to institutions and corporate enterprises.
+        </p>
+
+        <div class="service-safeguard-strip">
+          <div class="safeguard-icon">
+            <svg fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+            </svg>
+          </div>
+          <div class="safeguard-text">
+            <strong>Institutional Safeguards:</strong> Audit-tested accounts, verified statutory filings, forensic risk mitigation &amp; defended books.
+          </div>
+        </div>
+
+        <div class="card-modules-section">
+          <button type="button" class="card-modules-toggle" aria-expanded="false">
+            <span class="toggle-label">
+              <span class="toggle-dot"></span>
+              Practice Architecture (05 Modules)
+            </span>
+            <svg class="toggle-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M19 9l-7 7-7-7"></path>
+            </svg>
+          </button>
+          <div class="card-modules-drawer">
+            <div class="card-modules-list">
+              <div class="module-mini-item">
+                <span class="mod-num">7.1</span>
+                <div class="mod-info"><strong>Corporate &amp; Tax</strong><span>GST returns &amp; transfer pricing.</span></div>
+              </div>
+              <div class="module-mini-item">
+                <span class="mod-num">7.2</span>
+                <div class="mod-info"><strong>Statutory Audit &amp; Reporting</strong><span>Companies Act &amp; ICAI assurance guidelines.</span></div>
+              </div>
+              <div class="module-mini-item">
+                <span class="mod-num">7.3</span>
+                <div class="mod-info"><strong>Internal &amp; Forensic Audit</strong><span>Transaction testing &amp; fraud controls.</span></div>
+              </div>
+              <div class="module-mini-item">
+                <span class="mod-num">7.4</span>
+                <div class="mod-info"><strong>Accounting &amp; Bookkeeping</strong><span>Financial statements &amp; reconciliations.</span></div>
+              </div>
+              <div class="module-mini-item">
+                <span class="mod-num">7.5</span>
+                <div class="mod-info"><strong>M&amp;A Valuation &amp; Restructuring</strong><span>Due diligence &amp; capital structuring advisory.</span></div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="service-card-actions">
+          <button class="btn btn-primary btn-service-detail" data-service-id="7">
+            <span>View Full Scope &amp; Methodology</span>
+            <svg fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"></path>
+            </svg>
+          </button>
+          <a href="pages/financial-services-and-advisory.php" class="btn btn-secondary card-briefing-btn">
+            <span>Dedicated Page</span>
+          </a>
+        </div>
+      </article>  
   <!-- =========================================================================
        3. Executive Bottom Credential Strip
        ========================================================================= -->
