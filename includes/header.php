@@ -227,7 +227,7 @@ $activeNav = isset($activeNav) ? $activeNav : '';
       </svg>
       <span>Business Operations Optimization</span>
     </a>
-=======
+======= 
     <!-- Quick Institutional Credentials Badge -->
     <div class="drawer-cag-pill">
       <svg fill="none" stroke="currentColor" viewBox="0 0 24 24">
