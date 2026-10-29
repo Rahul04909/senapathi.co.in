@@ -1,0 +1,131 @@
+<?php
+/**
+ * Senapathi Alliance - Master Footer Framework
+ * Institutional Accreditations, Disclaimers & Sitemaps
+ */
+$basePath = isset($basePath) ? $basePath : '';
+?>
+  <!-- Master Site Footer -->
+  <footer class="site-footer">
+    <div class="footer-top-accent"></div>
+    <div class="footer-main">
+      <div class="container">
+        <div class="footer-grid">
+          
+          <!-- Col 1: Brand & Institutional Mandate -->
+          <div class="footer-brand">
+            <div class="footer-logo-wrap">
+              <img src="<?php echo $basePath; ?>assets/images/logo.jpeg" alt="Senapathi Alliance Logo" width="200" height="48">
+            </div>
+            <p class="footer-about-text">
+              Senapathi Alliance (Senapathi India) is a multidisciplinary management and technical consulting firm supporting government departments, PSUs, multilateral institutions, programme implementation agencies, and responsible private-sector organizations.
+            </p>
+            <div class="footer-compliance-box">
+              <svg fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"></path>
+              </svg>
+              <p>
+                <strong>Statutory Compliance &amp; Assurance:</strong> Regulated financial services are delivered through a Partner Chartered Accountancy firm in compliance with statutory audit and ICAI standards. Regulated legal services are provided through a partner law firm.
+              </p>
+            </div>
+          </div>
+
+          <!-- Col 2: Navigation Links -->
+          <div class="footer-col">
+            <h4 class="footer-col-title">Quick Navigation</h4>
+            <ul class="footer-links-list">
+              <li class="footer-link-item"><a href="<?php echo $basePath; ?>pages/about-us.php">About Senapathi</a></li>
+              <li class="footer-link-item"><a href="<?php echo $basePath; ?>index.php#services">9 Core Service Lines</a></li>
+              <li class="footer-link-item"><a href="<?php echo $basePath; ?>index.php#approach">Our 5-Pillar Approach</a></li>
+              <li class="footer-link-item"><a href="<?php echo $basePath; ?>index.php#industries">Industries We Serve</a></li>
+              <li class="footer-link-item"><a href="<?php echo $basePath; ?>pages/terms-&-conditions.php">Terms &amp; Conditions</a></li>
+              <li class="footer-link-item"><a href="<?php echo $basePath; ?>pages/privacy-policy.php">Privacy Policy</a></li>
+              <li class="footer-link-item"><a href="<?php echo $basePath; ?>index.php#contact">Request for Proposal (RFP)</a></li>
+            </ul>
+          </div>
+
+          <!-- Col 3: Core Service Lines Sitemap -->
+          <div class="footer-col">
+            <h4 class="footer-col-title">Core Service Lines</h4>
+            <ul class="footer-links-list">
+              <li class="footer-link-item"><a href="<?php echo $basePath; ?>pages/real-estate-transaction-advisory.php">Real Estate Advisory</a></li>
+              <li class="footer-link-item"><a href="<?php echo $basePath; ?>pages/infrastructure-consulting.php">Infrastructure Consulting</a></li>
+              <li class="footer-link-item"><a href="<?php echo $basePath; ?>pages/human-resource-advisory.php">Human Resource Advisory</a></li>
+              <li class="footer-link-item"><a href="<?php echo $basePath; ?>pages/learning-and-development.php">Learning &amp; Development</a></li>
+              <li class="footer-link-item"><a href="<?php echo $basePath; ?>pages/impact-consulting.php">Impact Consulting &amp; CSR</a></li>
+              <li class="footer-link-item"><a href="<?php echo $basePath; ?>pages/business-development-and-strategic-growth.php">Business Development</a></li>
+              <li class="footer-link-item"><a href="<?php echo $basePath; ?>pages/financial-services-and-advisory.php">Financial Services &amp; Advisory</a></li>
+              <li class="footer-link-item"><a href="<?php echo $basePath; ?>pages/business-operations-optimization.php">Business Operations Opt.</a></li>
+              <li class="footer-link-item"><a href="<?php echo $basePath; ?>pages/digital-transformation-and-technology.php">Digital Transformation</a></li>
+            </ul>
+          </div>
+
+          <!-- Col 4: Official Inquiries & Advisory Desk -->
+          <div class="footer-col">
+            <h4 class="footer-col-title">Advisory Desk</h4>
+            <div class="footer-contact-items">
+              <div class="footer-contact-row">
+                <svg fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"></path>
+                </svg>
+                <div>
+                  <span>Official Inquiries:</span><br>
+                  <a href="mailto:contact@senapathi.co.in">contact@senapathi.co.in</a>
+                </div>
+              </div>
+              <div class="footer-contact-row">
+                <svg fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4"></path>
+                </svg>
+                <div>
+                  <span>Public &amp; Private Sector:</span><br>
+                  Pan-India Engagements &amp; PSU Advisory
+                </div>
+              </div>
+              <div class="footer-contact-row">
+                <svg fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+                </svg>
+                <div>
+                  <span>Hours of Engagement:</span><br>
+                  Monday – Friday: 9:00 AM – 6:00 PM IST
+                </div>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </div>
+
+    <!-- Bottom Disclaimer & Copyright -->
+    <div class="footer-bottom">
+      <div class="container">
+        <div class="footer-copyright">
+          &copy; <?php echo date('Y'); ?> Senapathi Alliance. All Rights Reserved.
+        </div>
+        <div style="display: flex; gap: 20px; align-items: center; flex-wrap: wrap;">
+          <a href="<?php echo $basePath; ?>pages/terms-&-conditions.php" style="color: #94A3B8; font-size: 0.8125rem; text-decoration: underline; transition: color 0.2s;">Terms &amp; Conditions</a>
+          <a href="<?php echo $basePath; ?>pages/privacy-policy.php" style="color: #94A3B8; font-size: 0.8125rem; text-decoration: underline; transition: color 0.2s;">Privacy Policy</a>
+          <span style="color: #475569;">|</span>
+          <span style="font-size: 0.75rem; color: #64748B;">Regulated services delivered via partner firms in accordance with statutory and institutional standards.</span>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Floating Back to Top Trigger -->
+  <button class="back-to-top-btn" id="backToTop" aria-label="Back to Top">
+    <svg fill="none" stroke="currentColor" viewBox="0 0 24 24">
+      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M5 15l7-7 7 7"></path>
+    </svg>
+  </button>
+
+  <!-- GSAP Animation Library for Interactive Floating Motion & 3D Parallax -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+
+  <!-- JavaScript Application Bundle -->
+  <script src="<?php echo $basePath; ?>assets/js/main.js"></script>
+</body>
+</html>

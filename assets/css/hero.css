@@ -1,0 +1,654 @@
+/* ==========================================================================
+   SENAPATHI ALLIANCE - HERO SECTION STYLES
+   Dribbble-Grade Institutional Hero with Dynamic Gradients & Glass Elements
+   ========================================================================== */
+
+.hero-section {
+  position: relative;
+  background: radial-gradient(circle at 85% 15%, rgba(2, 132, 199, 0.12) 0%, transparent 45%),
+              radial-gradient(circle at 10% 85%, rgba(15, 59, 108, 0.08) 0%, transparent 45%),
+              linear-gradient(180deg, #FFFFFF 0%, #F8FAFC 100%);
+  padding-top: 72px;
+  padding-bottom: 96px;
+  overflow: hidden;
+}
+
+/* Background decorative geometry */
+.hero-glow-blob {
+  position: absolute;
+  width: 600px;
+  height: 600px;
+  border-radius: 50%;
+  filter: blur(80px);
+  pointer-events: none;
+  z-index: 0;
+}
+
+.hero-glow-1 {
+  top: -150px;
+  right: -100px;
+  background: rgba(14, 165, 233, 0.14);
+}
+
+.hero-glow-2 {
+  bottom: -150px;
+  left: -100px;
+  background: rgba(11, 37, 69, 0.08);
+}
+
+.hero-container {
+  position: relative;
+  z-index: 1;
+}
+
+.hero-grid {
+  display: grid;
+  grid-template-columns: 1.15fr 0.85fr;
+  align-items: center;
+  gap: 56px;
+}
+
+/* Left Hero Content */
+.hero-content {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.hero-eyebrow-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  padding: 8px 16px;
+  background: #FFFFFF;
+  border: 1px solid rgba(2, 132, 199, 0.25);
+  border-radius: var(--radius-full);
+  font-size: 0.8125rem;
+  font-weight: 600;
+  color: var(--color-primary-700);
+  box-shadow: var(--shadow-sm);
+  margin-bottom: 24px;
+}
+
+.pulsing-dot {
+  width: 8px;
+  height: 8px;
+  background-color: var(--color-primary-500);
+  border-radius: 50%;
+  position: relative;
+}
+
+.pulsing-dot::after {
+  content: '';
+  position: absolute;
+  inset: -4px;
+  border-radius: 50%;
+  background: var(--color-primary-400);
+  opacity: 0.6;
+  animation: pulseGlow 2s infinite cubic-bezier(0.4, 0, 0.6, 1);
+}
+
+@keyframes pulseGlow {
+  0% { transform: scale(0.9); opacity: 0.8; }
+  70% { transform: scale(2.2); opacity: 0; }
+  100% { transform: scale(2.4); opacity: 0; }
+}
+
+.hero-title {
+  font-size: clamp(2.35rem, 4.4vw, 3.75rem);
+  font-weight: 800;
+  line-height: 1.14;
+  color: var(--color-primary-900);
+  margin-bottom: 22px;
+  letter-spacing: -0.03em;
+}
+
+.hero-title .gradient-text {
+  background: linear-gradient(135deg, var(--color-primary-700) 0%, var(--color-primary-500) 70%, var(--color-primary-400) 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.hero-description {
+  font-size: 1.1875rem;
+  line-height: 1.7;
+  color: var(--color-text-muted);
+  margin-bottom: 36px;
+  max-width: 620px;
+}
+
+.hero-buttons {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  flex-wrap: wrap;
+  margin-bottom: 40px;
+}
+
+.hero-highlights-strip {
+  display: flex;
+  align-items: center;
+  gap: 24px;
+  flex-wrap: wrap;
+  padding-top: 24px;
+  border-top: 1px solid var(--color-border);
+  width: 100%;
+}
+
+.hero-highlight-item {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 0.875rem;
+  font-weight: 500;
+  color: var(--color-text-muted);
+}
+
+.hero-highlight-item svg {
+  width: 18px;
+  height: 18px;
+  color: var(--color-accent-emerald);
+  flex-shrink: 0;
+}
+
+/* ==========================================================================
+   Hero Visual Showcase: Featured Agent Image with Interactive Floating Matrix Bubbles
+   ========================================================================== */
+.hero-visual-card {
+  position: relative;
+}
+
+.hero-visual-showcase {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 540px;
+  perspective: 1200px;
+  user-select: none;
+}
+
+/* Ambient glow & orbit lines */
+.hero-image-backdrop-glow {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 440px;
+  height: 440px;
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(14, 165, 233, 0.24) 0%, rgba(2, 132, 199, 0.08) 50%, transparent 70%);
+  filter: blur(40px);
+  pointer-events: none;
+  z-index: 1;
+}
+
+.hero-orbit-ring {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  border-radius: 50%;
+  border: 1px dashed rgba(2, 132, 199, 0.22);
+  pointer-events: none;
+  z-index: 1;
+}
+
+.hero-orbit-ring-1 {
+  width: 470px;
+  height: 470px;
+  animation: spinSlow 60s linear infinite;
+}
+
+.hero-orbit-ring-2 {
+  width: 580px;
+  height: 580px;
+  border-color: rgba(15, 59, 108, 0.12);
+  animation: spinSlowReverse 80s linear infinite;
+}
+
+@keyframes spinSlow {
+  from { transform: translate(-50%, -50%) rotate(0deg); }
+  to { transform: translate(-50%, -50%) rotate(360deg); }
+}
+
+@keyframes spinSlowReverse {
+  from { transform: translate(-50%, -50%) rotate(360deg); }
+  to { transform: translate(-50%, -50%) rotate(0deg); }
+}
+
+/* Center Agent Image Container */
+.hero-agent-image-wrap {
+  position: relative;
+  z-index: 2;
+  width: 100%;
+  max-width: 420px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: transform 0.2s cubic-bezier(0.16, 1, 0.3, 1);
+  will-change: transform;
+}
+
+.hero-agent-img {
+  width: 100%;
+  height: auto;
+  max-height: 520px;
+  object-fit: contain;
+  filter: drop-shadow(0 20px 35px rgba(11, 37, 69, 0.2));
+  pointer-events: none;
+}
+
+/* --------------------------------------------------------------------------
+   Floating Capability Matrix Bubbles (Dribbble Glassmorphic Floating Cards)
+   -------------------------------------------------------------------------- */
+.hero-bubble {
+  position: absolute;
+  z-index: 5;
+  background: rgba(255, 255, 255, 0.90);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1px solid rgba(255, 255, 255, 0.95);
+  border-radius: var(--radius-lg);
+  padding: 12px 18px;
+  display: inline-flex;
+  align-items: center;
+  gap: 12px;
+  box-shadow: 0 14px 34px rgba(11, 37, 69, 0.14), 0 2px 6px rgba(0, 0, 0, 0.04);
+  cursor: pointer;
+  transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.3s ease, border-color 0.3s ease;
+  will-change: transform;
+}
+
+.hero-bubble:hover {
+  transform: scale(1.06) translateY(-4px) !important;
+  box-shadow: 0 20px 42px rgba(2, 132, 199, 0.26), 0 4px 12px rgba(0, 0, 0, 0.06);
+  border-color: rgba(2, 132, 199, 0.45);
+  z-index: 10;
+}
+
+/* Bubble Desktop Positioning */
+.bubble-top-left {
+  top: 4%;
+  left: -8%;
+  animation: floatSine1 4.2s ease-in-out infinite alternate;
+}
+
+.bubble-top-right {
+  top: 8%;
+  right: -6%;
+  animation: floatSine2 4.8s ease-in-out infinite alternate;
+}
+
+.bubble-mid-right {
+  top: 46%;
+  right: -10%;
+  animation: floatSine3 3.9s ease-in-out infinite alternate;
+}
+
+.bubble-bottom-left {
+  bottom: 8%;
+  left: -10%;
+  animation: floatSine2 4.5s ease-in-out infinite alternate;
+}
+
+.bubble-bottom-right {
+  bottom: 2%;
+  right: -4%;
+  animation: floatSine1 5.2s ease-in-out infinite alternate;
+}
+
+/* Fallback CSS Keyframe Oscillations */
+@keyframes floatSine1 {
+  0% { transform: translateY(0px) rotate(0deg); }
+  100% { transform: translateY(-12px) rotate(1deg); }
+}
+
+@keyframes floatSine2 {
+  0% { transform: translateY(0px) rotate(0deg); }
+  100% { transform: translateY(14px) rotate(-1deg); }
+}
+
+@keyframes floatSine3 {
+  0% { transform: translateY(0px) translateX(0px); }
+  100% { transform: translateY(-10px) translateX(-6px); }
+}
+
+/* Bubble Internal Elements */
+.bubble-icon-wrap {
+  width: 40px;
+  height: 40px;
+  border-radius: var(--radius-md);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.bubble-icon-wrap svg {
+  width: 20px;
+  height: 20px;
+}
+
+.bubble-icon-wrap.emerald {
+  background: var(--color-accent-emerald-light);
+  color: var(--color-accent-emerald);
+}
+
+.bubble-icon-wrap.cyan {
+  background: var(--color-primary-100);
+  color: var(--color-primary-600);
+}
+
+.bubble-icon-wrap.amber {
+  background: #FEF3C7;
+  color: #D97706;
+}
+
+.bubble-icon-wrap.navy {
+  background: #E0E7FF;
+  color: #3730A3;
+}
+
+.bubble-stat-badge {
+  font-family: var(--font-heading);
+  font-size: 1.35rem;
+  font-weight: 800;
+  color: var(--color-primary-700);
+  background: var(--color-primary-50);
+  border: 1px solid var(--color-primary-100);
+  padding: 4px 10px;
+  border-radius: var(--radius-sm);
+  line-height: 1;
+}
+
+.bubble-content {
+  display: flex;
+  flex-direction: column;
+}
+
+.bubble-title {
+  font-size: 0.875rem;
+  font-weight: 700;
+  color: var(--color-primary-900);
+  line-height: 1.25;
+}
+
+.bubble-title .highlight-stat {
+  color: var(--color-primary-600);
+  font-size: 0.9375rem;
+}
+
+.bubble-desc {
+  font-size: 0.71875rem;
+  color: var(--color-text-muted);
+  line-height: 1.3;
+}
+
+/* Special styling for Statutory Advisory Card Bubble */
+.hero-bubble.audit-special {
+  background: linear-gradient(135deg, #071527 0%, #0F3B6C 100%);
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  box-shadow: 0 16px 36px rgba(11, 37, 69, 0.28);
+}
+
+.hero-bubble.audit-special .bubble-title {
+  color: #FFFFFF;
+}
+
+.hero-bubble.audit-special .bubble-desc {
+  color: #BAE6FD;
+}
+
+/* Live interactive indicator badge */
+.hero-floating-indicator {
+  position: absolute;
+  top: -12px;
+  right: 15%;
+  background: rgba(255, 255, 255, 0.92);
+  border: 1px solid rgba(2, 132, 199, 0.2);
+  border-radius: var(--radius-full);
+  padding: 4px 12px;
+  font-size: 0.6875rem;
+  font-weight: 600;
+  color: var(--color-primary-700);
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  z-index: 6;
+  box-shadow: var(--shadow-xs);
+}
+
+.live-pulse-dot {
+  width: 6px;
+  height: 6px;
+  background: var(--color-accent-emerald);
+  border-radius: 50%;
+  animation: pulseGlow 1.8s infinite;
+}
+
+/* --------------------------------------------------------------------------
+   Responsive Layout & Mobile Adaptation
+   -------------------------------------------------------------------------- */
+@media (max-width: 1220px) {
+  .bubble-top-left { left: -4%; }
+  .bubble-top-right { right: -2%; }
+  .bubble-mid-right { right: -4%; }
+  .bubble-bottom-left { left: -4%; }
+  .bubble-bottom-right { right: 0%; }
+}
+
+@media (max-width: 1024px) {
+  .hero-section {
+    padding-top: 48px;
+    padding-bottom: 72px;
+  }
+
+  .hero-grid {
+    grid-template-columns: 1fr;
+    gap: 40px;
+  }
+
+  .hero-content {
+    text-align: center;
+    align-items: center;
+  }
+
+  .hero-highlights-strip {
+    justify-content: center;
+  }
+
+  .hero-visual-showcase {
+    max-width: 540px;
+    margin: 0 auto;
+    min-height: 480px;
+  }
+}
+
+@media (max-width: 768px) {
+  .hero-section {
+    padding-top: 32px;
+    padding-bottom: 56px;
+  }
+
+  .hero-eyebrow-badge {
+    font-size: 0.75rem;
+    padding: 6px 14px;
+    margin-bottom: 18px;
+    max-width: 100%;
+    text-align: center;
+    justify-content: center;
+  }
+
+  .hero-title {
+    font-size: clamp(1.95rem, 6.5vw, 2.65rem);
+    margin-bottom: 16px;
+  }
+
+  .hero-description {
+    font-size: 0.96875rem;
+    line-height: 1.6;
+    margin-bottom: 24px;
+    max-width: 100%;
+  }
+
+  .hero-buttons {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    gap: 12px;
+    margin-bottom: 28px;
+  }
+
+  .hero-buttons .btn {
+    width: 100%;
+    justify-content: center;
+    min-height: 48px;
+  }
+
+  .hero-highlights-strip {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 10px;
+    width: 100%;
+    padding-top: 18px;
+  }
+
+  .hero-highlight-item {
+    font-size: 0.8125rem;
+  }
+
+  /* Interactive Mobile Showcase: Agent Image + 2-Column Capability Grid */
+  .hero-visual-showcase {
+    position: relative;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 10px;
+    max-width: 100%;
+    min-height: auto;
+    padding: 0;
+    margin: 0 auto;
+  }
+
+  .hero-floating-indicator {
+    position: static;
+    grid-column: span 2;
+    margin: 0 auto 4px auto;
+    display: inline-flex;
+    width: fit-content;
+  }
+
+  .hero-orbit-ring {
+    display: none;
+  }
+
+  .hero-image-backdrop-glow {
+    width: 260px;
+    height: 260px;
+  }
+
+  .hero-agent-image-wrap {
+    grid-column: span 2;
+    max-width: 270px;
+    margin: 0 auto 8px auto;
+  }
+
+  .hero-agent-img {
+    max-height: 290px;
+    filter: drop-shadow(0 14px 24px rgba(11, 37, 69, 0.18));
+  }
+
+  /* Mobile Capability Cards (Zero overlapping, high tactile feedback) */
+  .hero-bubble {
+    position: static !important;
+    top: auto !important;
+    left: auto !important;
+    right: auto !important;
+    bottom: auto !important;
+    transform: none !important;
+    animation: none !important;
+    width: 100%;
+    padding: 10px 12px;
+    gap: 10px;
+    border-radius: var(--radius-md);
+    background: rgba(255, 255, 255, 0.94);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    border: 1px solid rgba(2, 132, 199, 0.2);
+    box-shadow: 0 4px 14px rgba(11, 37, 69, 0.08);
+    display: flex;
+    align-items: center;
+    transition: all 0.2s ease;
+    -webkit-tap-highlight-color: transparent;
+  }
+
+  .hero-bubble:active {
+    transform: scale(0.97) !important;
+    background: #F0F9FF !important;
+    border-color: var(--color-primary-400) !important;
+  }
+
+  .hero-bubble.audit-special {
+    grid-column: span 2;
+    background: linear-gradient(135deg, rgba(254, 243, 199, 0.5) 0%, rgba(255, 255, 255, 0.95) 100%);
+    border-color: rgba(217, 119, 6, 0.35);
+  }
+
+  .bubble-title {
+    font-size: 0.78125rem;
+    line-height: 1.25;
+  }
+
+  .bubble-desc {
+    font-size: 0.6875rem;
+    line-height: 1.3;
+  }
+
+  .bubble-icon-wrap {
+    width: 34px;
+    height: 34px;
+    flex-shrink: 0;
+  }
+
+  .bubble-icon-wrap svg {
+    width: 17px;
+    height: 17px;
+  }
+
+  .bubble-stat-badge {
+    width: 34px;
+    height: 34px;
+    font-size: 0.8125rem;
+    flex-shrink: 0;
+  }
+}
+
+@media (max-width: 400px) {
+  .hero-visual-showcase {
+    gap: 8px;
+  }
+
+  .hero-bubble {
+    padding: 8px 10px;
+    gap: 8px;
+  }
+
+  .bubble-title {
+    font-size: 0.71875rem;
+  }
+
+  .bubble-desc {
+    font-size: 0.625rem;
+  }
+
+  .bubble-icon-wrap,
+  .bubble-stat-badge {
+    width: 30px;
+    height: 30px;
+  }
+
+  .bubble-icon-wrap svg {
+    width: 15px;
+    height: 15px;
+  }
+}

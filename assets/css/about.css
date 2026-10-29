@@ -1,0 +1,522 @@
+/* ==========================================================================
+   SENAPATHI ALLIANCE - ABOUT US SECTION STYLES
+   High-End Dribbble-Grade Layout, Executive Video Frame & Shining Text Effects
+   ========================================================================== */
+
+.about-section {
+  background: #FFFFFF;
+  position: relative;
+  overflow: hidden;
+}
+
+/* Background subtle ambient mesh */
+.about-section::before {
+  content: '';
+  position: absolute;
+  top: -120px;
+  right: -100px;
+  width: 500px;
+  height: 500px;
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(14, 165, 233, 0.08) 0%, transparent 70%);
+  pointer-events: none;
+}
+
+.about-grid {
+  display: grid;
+  grid-template-columns: 1.05fr 0.95fr;
+  gap: 48px;
+  align-items: flex-start;
+}
+
+@media (max-width: 1024px) {
+  .about-grid {
+    grid-template-columns: 1fr;
+    gap: 40px;
+  }
+}
+
+/* ==========================================================================
+   1. Executive Video Frame Component (Left Column)
+   ========================================================================== */
+.about-visual {
+  position: relative;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.about-video-frame {
+  position: relative;
+  width: 100%;
+  border-radius: var(--radius-2xl);
+  overflow: hidden;
+  box-shadow: 0 20px 50px rgba(11, 37, 69, 0.14), 0 4px 12px rgba(0, 0, 0, 0.05);
+  border: 1px solid rgba(226, 232, 240, 0.9);
+  background: #071527;
+  aspect-ratio: 16 / 10;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.4s ease, border-color 0.4s ease;
+}
+
+.about-video-frame:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 28px 64px rgba(11, 37, 69, 0.2), 0 8px 20px rgba(2, 132, 199, 0.12);
+  border-color: rgba(56, 189, 248, 0.45);
+}
+
+.about-frame-video-element {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  border-radius: inherit;
+  background-color: #071527;
+}
+
+/* Sleek Accreditation & Institutional Metrics Strip */
+.about-video-meta {
+  background: #FFFFFF;
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-xl);
+  padding: 18px 22px;
+  box-shadow: var(--shadow-sm);
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  transition: all 0.3s ease;
+}
+
+.about-video-meta:hover {
+  box-shadow: var(--shadow-md);
+  border-color: rgba(2, 132, 199, 0.25);
+}
+
+.video-meta-card {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+}
+
+.meta-icon-box {
+  width: 44px;
+  height: 44px;
+  border-radius: var(--radius-md);
+  background: rgba(2, 132, 199, 0.08);
+  border: 1px solid rgba(2, 132, 199, 0.2);
+  color: var(--color-primary-600);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.meta-icon-box svg {
+  width: 22px;
+  height: 22px;
+}
+
+.meta-info h6 {
+  font-size: 0.9375rem;
+  font-weight: 700;
+  color: var(--color-primary-900);
+  margin-bottom: 2px;
+  line-height: 1.3;
+}
+
+.meta-info p {
+  font-size: 0.8125rem;
+  color: var(--color-text-muted);
+  line-height: 1.4;
+  margin: 0;
+}
+
+.video-meta-stats {
+  display: grid;
+  grid-template-columns: 1fr auto 1fr auto 1fr;
+  align-items: center;
+  padding-top: 14px;
+  border-top: 1px solid rgba(226, 232, 240, 0.8);
+  text-align: center;
+}
+
+.meta-stat-item {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.stat-number {
+  font-family: var(--font-heading);
+  font-size: 1.25rem;
+  font-weight: 800;
+  color: var(--color-primary-700);
+  line-height: 1.1;
+}
+
+.stat-label {
+  font-size: 0.6875rem;
+  font-weight: 600;
+  color: var(--color-text-muted);
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+}
+
+.meta-stat-divider {
+  width: 1px;
+  height: 28px;
+  background: rgba(226, 232, 240, 0.9);
+}
+
+/* ==========================================================================
+   2. Right Content & Shining Text Effects
+   ========================================================================== */
+.about-text-content {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+}
+
+/* Animated Shining Text / Light-Sweep Shimmer */
+.shining-text {
+  background: linear-gradient(110deg, #071527 15%, #0284C7 35%, #38BDF8 50%, #0284C7 65%, #071527 85%);
+  background-size: 200% auto;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  animation: shineSweep 4s linear infinite;
+  display: inline;
+  font-weight: 800;
+}
+
+@keyframes shineSweep {
+  0% { background-position: 200% center; }
+  100% { background-position: -200% center; }
+}
+
+/* High-Impact Gold Shimmer for Assurance */
+.shining-gold-text {
+  background: linear-gradient(110deg, #92400E 15%, #D97706 35%, #FDE68A 50%, #D97706 65%, #92400E 85%);
+  background-size: 200% auto;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  animation: shineSweep 3.5s linear infinite;
+  font-weight: 700;
+}
+
+/* Dynamic Rotating Pill Indicator */
+.dynamic-focus-pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 0.78125rem;
+  font-weight: 700;
+  color: var(--color-primary-700);
+  background: linear-gradient(135deg, var(--color-primary-50) 0%, #E0F2FE 100%);
+  border: 1px solid rgba(2, 132, 199, 0.25);
+  padding: 5px 14px;
+  border-radius: var(--radius-full);
+  margin-bottom: 14px;
+  width: fit-content;
+}
+
+.dynamic-focus-pill .dot {
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background: var(--color-primary-500);
+  animation: pulseGlow 2s infinite;
+}
+
+.about-lead {
+  font-size: 1.0625rem;
+  font-weight: 500;
+  color: var(--color-primary-900);
+  line-height: 1.7;
+  margin-bottom: 24px;
+}
+
+.about-body {
+  font-size: 0.96875rem;
+  color: var(--color-text-muted);
+  line-height: 1.75;
+  margin-bottom: 28px;
+}
+
+/* Modern Interactive Feature Cards */
+.about-features-list {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 16px;
+  margin-bottom: 32px;
+}
+
+.about-feature-card {
+  background: #FFFFFF;
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-lg);
+  padding: 18px 20px;
+  display: flex;
+  align-items: flex-start;
+  gap: 14px;
+  transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+  box-shadow: var(--shadow-xs);
+  position: relative;
+  overflow: hidden;
+}
+
+.about-feature-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 3px;
+  height: 100%;
+  background: var(--color-primary-500);
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.about-feature-card:hover {
+  transform: translateY(-3px);
+  border-color: rgba(2, 132, 199, 0.3);
+  box-shadow: var(--shadow-md);
+}
+
+.about-feature-card:hover::before {
+  opacity: 1;
+}
+
+.about-feature-icon {
+  width: 40px;
+  height: 40px;
+  border-radius: var(--radius-md);
+  background: var(--color-primary-50);
+  color: var(--color-primary-600);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  transition: all 0.3s ease;
+}
+
+.about-feature-card:hover .about-feature-icon {
+  background: var(--color-primary-600);
+  color: #FFFFFF;
+  transform: rotate(-6deg) scale(1.08);
+}
+
+.about-feature-icon svg {
+  width: 20px;
+  height: 20px;
+}
+
+.about-feature-text h5 {
+  font-size: 0.9375rem;
+  font-weight: 700;
+  color: var(--color-primary-900);
+  margin-bottom: 4px;
+  line-height: 1.3;
+}
+
+.about-feature-text p {
+  font-size: 0.8125rem;
+  color: var(--color-text-muted);
+  line-height: 1.5;
+}
+
+/* ==========================================================================
+   3. Interactive Video Briefing Modal Dialog
+   ========================================================================== */
+.video-modal-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(7, 21, 39, 0.85);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  z-index: 4000;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 24px;
+  opacity: 0;
+  visibility: hidden;
+  transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.video-modal-overlay.active {
+  opacity: 1;
+  visibility: visible;
+}
+
+.video-modal-container {
+  background: #071527;
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  border-radius: var(--radius-2xl);
+  width: 100%;
+  max-width: 860px;
+  overflow: hidden;
+  box-shadow: 0 28px 70px rgba(0, 0, 0, 0.6);
+  transform: scale(0.94) translateY(20px);
+  transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+  position: relative;
+}
+
+.video-modal-overlay.active .video-modal-container {
+  transform: scale(1) translateY(0);
+}
+
+.video-modal-header {
+  padding: 18px 24px;
+  background: rgba(255, 255, 255, 0.05);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  color: #FFFFFF;
+}
+
+.video-modal-header h4 {
+  font-size: 1.0625rem;
+  font-weight: 700;
+  color: #FFFFFF;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.video-modal-close {
+  background: rgba(255, 255, 255, 0.12);
+  border: none;
+  width: 36px;
+  height: 36px;
+  border-radius: var(--radius-sm);
+  color: #FFFFFF;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.video-modal-close:hover {
+  background: rgba(255, 255, 255, 0.25);
+  transform: rotate(90deg);
+}
+
+.video-modal-player-wrap {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 16 / 9;
+  background: #000000;
+}
+
+.video-modal-player-wrap iframe,
+.video-modal-player-wrap video {
+  width: 100%;
+  height: 100%;
+  border: none;
+}
+
+.video-modal-footer {
+  padding: 16px 24px;
+  background: rgba(255, 255, 255, 0.03);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  color: #94A3B8;
+  font-size: 0.8125rem;
+  flex-wrap: wrap;
+  gap: 12px;
+}
+
+/* ==========================================================================
+   4. Mobile Responsiveness & Touch Interactions
+   ========================================================================== */
+.about-actions-row {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  flex-wrap: wrap;
+}
+
+@media (max-width: 768px) {
+  .about-video-frame {
+    aspect-ratio: 16 / 9;
+    border-radius: var(--radius-xl);
+  }
+
+  .about-video-meta {
+    padding: 16px 14px;
+    border-radius: var(--radius-lg);
+  }
+
+  .about-features-list {
+    grid-template-columns: 1fr;
+    gap: 10px;
+  }
+
+  .about-feature-card {
+    padding: 14px 16px;
+    -webkit-tap-highlight-color: transparent;
+  }
+
+  .about-feature-card:active {
+    transform: scale(0.98);
+    background: var(--color-primary-50);
+    border-color: var(--color-primary-400);
+  }
+
+  .about-lead {
+    font-size: 1rem;
+    line-height: 1.6;
+    margin-bottom: 20px;
+  }
+}
+
+@media (max-width: 576px) {
+  .about-actions-row {
+    flex-direction: column;
+    width: 100%;
+    gap: 12px;
+  }
+
+  .about-actions-row .btn {
+    width: 100%;
+    justify-content: center;
+    min-height: 48px;
+  }
+
+  .video-meta-card {
+    gap: 10px;
+  }
+
+  .meta-icon-box {
+    width: 38px;
+    height: 38px;
+  }
+
+  .meta-icon-box svg {
+    width: 19px;
+    height: 19px;
+  }
+
+  .meta-info h6 {
+    font-size: 0.875rem;
+  }
+
+  .meta-info p {
+    font-size: 0.75rem;
+  }
+
+  .stat-number {
+    font-size: 1.125rem;
+  }
+
+  .stat-label {
+    font-size: 0.625rem;
+  }
+}
+

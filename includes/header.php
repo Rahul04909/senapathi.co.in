@@ -1,0 +1,292 @@
+<?php
+/**
+ * Senapathi Alliance - Master Header & SEO Framework
+ * Corporate & Government Advisory
+ */
+$basePath = isset($basePath) ? $basePath : '';
+$pageTitle = isset($pageTitle) ? $pageTitle : "Senapathi Alliance | Corporate & Government Advisory | Management & Technical Consulting";
+$pageDescription = isset($pageDescription) ? $pageDescription : "Senapathi Alliance provides multidisciplinary management, technical, financial, and institutional advisory to government departments, PSUs, multilateral institutions, and public-private projects across India.";
+$canonicalUrl = isset($canonicalUrl) ? $canonicalUrl : "https://senapathi.co.in/";
+$pageKeywords = isset($pageKeywords) ? $pageKeywords : "Senapathi Alliance, Senapathi India, Government Advisory, PSU Consulting, Real Estate Transaction Advisory, Infrastructure Consulting, Statutory Audit Partner, HR Advisory, Impact Consulting, SROI, Digital Transformation, Public Procurement, PPP Advisory";
+$activeNav = isset($activeNav) ? $activeNav : '';
+?>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  
+  <!-- Primary SEO Meta Tags -->
+  <title><?php echo htmlspecialchars($pageTitle); ?></title>
+  <meta name="title" content="<?php echo htmlspecialchars($pageTitle); ?>">
+  <meta name="description" content="<?php echo htmlspecialchars($pageDescription); ?>">
+  <meta name="keywords" content="<?php echo htmlspecialchars($pageKeywords); ?>">
+  <meta name="author" content="Senapathi Alliance">
+  <meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1">
+  <link rel="canonical" href="<?php echo htmlspecialchars($canonicalUrl); ?>">
+
+  <!-- Open Graph / Facebook -->
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="<?php echo htmlspecialchars($canonicalUrl); ?>">
+  <meta property="og:title" content="<?php echo htmlspecialchars($pageTitle); ?>">
+  <meta property="og:description" content="<?php echo htmlspecialchars($pageDescription); ?>">
+  <meta property="og:image" content="<?php echo $basePath; ?>assets/images/logo.jpeg">
+  <meta property="og:site_name" content="Senapathi Alliance">
+
+  <!-- Twitter Meta Tags -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:url" content="<?php echo htmlspecialchars($canonicalUrl); ?>">
+  <meta name="twitter:title" content="<?php echo htmlspecialchars($pageTitle); ?>">
+  <meta name="twitter:description" content="<?php echo htmlspecialchars($pageDescription); ?>">
+  <meta name="twitter:image" content="<?php echo $basePath; ?>assets/images/logo.jpeg">
+
+  <!-- Favicon -->
+  <link rel="icon" type="image/jpeg" href="<?php echo $basePath; ?>assets/images/logo.jpeg">
+
+  <!-- Google Fonts Preconnect & Fonts (Outfit & Inter) -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Outfit:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+
+  <!-- Component Stylesheets -->
+  <link rel="stylesheet" href="<?php echo $basePath; ?>assets/css/variables.css">
+  <link rel="stylesheet" href="<?php echo $basePath; ?>assets/css/header.css">
+  <link rel="stylesheet" href="<?php echo $basePath; ?>assets/css/hero.css">
+  <link rel="stylesheet" href="<?php echo $basePath; ?>assets/css/about.css">
+  <link rel="stylesheet" href="<?php echo $basePath; ?>assets/css/services.css">
+  <link rel="stylesheet" href="<?php echo $basePath; ?>assets/css/approach.css">
+  <link rel="stylesheet" href="<?php echo $basePath; ?>assets/css/industries.css">
+  <link rel="stylesheet" href="<?php echo $basePath; ?>assets/css/contact.css">
+  <link rel="stylesheet" href="<?php echo $basePath; ?>assets/css/modal.css">
+  <link rel="stylesheet" href="<?php echo $basePath; ?>assets/css/pages.css">
+  <link rel="stylesheet" href="<?php echo $basePath; ?>assets/css/footer.css">
+
+  <!-- Structured Data: Schema.org JSON-LD -->
+  <?php if (isset($customSchemaJson) && !empty($customSchemaJson)): ?>
+    <?php echo $customSchemaJson; ?>
+  <?php else: ?>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "Organization",
+        "@id": "https://senapathi.co.in/#organization",
+        "name": "Senapathi Alliance",
+        "alternateName": "Senapathi India",
+        "url": "https://senapathi.co.in/",
+        "logo": {
+          "@type": "ImageObject",
+          "url": "https://senapathi.co.in/assets/images/logo.jpeg",
+          "caption": "Senapathi Corporate and Government Advisory"
+        },
+        "description": "Multidisciplinary management and technical consulting firm supporting government departments, PSUs, multilateral institutions, and public-private enterprises.",
+        "address": {
+          "@type": "PostalAddress",
+          "addressCountry": "IN"
+        },
+        "contactPoint": {
+          "@type": "ContactPoint",
+          "contactType": "Customer and Institutional Advisory",
+          "email": "contact@senapathi.co.in"
+        }
+      },
+      {
+        "@type": "WebSite",
+        "@id": "https://senapathi.co.in/#website",
+        "url": "https://senapathi.co.in/",
+        "name": "Senapathi Alliance",
+        "publisher": {
+          "@id": "https://senapathi.co.in/#organization"
+        }
+      }
+    ]
+  }
+  </script>
+  <?php endif; ?>
+</head>
+<body>
+
+  <!-- Top Utility Announcement Bar -->
+  <div class="top-bar">
+    <div class="container">
+      <div class="top-bar-left">
+        <span class="top-badge">Multidisciplinary Advisory</span>
+        <span class="top-bar-item">
+          <svg fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4"></path>
+          </svg>
+          Serving Government, PSUs &amp; Multilateral Institutions
+        </span>
+      </div>
+      <div class="top-bar-right">
+        <a href="mailto:contact@senapathi.co.in" class="top-bar-item">
+          <svg fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"></path>
+          </svg>
+          contact@senapathi.co.in
+        </a>
+        <a href="<?php echo $basePath; ?>pages/business-operations-optimization.php" class="top-bar-item">
+          <svg fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10.325 4.317c.426-1.756 2.924-1.756 3.35 0a1.724 1.724 0 002.573 1.066c1.543-.94 3.31.826 2.37 2.37a1.724 1.724 0 001.065 2.572c1.756.426 1.756 2.924 0 3.35a1.724 1.724 0 00-1.066 2.573c.94 1.543-.826 3.31-2.37 2.37a1.724 1.724 0 00-2.572 1.065c-.426 1.756-2.924 1.756-3.35 0a1.724 1.724 0 00-2.573-1.066c-1.543.94-3.31-.826-2.37-2.37a1.724 1.724 0 00-1.065-2.572c-1.756-.426-1.756-2.924 0-3.35a1.724 1.724 0 001.066-2.573c-.94-1.543.826-3.31 2.37-2.37.996.608 2.296.07 2.572-1.065z"></path>
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"></path>
+          </svg>
+          Business Operations Optimization
+        </a>
+      </div>
+    </div>
+  </div>
+
+  <!-- Sticky Main Navbar -->
+  <header class="site-header" id="siteHeader">
+    <div class="container">
+      <div class="header-inner">
+        <!-- Logo -->
+        <a href="<?php echo $basePath; ?>index.php" class="brand-logo" aria-label="Senapathi Alliance Home">
+          <img src="<?php echo $basePath; ?>assets/images/logo.jpeg" alt="Senapathi - Corporate and Government Advisory" width="220" height="52">
+        </a>
+
+        <!-- Desktop Navigation -->
+        <nav class="main-nav" aria-label="Primary Navigation">
+          <a href="<?php echo $basePath; ?>pages/about-us.php" class="nav-link <?php echo ($activeNav === 'about') ? 'active' : ''; ?>">About Us</a>
+          
+          <div class="nav-item-dropdown">
+            <a href="<?php echo $basePath; ?>index.php#services" class="nav-link <?php echo ($activeNav === 'services') ? 'active' : ''; ?>" style="display:inline-flex; align-items:center; gap:5px;">
+              <span>Core Service Lines</span>
+              <svg style="width:12px;height:12px;" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M19 9l-7 7-7-7"></path></svg>
+            </a>
+            <div class="nav-dropdown-menu">
+              <a href="<?php echo $basePath; ?>pages/real-estate-transaction-advisory.php" class="nav-dropdown-item"><span class="item-num">01</span><span>Real Estate Advisory</span></a>
+              <a href="<?php echo $basePath; ?>pages/infrastructure-consulting.php" class="nav-dropdown-item"><span class="item-num">02</span><span>Infrastructure &amp; PMC</span></a>
+              <a href="<?php echo $basePath; ?>pages/human-resource-advisory.php" class="nav-dropdown-item"><span class="item-num">03</span><span>Human Resource Advisory</span></a>
+              <a href="<?php echo $basePath; ?>pages/learning-and-development.php" class="nav-dropdown-item"><span class="item-num">04</span><span>Learning &amp; Development</span></a>
+              <a href="<?php echo $basePath; ?>pages/impact-consulting.php" class="nav-dropdown-item"><span class="item-num">05</span><span>Impact Consulting &amp; SROI</span></a>
+              <a href="<?php echo $basePath; ?>pages/business-development-and-strategic-growth.php" class="nav-dropdown-item"><span class="item-num">06</span><span>Business Development</span></a>
+              <a href="<?php echo $basePath; ?>pages/financial-services-and-advisory.php" class="nav-dropdown-item"><span class="item-num">07</span><span>Financial Services &amp; Advisory</span></a>
+              <a href="<?php echo $basePath; ?>pages/business-operations-optimization.php" class="nav-dropdown-item"><span class="item-num">08</span><span>Business Operations Opt.</span></a>
+              <a href="<?php echo $basePath; ?>pages/digital-transformation-and-technology.php" class="nav-dropdown-item"><span class="item-num">09</span><span>Digital Transformation</span></a>
+            </div>
+          </div>
+
+          <a href="<?php echo $basePath; ?>index.php#approach" class="nav-link <?php echo ($activeNav === 'approach') ? 'active' : ''; ?>">Our Approach</a>
+          <a href="<?php echo $basePath; ?>index.php#industries" class="nav-link <?php echo ($activeNav === 'industries') ? 'active' : ''; ?>">Industries We Serve</a>
+          <a href="<?php echo $basePath; ?>index.php#contact" class="nav-link <?php echo ($activeNav === 'contact') ? 'active' : ''; ?>">Contact</a>
+        </nav>
+
+        <!-- Header CTA Actions -->
+        <div class="header-actions">
+          <a href="<?php echo $basePath; ?>index.php#contact" class="btn btn-primary header-cta">
+            <span>Request Consultation / RFP</span>
+            <svg class="btn-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"></path>
+            </svg>
+          </a>
+          <!-- Mobile Menu Toggle Button -->
+          <button class="mobile-toggle" id="mobileToggle" aria-label="Open Mobile Menu">
+            <svg fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
+            </svg>
+          </button>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <!-- Mobile Drawer Overlay -->
+  <div class="mobile-drawer-overlay" id="drawerOverlay"></div>
+
+  <!-- Mobile Drawer Menu -->
+  <aside class="mobile-drawer" id="mobileDrawer" aria-label="Mobile Navigation Menu">
+    <div class="drawer-header">
+      <a href="<?php echo $basePath; ?>index.php" class="drawer-logo" aria-label="Home">
+        <img src="<?php echo $basePath; ?>assets/images/logo.jpeg" alt="Senapathi Logo">
+      </a>
+      <button class="drawer-close" id="drawerClose" aria-label="Close Menu">
+        <svg fill="none" stroke="currentColor" viewBox="0 0 24 24" style="width:20px;height:20px;">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M6 18L18 6M6 6l12 12"></path>
+        </svg>
+      </button>
+    </div>
+
+    <!-- Quick Institutional Practice Badge -->
+    <a href="<?php echo $basePath; ?>pages/business-operations-optimization.php" class="drawer-credentials-pill" style="text-decoration:none;">
+      <svg fill="none" stroke="currentColor" viewBox="0 0 24 24">
+        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10.325 4.317c.426-1.756 2.924-1.756 3.35 0a1.724 1.724 0 002.573 1.066c1.543-.94 3.31.826 2.37 2.37a1.724 1.724 0 001.065 2.572c1.756.426 1.756 2.924 0 3.35a1.724 1.724 0 00-1.066 2.573c.94 1.543-.826 3.31-2.37 2.37a1.724 1.724 0 00-2.572 1.065c-.426 1.756-2.924 1.756-3.35 0a1.724 1.724 0 00-2.573-1.066c-1.543.94-3.31-.826-2.37-2.37a1.724 1.724 0 00-1.065-2.572c-1.756-.426-1.756-2.924 0-3.35a1.724 1.724 0 001.066-2.573c-.94-1.543.826-3.31 2.37-2.37.996.608 2.296.07 2.572-1.065z"></path>
+        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"></path>
+      </svg>
+      <span>Business Operations Optimization</span>
+    </a>
+
+    <nav class="drawer-nav">
+      <a href="<?php echo $basePath; ?>pages/about-us.php" class="drawer-link <?php echo ($activeNav === 'about') ? 'active' : ''; ?>">
+        <div class="drawer-link-title">
+          <span class="drawer-icon-dot"></span>
+          <span>About Senapathi</span>
+        </div>
+        <svg fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path></svg>
+      </a>
+      <a href="<?php echo $basePath; ?>index.php#services" class="drawer-link">
+        <div class="drawer-link-title">
+          <span class="drawer-icon-dot"></span>
+          <span>Core Service Lines</span>
+        </div>
+        <span class="drawer-badge">09 Verticals</span>
+      </a>
+      <a href="<?php echo $basePath; ?>index.php#approach" class="drawer-link">
+        <div class="drawer-link-title">
+          <span class="drawer-icon-dot"></span>
+          <span>Our Approach</span>
+        </div>
+        <span class="drawer-badge">5 Pillars</span>
+      </a>
+      <a href="<?php echo $basePath; ?>index.php#industries" class="drawer-link">
+        <div class="drawer-link-title">
+          <span class="drawer-icon-dot"></span>
+          <span>Industries We Serve</span>
+        </div>
+        <span class="drawer-badge">6 Sectors</span>
+      </a>
+      <a href="<?php echo $basePath; ?>pages/terms-&-conditions.php" class="drawer-link <?php echo ($activeNav === 'terms') ? 'active' : ''; ?>">
+        <div class="drawer-link-title">
+          <span class="drawer-icon-dot"></span>
+          <span>Terms &amp; Conditions</span>
+        </div>
+        <svg fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path></svg>
+      </a>
+      <a href="<?php echo $basePath; ?>pages/privacy-policy.php" class="drawer-link <?php echo ($activeNav === 'privacy') ? 'active' : ''; ?>">
+        <div class="drawer-link-title">
+          <span class="drawer-icon-dot"></span>
+          <span>Privacy Policy</span>
+        </div>
+        <svg fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path></svg>
+      </a>
+      <a href="<?php echo $basePath; ?>index.php#contact" class="drawer-link">
+        <div class="drawer-link-title">
+          <span class="drawer-icon-dot"></span>
+          <span>Contact &amp; RFP</span>
+        </div>
+        <svg fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path></svg>
+      </a>
+    </nav>
+
+    <div class="drawer-footer">
+      <a href="mailto:contact@senapathi.co.in" class="drawer-contact-item">
+        <div class="drawer-contact-icon">
+          <svg fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"></path>
+          </svg>
+        </div>
+        <div class="drawer-contact-text">
+          <small>Electronic Inquiries</small>
+          <strong>contact@senapathi.co.in</strong>
+        </div>
+      </a>
+      <a href="<?php echo $basePath; ?>index.php#contact" class="btn btn-primary" style="width: 100%;">
+        <span>Request Consultation / RFP</span>
+        <svg class="btn-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"></path>
+        </svg>
+      </a>
+    </div>
+  </aside>
