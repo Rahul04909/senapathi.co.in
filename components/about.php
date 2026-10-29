@@ -52,8 +52,8 @@ $basePath = isset($basePath) ? $basePath : '';
               </svg>
             </div>
             <div class="meta-info">
-              <h6>Statutory Audit &amp; Finance Partner CA Firm</h6>
-              <p>Statutory audits, forensic accounting &amp; public expenditure governance.</p>
+              <h6>Digital Transformation & Technology</h6>
+              <p>We assist public sector bodies, institutions, and businesses in planning, procuring, implementing, and governing digital systems.</p>
             </div>
           </div>
 
