@@ -70,7 +70,7 @@ $basePath = isset($basePath) ? $basePath : '';
                 </svg>
                 <div>
                   <span>Official Inquiries:</span><br>
-                  <a href="mailto:contact@senapathi.co.in">contact@senapathi.co.in</a>
+                  <a href="mailto:contact@senapathi.co.in">info@senapathi.co.in</a>
                 </div>
               </div>
               <div class="footer-contact-row">
