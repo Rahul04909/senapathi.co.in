@@ -20,14 +20,14 @@ $basePath = isset($basePath) ? $basePath : '';
             <p class="footer-about-text">
               Senapathi Alliance (Senapathi India) is a multidisciplinary management and technical consulting firm supporting government departments, PSUs, multilateral institutions, programme implementation agencies, and responsible private-sector organizations.
             </p>
-            <div class="footer-cag-box">
+            <!-- <div class="footer-compliance-box">
               <svg fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"></path>
               </svg>
               <p>
                 <strong>Statutory Compliance &amp; Assurance:</strong> Regulated financial services are delivered through a Partner Chartered Accountancy firm in compliance with statutory audit and ICAI standards. Regulated legal services are provided through a partner law firm.
               </p>
-            </div>
+            </div> -->
           </div>
 
           <!-- Col 2: Navigation Links -->
@@ -70,7 +70,7 @@ $basePath = isset($basePath) ? $basePath : '';
                 </svg>
                 <div>
                   <span>Official Inquiries:</span><br>
-                  <a href="mailto:contact@senapathi.co.in">contact@senapathi.co.in</a>
+                  <a href="mailto:contact@senapathi.co.in">info@senapathi.co.in</a>
                 </div>
               </div>
               <div class="footer-contact-row">

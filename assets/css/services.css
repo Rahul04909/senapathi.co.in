@@ -243,7 +243,8 @@
   color: #FDE68A;
 }
 
-.service-partner-pill.cag {
+.service-partner-pill.cag,
+.service-partner-pill.audit-partner {
   background: rgba(16, 185, 129, 0.14);
   border-color: rgba(16, 185, 129, 0.32);
   color: #A7F3D0;

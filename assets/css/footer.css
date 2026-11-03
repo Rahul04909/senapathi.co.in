@@ -94,7 +94,6 @@
   margin-bottom: 24px;
 }
 
-/* Compliance Accreditation Card */
 .footer-cag-box {
   background: rgba(255, 255, 255, 0.05);
   border: 1px solid rgba(255, 255, 255, 0.1);
@@ -105,7 +104,7 @@
   gap: 12px;
 }
 
-.footer-cag-box svg {
+.footer-compliance-box svg {
   width: 20px;
   height: 20px;
   color: #F59E0B;
@@ -113,7 +112,7 @@
   margin-top: 2px;
 }
 
-.footer-cag-box p {
+.footer-compliance-box p {
   font-size: 0.75rem;
   color: #CBD5E1;
   line-height: 1.45;
@@ -276,6 +275,7 @@
   .footer-bottom {
     padding: 20px 0;
   }
+
   .footer-bottom .container {
     flex-direction: column;
     align-items: flex-start;
@@ -345,6 +345,7 @@
     height: 38px;
     z-index: 40;
   }
+
   .back-to-top-btn svg {
     width: 17px;
     height: 17px;
