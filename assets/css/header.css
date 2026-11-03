@@ -382,6 +382,7 @@
   transform: scale(0.92) rotate(90deg);
 }
 
+<<<<<<< HEAD
 /* Institutional Credentials Pill in Drawer */
 .drawer-credentials-pill,
 .drawer-cag-pill {
@@ -389,6 +390,23 @@
   margin-bottom: 6px;
   background: var(--color-bg-surface-alt, #F8FAFC);
   border: 1px solid var(--color-border, #E2E8F0);
+=======
+<<<<<<< HEAD
+/* Institutional Credentials Pill in Drawer */
+.drawer-credentials-pill {
+  margin-top: 14px;
+  margin-bottom: 6px;
+  background: var(--color-bg-surface-alt, #F8FAFC);
+  border: 1px solid var(--color-border, #E2E8F0);
+=======
+/* Institutional CAG Pill in Drawer */
+.drawer-cag-pill {
+  margin-top: 14px;
+  margin-bottom: 6px;
+  background: #FFFBEB;
+  border: 1px solid #FDE68A;
+>>>>>>> f18d83945b4b5ab1d7285f7ea68a461228f2a3ab
+>>>>>>> ca31a1fc450db9346bbf1e6bf39ee80c5b77752e
   border-radius: var(--radius-md);
   padding: 10px 12px;
   display: flex;
@@ -396,7 +414,30 @@
   gap: 10px;
   font-size: 0.75rem;
   font-weight: 600;
+<<<<<<< HEAD
   color: var(--color-primary-800, #0F3B6C);
+=======
+<<<<<<< HEAD
+  color: var(--color-primary-800, #0F3B6C);
+  line-height: 1.35;
+  flex-shrink: 0;
+  transition: all var(--transition-fast, 0.2s ease);
+}
+
+.drawer-credentials-pill:hover,
+.drawer-credentials-pill:active {
+  background: #F0F9FF;
+  border-color: var(--color-primary-300, #7DD3FC);
+  color: var(--color-primary-600, #0284C7);
+}
+
+.drawer-credentials-pill svg {
+  width: 18px;
+  height: 18px;
+  color: var(--color-primary-600, #0284C7);
+=======
+  color: #92400E;
+>>>>>>> ca31a1fc450db9346bbf1e6bf39ee80c5b77752e
   line-height: 1.35;
   flex-shrink: 0;
   transition: all var(--transition-fast, 0.2s ease);
@@ -415,7 +456,12 @@
 .drawer-cag-pill svg {
   width: 18px;
   height: 18px;
+<<<<<<< HEAD
   color: var(--color-primary-600, #0284C7);
+=======
+  color: #D97706;
+>>>>>>> f18d83945b4b5ab1d7285f7ea68a461228f2a3ab
+>>>>>>> ca31a1fc450db9346bbf1e6bf39ee80c5b77752e
   flex-shrink: 0;
 }
 

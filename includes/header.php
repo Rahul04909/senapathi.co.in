@@ -226,6 +226,7 @@ $activeNav = isset($activeNav) ? $activeNav : '';
       </svg>
       <span>Partner Chartered Accountancy &amp; Audit Advisory Firm</span>
     </div>
+>>>>>>> f18d83945b4b5ab1d7285f7ea68a461228f2a3ab
 
     <nav class="drawer-nav">
       <a href="<?php echo $basePath; ?>pages/about-us.php" class="drawer-link <?php echo ($activeNav === 'about') ? 'active' : ''; ?>">
